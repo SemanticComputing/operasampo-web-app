@@ -1,0 +1,256 @@
+{
+  "languageLabel": "Suomi",
+  "html": {
+    "title": "Oopperasampo",
+    "description": ""
+  },
+  "appTitle": {
+    "short": "Oopperasampo",
+    "mobile": "Oopperasampo",
+    "long": "&nbsp; &nbsp; Oopperasampo &nbsp; &nbsp;",
+    "subheading": "Semanttinen haku ja data-analyysi"
+  },
+  "appDescription1": "OopperaSampo is a web service for searching and studying operas. The search results can be viewed as a table, on maps, and as statistical distributions.",
+  "appDescription2": "Start by choosing source dataset(s) and input a place name on the search field. Alternatively you can search by area.",
+  "selectPerspective": "Valitse näkymä tiedon hakuun:",
+  "mainPageImageLicence": "Images used under license from Shutterstock.com",
+  "backendErrorText": "One of the backend services is not available at the moment. Please try again later.",
+  "infoHeader": {
+    "toggleInstructions": "Paina näyttääksesi tai piilottaaksesi ohjeet"
+  },
+  "topBar": {
+    "feedback": "palaute",
+    "info": {
+      "info": "Info",
+      "blog": "Projektin blogi",
+      "blogUrl": "https://seco.cs.aalto.fi/tools/sampo-ui/",
+      "aboutThePortal": "Tietoa portaalista"
+    },
+    "searchBarPlaceHolder": "Hae kaikesta sisällöstä",
+    "searchBarPlaceHolderShort": "Hae",
+    "instructions": "ohjeet"
+  },
+  "facetBar": {
+    "results": "Tulokset",
+    "filters": "Suodattimet",
+    "activeFilters": "Aktiiviset suodattimet:",
+    "removeAllFilters": "Poista kaikki",
+    "narrowDownBy": "Rajaa",
+    "filterOptions": "Suodatinasetukset",
+    "filterByName": "Suodata nimen perusteella",
+    "filterByBoundingBox": "Suodata rajaavalla suorakaiteella",
+    "selectionOptions": "Valinta-asetukset",
+    "selectAlsoSubconcepts": "Valitse kaikki alakäsitteet automaattisesti",
+    "doNotSelectSubconcepts": "Älä valitse alakäsitteitä",
+    "sortingOptions": "Järjestysasetukset",
+    "sortAlphabetically": "Järjestä aakkosjärjestykseen",
+    "sortByNumberOfSearchResults": "Järjestä hakutulosten määrän mukaan",
+    "useDisjunction": "Käytä loogista OR-konnektiivia valintojen välillä",
+    "useConjuction": "Käytä loogista AND-konnektiivia valintojen välillä",
+    "minYear": "Minimivuosi",
+    "maxYear": "Maksimivuosi",
+    "min": "Min",
+    "max": "Max",
+    "facetSearchFieldPlaceholder": "Hae...",
+    "applyFacetSelection": "apply",
+    "pieChart": {
+      "tooltip": "Pie chart"
+    },
+    "barChart": {
+      "tooltip": "",
+      "language": {
+        "title": "",
+        "xaxisTitle": "",
+        "yaxisTitle": "",
+        "seriesTitle": ""
+      }
+    },
+    "lineChart": {
+      "tooltip": "",
+      "productionTimespan": {
+        "title": "",
+        "xaxisTitle": "",
+        "yaxisTitle": "",
+        "seriesTitle": ""
+      }
+    }
+  },
+  "tabs": {
+    "table": "",
+    "map": "",
+    "production_places": "",
+    "production_places_heatmap": "",
+    "last_known_locations": "",
+    "migrations": "",
+    "network": "",
+    "export": "",
+    "production_dates": "",
+    "event_dates": "",
+    "map_clusters": "",
+    "map_markers": "",
+    "heatmap": "",
+    "statistics": "",
+    "emloLetterNetwork": "",
+    "emloSentReceived": "",
+    "download": "",
+    "recommendations": ""
+  },
+  "table": {
+    "rowsPerPage": "Rivejä per sivu",
+    "of": "of"
+  },
+  "apexCharts": {
+    "grouping": "Lajitteluperuste:",
+    "by": "by",
+    "property": "X-akseli:",
+    "chartType": "Kaaviotyyppi:",
+    "pie": "ympyräkaavio",
+    "bar": "pylväsdiagrammi",
+    "other": "muu",
+    "resultClasses": {
+    }
+  },
+  "lineChart": {
+    "productionCount": "",
+    "transferCount": "",
+    "observationCount": "",
+    "sentCount": "",
+    "receivedCount": "",
+    "allCount": ""
+  },
+  "exportToYasgui": "",
+  "openInLinkedDataBrowser": "",
+  "resultsAsCSV": "",
+  "facets": {
+    "dateFacet": {
+      "invalidDate": "",
+      "toBeforeFrom": "",
+      "minDate": "",
+      "maxDate": "",
+      "cancel": "",
+      "fromLabel": "",
+      "toLabel": ""
+    },
+    "textFacet": {
+      "inputLabel": ""
+    },
+    "sliderFacet": {
+      "invalidStartOrEnd": ""
+    }
+  },
+  "leafletMap": {
+    "basemaps": {
+      "mapbox": {
+        "light-v10": ""
+      },
+      "googleRoadmap": "",
+      "topographicalMapNLS": "",
+      "backgroundMapNLS": ""
+    },
+    "externalLayers": {
+      "arkeologiset_kohteet_alue": "",
+      "arkeologiset_kohteet_piste": "",
+      "fhaLidar": "",
+      "karelianMaps": "",
+      "senateAtlas": "",
+      "kotus:pitajat": "",
+      "kotus:rajat-sms-alueet": "",
+      "kotus:rajat-sms-alueosat": "",
+      "kotus:rajat-lansi-ita": ""
+    },
+    "mapModeButtons": {
+      "markers": "",
+      "heatmap": ""
+    },
+    "wrongZoomLevel": "",
+    "wrongZoomLevelFHA": "",
+    "tooManyResults": ""
+  },
+  "instancePageGeneral": {
+    "introduction": "",
+    "repetition": ""
+  },
+  "deckGlMap": {
+    "arcColouring": "",
+    "showMoreInformation": "",
+    "manuscriptMigrations": {
+      "legendTitle": "",
+      "legendFrom": "",
+      "legendTo": "",
+      "from": "",
+      "to": "",
+      "count": "",
+      "listHeadingSingleInstance": "",
+      "listHeadingMultipleInstances": ""
+    }
+  },
+  "perspectives": {
+    "compositions": {
+      "label": "Sävellykset",
+      "facetResultsType": "",
+      "shortDescription": "",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Sävellys",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Sävellyksen URI"
+        },
+        "prefLabel": {
+          "label": "Nimi",
+          "description": "Sävellyksen nimi",
+          "textFacetInputPlaceholder": ""
+        }
+      }
+    },
+    "performances": {
+      "label": "Esitykset",
+      "facetResultsType": "",
+      "shortDescription": "",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Esitys",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Esityksen URI"
+        },
+        "prefLabel": {
+          "label": "Nimi",
+          "description": "Esityksen nimi",
+          "textFacetInputPlaceholder": ""
+        }
+      }
+    },
+    "people": {
+      "label": "Henkilöt",
+      "facetResultsType": "",
+      "shortDescription": "",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Henkilö",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Henkilön URI"
+        },
+        "prefLabel": {
+          "label": "Nimi",
+          "description": "Henkilön nimi",
+          "textFacetInputPlaceholder": ""
+        }
+      }
+    }
+  },
+  "aboutThePortalPartOne": "",
+  "aboutThePortalPartTwo": "",
+  "instructions": "",
+  "feedback": ""
+}

@@ -1,33 +1,19 @@
 {
-    "portalID": "sampo",
+    "portalID": "operasampo",
     "rootUrl": "",
     "perspectives": {
         "searchPerspectives": [
-            "perspective1",
-            "perspective2",
-            "perspective3",
-            "perspective4",
-            "fullTextSearch"
+            "compositions",
+            "performances",
+            "people"
         ],
         "onlyInstancePages": [
-            "manuscripts",
-            "collections",
-            "works",
-            "expressions",
-            "events",
-            "actors",
-            "places"
         ]
     },
     "localeConfig": {
-        "defaultLocale": "en",
+        "defaultLocale": "fi",
         "readTranslationsFromGoogleSheets": false,
         "availableLocales": [
-            {
-                "id": "en",
-                "label": "English",
-                "filename": "localeEN.json"
-            },
             {
                 "id": "fi",
                 "label": "English",
@@ -45,7 +31,7 @@
     },
     "knowledgeGraphMetadataConfig": {
         "showTable": false,
-        "perspective": "perspective1" 
+        "perspective": "compositions" 
     },
     "layoutConfig": {
         "colorPalette": {
@@ -62,10 +48,10 @@
         "paginationToolbarHeight": 37,
         "tableFontSize": "0.8rem",
         "topBar": {
-            "logoImage": "logos/logo.png",
             "logoTextTransform": "none",
             "hideLogoTextOnMobile": true,
             "showLanguageButton": true,
+            "showSearchField": false,
             "feedbackLink": "https://link.webropolsurveys.com/...",
             "externalInstructions": false,
             "externalAboutPage": false,
@@ -121,19 +107,12 @@
         "yasguiParams": {
             "contentTypeConstruct": "text/turtle",
             "contentTypeSelect": "application/sparql-results+json",
-            "endpoint": "https://ldf.fi/mmm/sparql",
+            "endpoint": "http://localhost:3055/ds/sparql",
             "requestMethod": "POST",
             "tabTitle": "Exported query"
         }
     },
     "documentFinderConfig": {
         "apiURL": "https://data.finlex.fi/document-finder-backend"
-    },
-    "temporalMapConfig": {
-        "sliderDuration": {
-            "halfSpeed": 1200,
-            "normalSpeed": 600,
-            "doubleSpeed": 300
-        }
     }
 }
