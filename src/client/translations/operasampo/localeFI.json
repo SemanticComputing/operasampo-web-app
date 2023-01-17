@@ -305,6 +305,46 @@
           "label": "Nimi",
           "description": "Henkilön nimi",
           "textFacetInputPlaceholder": ""
+        },
+        "firstName": {
+          "label": "Etunimi",
+          "description": "Henkilön etunimi"
+        },
+        "lastName": {
+          "label": "Sukunimi",
+          "description": "Henkilön sukunimi"
+        },
+        "role": {
+          "label": "Rooli",
+          "description": "Henkilön rooli"
+        },
+        "nationality": {
+          "label": "Kansallisuus",
+          "description": "Henkilön kansallisuus"
+        },
+        "language": {
+          "label": "Kieli",
+          "description": "Henkilön puhuma kieli"
+        },
+        "dateOfBirth": {
+          "label": "Synnyinaika",
+          "description": "Henkilön synnyinaika"
+        },
+        "placeOfBirth": {
+          "label": "Synnyinpaikka",
+          "description": "Henkilön synnyinpaikka"
+        },
+        "dateOfDeath": {
+          "label": "Kuolinaika",
+          "description": "Henkilön kuolinaika"
+        },
+        "placeOfDeath": {
+          "label": "Kuolinpaikka",
+          "description": "Henkilön kuolinpaikka"
+        },
+        "additionalInfo": {
+          "label": "Lisätietoja",
+          "description": "Henkilön lisätietoja"
         }
       }
     }

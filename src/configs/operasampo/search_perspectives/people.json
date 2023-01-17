@@ -57,6 +57,99 @@
             "sortValues": true,
             "numberedList": false,
             "minWidth": 200
+        },
+        {
+            "id": "firstName",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "lastName",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "role",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100
+        },
+        {
+            "id": "nationality",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150
+        },
+        {
+            "id": "language",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100
+        },
+        {
+            "id": "dateOfBirth",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100
+        },
+        {
+            "id": "placeOfBirth",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100
+        },
+        {
+            "id": "dateOfDeath",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100
+        },
+        {
+            "id": "placeOfDeath",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100
+        },
+        {
+            "id": "additionalInfo",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 250,
+            "onlyOnInstancePage": true
         }
     ],
     "facets": {
