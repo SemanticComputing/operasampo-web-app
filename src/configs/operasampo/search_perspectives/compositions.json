@@ -59,6 +59,147 @@
             "sortValues": true,
             "numberedList": false,
             "minWidth": 250
+        },
+        {
+            "id": "composedBy",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
+            "id": "language",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100
+        },
+        {
+            "id": "libretist",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
+            "id": "additionalTitle",
+            "valueType": "object",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "originalTitle",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "originalWork",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "composed",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150
+        },
+        {
+            "id": "compositionYear",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150
+        },
+        {
+            "id": "firstPerformedDate",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150
+        },
+        {
+            "id": "firstPerformancePlace",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150
+        },
+        {
+            "id": "published",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150
+        },
+        {
+            "id": "publishedDate",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150
+        },
+        {
+            "id": "opus",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "catalogue",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "additionalInfo",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 250,
+            "onlyOnInstancePage": true
         }
     ],
     "facets": {
@@ -68,6 +209,28 @@
             "filterType": "textFilter",
             "sortByPredicate": "skos:prefLabel",
             "textQueryProperty": "skos:prefLabel"
+        },
+        "composedBy": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:composedBy",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:composedBy/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "libretist": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:libretist",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:libretist/skos:prefLabel",
+            "sortDirection": "desc"
         }
     }
 }

@@ -203,6 +203,66 @@
           "label": "Nimi",
           "description": "Sävellyksen nimi",
           "textFacetInputPlaceholder": ""
+        },
+        "additionalTitle": {
+          "label": "Lisänimeke",
+          "description": "Sävellyksen lisänimeke"
+        },
+        "originalTitle": {
+          "label": "Alkuperäinen nimeke",
+          "description": "Sävellyksen alkuperäinen nimeke"
+        },
+        "originalWork": {
+          "label": "Alkuteos",
+          "description": "Sävellyksen alkuteos"
+        },
+        "composedBy": {
+          "label": "Säveltäjä",
+          "description": "Sävellyksen säveltäjä"
+        },
+        "language": {
+          "label": "Kieli",
+          "description": "Sävellyksen kieli"
+        },
+        "libretist": {
+          "label": "Libretisti",
+          "description": "Sävellyksen libretisti"
+        },
+        "composed": {
+          "label": "Sävellysvuosi?",
+          "description": "Sävellyksen sävellysvuosi"
+        },
+        "compositionYear": {
+          "label": "Sävellysvuosi",
+          "description": "Sävellyksen sävellysvuosi"
+        },
+        "firstPerformedDate": {
+          "label": "Ensiesitysajankohta",
+          "description": "Sävellyksen ensiesitysajankohta"
+        },
+        "firstPerformancePlace": {
+          "label": "Ensiesityspaikka",
+          "description": "Sävellyksen ensiesityspaikka"
+        },
+        "published": {
+          "label": "Julkaisuajankohta?",
+          "description": "Sävellyksen Julkaisuajankohta"
+        },
+        "publishedDate": {
+          "label": "Julkaisuajankohta",
+          "description": "Sävellyksen julkaisuajankohta"
+        },
+        "opus": {
+          "label": "Opus",
+          "description": "Sävellyksen opus"
+        },
+        "catalogue": {
+          "label": "Katalogi",
+          "description": "Sävellyksen katalogi"
+        },
+        "additionalInfo": {
+          "label": "Lisätietoja",
+          "description": "Sävellyksen lisätietoja"
         }
       }
     },

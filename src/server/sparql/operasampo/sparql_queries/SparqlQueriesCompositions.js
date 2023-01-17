@@ -9,4 +9,74 @@ export const compositionProperties = `
       BIND(?id as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)
     }
+    UNION
+    {
+      ?id scop:additionalTitle ?additionalTitle__id .
+      BIND(?additionalTitle__id AS ?additionalTitle__prefLabel)
+    }
+    UNION
+    {
+      ?id scop:originalTitle ?originalTitle .
+    }
+    UNION
+    {
+      ?id scop:originalWork ?originalWork .
+    }
+    UNION
+    {
+      ?id scop:composedBy ?composedBy__id .
+      ?composedBy__id skos:prefLabel ?composedBy__prefLabel .
+      BIND(CONCAT("/people/page/", REPLACE(STR(?composedBy__id), "^.*\\\\/(.+)", "$1")) AS ?composedBy__dataProviderUrl)
+    }
+    UNION
+    {
+      ?id scop:language ?language .
+    }
+    UNION
+    {
+      ?id scop:libretist ?libretist__id .
+      ?libretist__id skos:prefLabel ?libretist__prefLabel .
+      BIND(CONCAT("/people/page/", REPLACE(STR(?libretist__id), "^.*\\\\/(.+)", "$1")) AS ?libretist__dataProviderUrl)
+    }
+    UNION
+    {
+      ?id scop:composed ?composed .
+    }
+    UNION
+    {
+      ?id scop:compositionYear ?compositionYear .
+    }
+    UNION
+    {
+      ?id scop:firstPerformedDate ?firstPerformedDate .
+    }
+    UNION
+    {
+      ?id scop:firstPerformancePlace ?firstPerformancePlace .
+    }
+    UNION
+    {
+      ?id scop:published ?published .
+    }
+    UNION
+    {
+      ?id scop:publishedDate ?publishedDate .
+    }
+    UNION
+    {
+      ?id scop:opus ?opus .
+    }
+    UNION
+    {
+      ?id scop:catalogue ?catalogue .
+    }
+    UNION
+    {
+      ?id scop:additionalInfo ?additionalInfo .
+      FILTER(LANG(?additionalInfo) = 'fi')
+    }
+    UNION
+    {
+      ?id scop:editorNotes ?editorNotes .
+    }
 `
