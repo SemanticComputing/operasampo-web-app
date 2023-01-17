@@ -216,7 +216,7 @@
           "label": "Alkuteos",
           "description": "Sävellyksen alkuteos"
         },
-        "composedBy": {
+        "composer": {
           "label": "Säveltäjä",
           "description": "Sävellyksen säveltäjä"
         },
@@ -284,6 +284,26 @@
           "label": "Nimi",
           "description": "Esityksen nimi",
           "textFacetInputPlaceholder": ""
+        },
+        "composition": {
+          "label": "Sävellys",
+          "description": "Esityksen sävellys"
+        },
+        "choirLeader": {
+          "label": "Kuoronjohtaja",
+          "description": "Esityksen kuoronjohtaja"
+        },
+        "conductor": {
+          "label": "Kapellimestari",
+          "description": "Esityksen kapellimestari"
+        },
+        "director": {
+          "label": "Ohjaaja",
+          "description": "Esityksen ohjaaja"
+        },
+        "producer": {
+          "label": "Tuottaja",
+          "description": "Esityksen tuottaja"
         }
       }
     },

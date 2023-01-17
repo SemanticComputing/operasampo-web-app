@@ -24,9 +24,9 @@ export const compositionProperties = `
     }
     UNION
     {
-      ?id scop:composedBy ?composedBy__id .
-      ?composedBy__id skos:prefLabel ?composedBy__prefLabel .
-      BIND(CONCAT("/people/page/", REPLACE(STR(?composedBy__id), "^.*\\\\/(.+)", "$1")) AS ?composedBy__dataProviderUrl)
+      ?id scop:composedBy ?composer__id .
+      ?composer__id skos:prefLabel ?composer__prefLabel .
+      BIND(CONCAT("/people/page/", REPLACE(STR(?composer__id), "^.*\\\\/(.+)", "$1")) AS ?composer__dataProviderUrl)
     }
     UNION
     {

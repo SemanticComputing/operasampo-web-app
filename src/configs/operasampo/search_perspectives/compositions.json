@@ -61,7 +61,7 @@
             "minWidth": 250
         },
         {
-            "id": "composedBy",
+            "id": "composer",
             "valueType": "object",
             "makeLink": true,
             "externalLink": false,
@@ -210,7 +210,7 @@
             "sortByPredicate": "skos:prefLabel",
             "textQueryProperty": "skos:prefLabel"
         },
-        "composedBy": {
+        "composer": {
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
