@@ -304,6 +304,14 @@
         "producer": {
           "label": "Tuottaja",
           "description": "Esityksen tuottaja"
+        },
+        "performanceDate": {
+          "label": "Esitysajankohta",
+          "description": "Esityksen esitysajankohta"
+        },
+        "additionalInfo": {
+          "label": "Lisätietoja",
+          "description": "Esityksen lisätietoja"
         }
       }
     },
@@ -365,6 +373,35 @@
         "additionalInfo": {
           "label": "Lisätietoja",
           "description": "Henkilön lisätietoja"
+        }
+      }
+    },
+    "producers": {
+      "label": "Tuottajat",
+      "facetResultsType": "",
+      "shortDescription": "",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Tuottaja",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Tuottajan URI"
+        },
+        "prefLabel": {
+          "label": "Nimi",
+          "description": "Tuottajan nimi",
+          "textFacetInputPlaceholder": ""
+        },
+        "additionalInfo": {
+          "label": "Lisätietoja",
+          "description": "Tuottajan lisätietoja"
+        },
+        "producedPerformances": {
+          "label": "Tuotetut esityksen",
+          "description": "Tuottajan tuottamat esitykset"
         }
       }
     }

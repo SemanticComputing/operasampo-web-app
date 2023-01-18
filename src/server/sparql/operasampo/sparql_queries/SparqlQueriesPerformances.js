@@ -14,7 +14,10 @@ export const performanceProperties = `
       ?id scop:composition ?composition__id .
       ?composition__id skos:prefLabel ?composition__prefLabel .
       BIND(CONCAT("/compositions/page/", REPLACE(STR(?composition__id), "^.*\\\\/(.+)", "$1")) AS ?composition__dataProviderUrl)
-      BIND(?composition__prefLabel as ?prefLabel__prefLabel)
+      OPTIONAL {
+        ?id scop:performanceDate ?pd .
+      }
+      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd, "esitysajankohta ei tiedossa"), ")") as ?prefLabel__prefLabel)
       BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
     }
     UNION
@@ -39,6 +42,11 @@ export const performanceProperties = `
     {
       ?id scop:producedBy ?producer__id .
       ?producer__id skos:prefLabel ?producer__prefLabel .
+      BIND(CONCAT("/producers/page/", REPLACE(STR(?producer__id), "^.*\\\\/(.+)", "$1")) AS ?producer__dataProviderUrl)
+    }
+    UNION
+    {
+      ?id scop:performanceDate ?performanceDate .
     }
     UNION
     {

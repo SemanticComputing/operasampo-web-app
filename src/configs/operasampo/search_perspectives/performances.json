@@ -106,6 +106,15 @@
             "minWidth": 200
         },
         {
+            "id": "performanceDate",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
             "id": "additionalInfo",
             "valueType": "string",
             "makeLink": false,
@@ -117,13 +126,6 @@
         }
     ],
     "facets": {
-        "prefLabel": {
-            "containerClass": "one",
-            "facetType": "text",
-            "filterType": "textFilter",
-            "sortByPredicate": "skos:prefLabel",
-            "textQueryProperty": "skos:prefLabel"
-        },
         "composition": {
             "containerClass": "ten",
             "facetType": "list",
