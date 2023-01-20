@@ -192,6 +192,17 @@
             "onlyOnInstancePage": true
         },
         {
+            "id": "performance",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 200,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
             "id": "additionalInfo",
             "valueType": "string",
             "makeLink": false,

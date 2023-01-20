@@ -260,6 +260,10 @@
           "label": "Katalogi",
           "description": "Sävellyksen katalogi"
         },
+        "performance": {
+          "label": "Esitykset",
+          "description": "Sävellyksen esitykset"
+        },
         "additionalInfo": {
           "label": "Lisätietoja",
           "description": "Sävellyksen lisätietoja"

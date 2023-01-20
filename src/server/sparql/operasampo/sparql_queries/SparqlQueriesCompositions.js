@@ -72,6 +72,23 @@ export const compositionProperties = `
     }
     UNION
     {
+      ?id ^scop:composition ?performance__id .
+      ?performance__id a scop:Performance .
+      ?id skos:prefLabel ?label .
+      FILTER(LANG(?label) = 'fi')
+      OPTIONAL {
+        ?performance__id scop:performanceDate ?pd .
+      }
+      OPTIONAL {
+        ?performance__id scop:estimatedPerformanceDateStart ?pdStart .
+        ?performance__id scop:estimatedPerformanceDateStop ?pdStop .
+        BIND(CONCAT(?pdStart, "–", ?pdStop) as ?pdRange)
+      }
+      BIND(CONCAT(?label, " (", COALESCE(?pd, ?pdRange, "esitysajankohta ei tiedossa"), ")") as ?performance__prefLabel)
+      BIND(CONCAT("/performances/page/", REPLACE(STR(?performance__id), "^.*\\\\/(.+)", "$1")) AS ?performance__dataProviderUrl)
+    }
+    UNION
+    {
       ?id scop:additionalInfo ?additionalInfo .
       FILTER(LANG(?additionalInfo) = 'fi')
     }
