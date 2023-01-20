@@ -376,6 +376,35 @@
         }
       }
     },
+    "roles": {
+      "label": "Roolit",
+      "facetResultsType": "",
+      "shortDescription": "",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Rooli",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Roolin URI"
+        },
+        "prefLabel": {
+          "label": "Nimi",
+          "description": "Roolin nimi",
+          "textFacetInputPlaceholder": ""
+        },
+        "composition": {
+          "label": "Sävellys",
+          "description": "Sävellys, johon rooli kuuluu"
+        },
+        "actor": {
+          "label": "Esiintyjät",
+          "description": "Henkilöt, jotka ovat esiityneet roolissa"
+        }
+      }
+    },
     "producers": {
       "label": "Tuottajat",
       "facetResultsType": "",

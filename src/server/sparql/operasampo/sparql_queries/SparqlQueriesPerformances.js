@@ -13,11 +13,17 @@ export const performanceProperties = `
     {
       ?id scop:composition ?composition__id .
       ?composition__id skos:prefLabel ?composition__prefLabel .
+      FILTER(LANG(?composition__prefLabel) = 'fi')
       BIND(CONCAT("/compositions/page/", REPLACE(STR(?composition__id), "^.*\\\\/(.+)", "$1")) AS ?composition__dataProviderUrl)
       OPTIONAL {
         ?id scop:performanceDate ?pd .
       }
-      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd, "esitysajankohta ei tiedossa"), ")") as ?prefLabel__prefLabel)
+      OPTIONAL {
+        ?id scop:estimatedPerformanceDateStart ?pdStart .
+        ?id scop:estimatedPerformanceDateStop ?pdStop .
+        BIND(CONCAT(?pdStart, "–", ?pdStop) as ?pdRange)
+      }
+      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd, ?pdRange, "esitysajankohta ei tiedossa"), ")") as ?prefLabel__prefLabel)
       BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
     }
     UNION

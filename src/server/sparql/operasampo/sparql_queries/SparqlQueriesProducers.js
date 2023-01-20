@@ -21,12 +21,20 @@ export const producerProperties = `
     UNION
     {
       ?id ^scop:producedBy ?producedPerformances__id .
+      ?producedPerformances__id a scop:Performance .
       ?producedPerformances__id scop:composition ?composition__id .
-      ?composition__id skos:prefLabel ?composition__prefLabel .
+      ?composition__id a scop:Composition ;
+                      skos:prefLabel ?composition__prefLabel .
+      FILTER(LANG(?composition__prefLabel) = 'fi')
       OPTIONAL {
         ?producedPerformances__id scop:performanceDate ?pd .
       }
-      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd, "esitysajankohta ei tiedossa"), ")") as ?producedPerformances__prefLabel)
+      OPTIONAL {
+        ?producedPerformances__id scop:estimatedPerformanceDateStart ?pdStart .
+        ?producedPerformances__id scop:estimatedPerformanceDateStop ?pdStop .
+        BIND(CONCAT(?pdStart, "–", ?pdStop) as ?pdRange)
+      }
+      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd, ?pdRange, "esitysajankohta ei tiedossa"), ")") as ?producedPerformances__prefLabel)
       BIND(CONCAT("/performances/page/", REPLACE(STR(?producedPerformances__id), "^.*\\\\/(.+)", "$1")) AS ?producedPerformances__dataProviderUrl)
     }
 `

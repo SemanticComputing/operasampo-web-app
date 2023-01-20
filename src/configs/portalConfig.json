@@ -5,7 +5,8 @@
         "searchPerspectives": [
             "compositions",
             "performances",
-            "people"
+            "people",
+            "roles"
         ],
         "onlyInstancePages": [
             "producers"
