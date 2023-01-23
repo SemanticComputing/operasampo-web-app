@@ -63,6 +63,20 @@ export const performanceProperties = `
     }
     UNION
     {
+      ?id scop:season ?season .
+    }
+    UNION
+    {
+      ?id scop:orchestra ?orchestra .
+      FILTER(LANG(?orchestra) = 'fi')
+    }
+    UNION
+    {
+      ?id scop:tickets ?tickets .
+      FILTER(LANG(?tickets) = 'fi')
+    }
+    UNION
+    {
       ?id scop:additionalInfo ?additionalInfo .
       FILTER(LANG(?additionalInfo) = 'fi')
     }

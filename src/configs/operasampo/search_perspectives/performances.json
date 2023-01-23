@@ -12,7 +12,7 @@
     "frontPageImage": "main_page/manuscripts-452x262.jpg",
     "searchMode": "faceted-search",
     "defaultActiveFacets": [
-        "prefLabel"
+        "composition"
     ],
     "defaultTab": "table",
     "defaultInstancePageTab": "table",
@@ -122,6 +122,36 @@
             "sortValues": true,
             "numberedList": false,
             "minWidth": 200
+        },
+        {
+            "id": "season",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "orchestra",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "tickets",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200,
+            "onlyOnInstancePage": true
         },
         {
             "id": "additionalInfo",

@@ -317,6 +317,18 @@
           "label": "Esityspaikka",
           "description": "Esityksen esityspaikka"
         },
+        "season": {
+          "label": "Kausi",
+          "description": "Esityksen kausi"
+        },
+        "orchestra": {
+          "label": "Orkesteri",
+          "description": "Esityksen orkesteri"
+        },
+        "tickets": {
+          "label": "Liput",
+          "description": "Esityksen liput"
+        },
         "additionalInfo": {
           "label": "Lisätietoja",
           "description": "Esityksen lisätietoja"

@@ -11,7 +11,9 @@
     "facetClass": "scop:Role",
     "frontPageImage": "main_page/events-452x262.jpg",
     "searchMode": "faceted-search",
-    "defaultActiveFacets": [],
+    "defaultActiveFacets": [
+        "prefLabel"
+    ],
     "defaultTab": "table",
     "defaultInstancePageTab": "table",
     "resultClasses": {
