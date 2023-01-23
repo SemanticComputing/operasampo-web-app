@@ -230,7 +230,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:composedBy/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "libretist": {
             "containerClass": "ten",
@@ -241,7 +242,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:libretist/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         }
     }
 }
