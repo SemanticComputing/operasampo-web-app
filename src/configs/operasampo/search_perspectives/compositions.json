@@ -211,6 +211,17 @@
             "numberedList": false,
             "minWidth": 250,
             "onlyOnInstancePage": true
+        },
+        {
+            "id": "role",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 200,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
         }
     ],
     "facets": {

@@ -267,6 +267,10 @@
         "additionalInfo": {
           "label": "Lisätietoja",
           "description": "Sävellyksen lisätietoja"
+        },
+        "role": {
+          "label": "Roolihahmot",
+          "description": "Sävellyksen roolihahmot"
         }
       }
     },

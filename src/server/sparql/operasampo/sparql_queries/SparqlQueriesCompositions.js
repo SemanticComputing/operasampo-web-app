@@ -94,6 +94,14 @@ export const compositionProperties = `
     }
     UNION
     {
+      ?id ^scop:composition ?role__id .
+      ?role__id a scop:Role ;
+                skos:prefLabel ?role__prefLabel .
+      FILTER(LANG(?role__prefLabel) = 'fi')
+      BIND(CONCAT("/roles/page/", REPLACE(STR(?role__id), "^.*\\\\/(.+)", "$1")) AS ?role__dataProviderUrl)
+    }
+    UNION
+    {
       ?id scop:editorNotes ?editorNotes .
     }
 `
