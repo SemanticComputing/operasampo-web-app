@@ -1,0 +1,85 @@
+{
+    "id": "places",
+    "endpoint": {
+        "url": "http://localhost:3055/ds/sparql",
+        "useAuth": false,
+        "prefixesFile": "SparqlQueriesPrefixes.js"
+    },
+    "sparqlQueriesFile": "SparqlQueriesPlaces.js",
+    "baseURI": "http://ldf.fi/operasampo/places/",
+    "URITemplate": "<BASE_URI><LOCAL_ID>",
+    "facetClass": "scop:Place",
+    "defaultInstancePageTab": "table",
+    "resultClasses": {
+        "places": {
+            "instanceConfig": {
+                "propertiesQueryBlock": "placeProperties",
+                "instancePageResultClasses": {
+                    "instancePageTable": {
+                        "tabID": 0,
+                        "component": "InstancePageTable",
+                        "tabPath": "table",
+                        "tabIcon": "CalendarViewDay"
+                    }
+                }
+            }
+        }
+    },
+    "properties": [
+        {
+            "id": "uri",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "prefLabel",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
+            "id": "address",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 250
+        },
+        {
+            "id": "city",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 250
+        },
+        {
+            "id": "country",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 250
+        },
+        {
+            "id": "additionalInfo",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 250,
+            "onlyOnInstancePage": true
+        }
+    ]
+}

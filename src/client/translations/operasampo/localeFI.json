@@ -8,7 +8,7 @@
     "short": "Oopperasampo",
     "mobile": "Oopperasampo",
     "long": "&nbsp; &nbsp; Oopperasampo &nbsp; &nbsp;",
-    "subheading": "Semanttinen haku ja data-analyysi"
+    "subheading": "Ooppera- ja musiikkiesitykset Suomessa 1830-1960"
   },
   "appDescription1": "OopperaSampo is a web service for searching and studying operas. The search results can be viewed as a table, on maps, and as statistical distributions.",
   "appDescription2": "Start by choosing source dataset(s) and input a place name on the search field. Alternatively you can search by area.",
@@ -313,6 +313,10 @@
           "label": "Esitysajankohta",
           "description": "Esityksen esitysajankohta"
         },
+        "place": {
+          "label": "Esityspaikka",
+          "description": "Esityksen esityspaikka"
+        },
         "additionalInfo": {
           "label": "Lisätietoja",
           "description": "Esityksen lisätietoja"
@@ -381,27 +385,27 @@
       }
     },
     "roles": {
-      "label": "Roolit",
+      "label": "Roolihahmot",
       "facetResultsType": "",
       "shortDescription": "",
       "longDescription": "",
       "instancePage": {
-        "label": "Rooli",
+        "label": "Roolihahmo",
         "description": ""
       },
       "properties": {
         "uri": {
           "label": "URI",
-          "description": "Roolin URI"
+          "description": "Roolihahmon URI"
         },
         "prefLabel": {
           "label": "Nimi",
-          "description": "Roolin nimi",
+          "description": "Roolihahmon nimi",
           "textFacetInputPlaceholder": ""
         },
         "composition": {
           "label": "Sävellys",
-          "description": "Sävellys, johon rooli kuuluu"
+          "description": "Sävellys, johon roolihahmo kuuluu"
         },
         "actor": {
           "label": "Esiintyjät",
@@ -435,6 +439,43 @@
         "producedPerformances": {
           "label": "Tuotetut esityksen",
           "description": "Tuottajan tuottamat esitykset"
+        }
+      }
+    },
+    "places": {
+      "label": "Paikat",
+      "facetResultsType": "",
+      "shortDescription": "",
+      "longDescription": "",
+      "instancePage": {
+        "label": "Paikka",
+        "description": ""
+      },
+      "properties": {
+        "uri": {
+          "label": "URI",
+          "description": "Paikan URI"
+        },
+        "prefLabel": {
+          "label": "Nimi",
+          "description": "Paikan nimi",
+          "textFacetInputPlaceholder": ""
+        },
+        "address": {
+          "label": "Osoite",
+          "description": "Paikan osoite"
+        },
+        "city": {
+          "label": "Kaupunki",
+          "description": "Kaupunki, jossa paikka sijaitsee"
+        },
+        "country": {
+          "label": "Maa",
+          "description": "Maa, jossa paikka sijaitsee"
+        },
+        "additionalInfo": {
+          "label": "Lisätietoja",
+          "description": "Paikan lisätietoja"
         }
       }
     }

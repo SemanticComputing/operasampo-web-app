@@ -56,6 +56,13 @@ export const performanceProperties = `
     }
     UNION
     {
+      ?id scop:performedIn ?place__id .
+      ?place__id skos:prefLabel ?place__prefLabel .
+      FILTER(LANG(?place__prefLabel) = 'fi')
+      BIND(CONCAT("/places/page/", REPLACE(STR(?place__id), "^.*\\\\/(.+)", "$1")) AS ?place__dataProviderUrl)
+    }
+    UNION
+    {
       ?id scop:additionalInfo ?additionalInfo .
       FILTER(LANG(?additionalInfo) = 'fi')
     }

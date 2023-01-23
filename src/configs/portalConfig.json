@@ -3,13 +3,14 @@
     "rootUrl": "",
     "perspectives": {
         "searchPerspectives": [
-            "compositions",
             "performances",
             "people",
+            "compositions",
             "roles"
         ],
         "onlyInstancePages": [
-            "producers"
+            "producers",
+            "places"
         ]
     },
     "localeConfig": {

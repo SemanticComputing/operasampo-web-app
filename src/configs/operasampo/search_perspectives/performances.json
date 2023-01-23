@@ -115,6 +115,15 @@
             "minWidth": 200
         },
         {
+            "id": "place",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
             "id": "additionalInfo",
             "valueType": "string",
             "makeLink": false,
@@ -180,6 +189,18 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:producedBy/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "place": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = 'fi')",
+            "filterType": "uriFilter",
+            "predicate": "scop:performedIn",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:performedIn/skos:prefLabel",
             "sortDirection": "desc"
         }
     }
