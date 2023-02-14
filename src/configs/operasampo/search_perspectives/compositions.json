@@ -9,7 +9,7 @@
     "baseURI": "http://ldf.fi/operasampo/compositions/",
     "URITemplate": "<BASE_URI><LOCAL_ID>",
     "facetClass": "scop:Composition",
-    "frontPageImage": "main_page/works-452x262.jpg",
+    "frontPageImage": "main_page/image-compositions.png",
     "searchMode": "faceted-search",
     "defaultActiveFacets": [
         "prefLabel"

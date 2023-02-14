@@ -9,7 +9,7 @@
     "baseURI": "http://ldf.fi/operasampo/persons/",
     "URITemplate": "<BASE_URI><LOCAL_ID>",
     "facetClass": "scop:Person",
-    "frontPageImage": "main_page/events-452x262.jpg",
+    "frontPageImage": "main_page/image-people.jpg",
     "searchMode": "faceted-search",
     "defaultActiveFacets": [
         "prefLabel"

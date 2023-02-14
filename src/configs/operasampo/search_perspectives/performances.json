@@ -9,7 +9,7 @@
     "baseURI": "http://ldf.fi/operasampo/performances/",
     "URITemplate": "<BASE_URI><LOCAL_ID>",
     "facetClass": "scop:Performance",
-    "frontPageImage": "main_page/manuscripts-452x262.jpg",
+    "frontPageImage": "main_page/image-performances.png",
     "searchMode": "faceted-search",
     "defaultActiveFacets": [
         "composition"

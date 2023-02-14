@@ -9,7 +9,7 @@
     "baseURI": "http://ldf.fi/operasampo/roles/",
     "URITemplate": "<BASE_URI><LOCAL_ID>",
     "facetClass": "scop:Role",
-    "frontPageImage": "main_page/events-452x262.jpg",
+    "frontPageImage": "main_page/image-roles.png",
     "searchMode": "faceted-search",
     "defaultActiveFacets": [
         "prefLabel"
