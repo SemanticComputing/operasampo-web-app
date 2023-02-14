@@ -39,6 +39,52 @@
                     }
                 }
             }
+        },
+        "compositionsByProperty": {
+            "tabID": 1,
+            "component": "ApexCharts",
+            "doNotRenderOnMount": true,
+            "tabPath": "pie_chart",
+            "tabIcon": "PieChart",
+            "facetClass": "compositions",
+            "dropdownForResultClasses": true,
+            "defaultResultClass": "compositionsByComposer",
+            "resultClasses": {
+                "compositionsByComposer": {
+                    "sparqlQuery": "compositionsByComposerQuery",
+                    "filterTarget": "composition",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "compositionsByLibretist": {
+                    "sparqlQuery": "compositionsByLibretistQuery",
+                    "filterTarget": "composition",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.008,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                }
+            }
         }
     },
     "properties": [

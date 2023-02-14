@@ -105,3 +105,49 @@ export const compositionProperties = `
       ?id scop:editorNotes ?editorNotes .
     }
 `
+
+export const compositionsByComposerQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?composition) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?composition a scop:Composition .
+      ?composition scop:composedBy ?category .
+      ?category skos:prefLabel ?prefLabel .
+    }
+    UNION
+    {
+      ?composition a scop:Composition .
+      FILTER NOT EXISTS {
+        ?composition scop:composedBy [] .
+      }
+      BIND("Tuntematon" as ?category)
+      BIND("Tuntematon" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const compositionsByLibretistQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?composition) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?composition a scop:Composition .
+      ?composition scop:libretist ?category .
+      ?category skos:prefLabel ?prefLabel .
+    }
+    UNION
+    {
+      ?composition a scop:Composition .
+      FILTER NOT EXISTS {
+        ?composition scop:libretist [] .
+      }
+      BIND("Tuntematon" as ?category)
+      BIND("Tuntematon" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
