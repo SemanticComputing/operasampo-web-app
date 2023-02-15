@@ -39,6 +39,86 @@
                     }
                 }
             }
+        },
+        "performancesByProperty": {
+            "tabID": 1,
+            "component": "ApexCharts",
+            "doNotRenderOnMount": true,
+            "tabPath": "pie_chart",
+            "tabIcon": "PieChart",
+            "facetClass": "performances",
+            "dropdownForResultClasses": true,
+            "defaultResultClass": "performancesByConductor",
+            "resultClasses": {
+                "performancesByConductor": {
+                    "sparqlQuery": "performancesByConductorQuery",
+                    "filterTarget": "performance",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "performancesByDirector": {
+                    "sparqlQuery": "performancesByDirectorQuery",
+                    "filterTarget": "performance",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "performancesByProducer": {
+                    "sparqlQuery": "performancesByProducerQuery",
+                    "filterTarget": "performance",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "performancesByPerformancePlace": {
+                    "sparqlQuery": "performancesByPerformancePlaceQuery",
+                    "filterTarget": "performance",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                }
+            }
         }
     },
     "properties": [

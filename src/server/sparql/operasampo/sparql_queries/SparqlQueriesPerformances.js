@@ -85,3 +85,95 @@ export const performanceProperties = `
       ?id scop:editorNotes ?editorNotes .
     }
 `
+
+export const performancesByConductorQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?performance) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?performance a scop:Performance .
+      ?performance scop:conductedBy ?category .
+      ?category skos:prefLabel ?prefLabel .
+    }
+    UNION
+    {
+      ?performance a scop:Performance .
+      FILTER NOT EXISTS {
+        ?performance scop:conductedBy [] .
+      }
+      BIND("Tuntematon" as ?category)
+      BIND("Tuntematon" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const performancesByDirectorQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?performance) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?performance a scop:Performance .
+      ?performance scop:directedBy ?category .
+      ?category skos:prefLabel ?prefLabel .
+    }
+    UNION
+    {
+      ?performance a scop:Performance .
+      FILTER NOT EXISTS {
+        ?performance scop:directedBy [] .
+      }
+      BIND("Tuntematon" as ?category)
+      BIND("Tuntematon" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const performancesByProducerQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?performance) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?performance a scop:Performance .
+      ?performance scop:producedBy ?category .
+      ?category skos:prefLabel ?prefLabel .
+    }
+    UNION
+    {
+      ?performance a scop:Performance .
+      FILTER NOT EXISTS {
+        ?performance scop:producedBy [] .
+      }
+      BIND("Tuntematon" as ?category)
+      BIND("Tuntematon" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const performancesByPerformancePlaceQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?performance) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?performance a scop:Performance .
+      ?performance scop:performedIn ?category .
+      ?category skos:prefLabel ?prefLabel .
+    }
+    UNION
+    {
+      ?performance a scop:Performance .
+      FILTER NOT EXISTS {
+        ?performance scop:performedIn [] .
+      }
+      BIND("Tuntematon" as ?category)
+      BIND("Tuntematon" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`

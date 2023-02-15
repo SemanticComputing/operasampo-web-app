@@ -12,7 +12,7 @@
   },
   "appDescription1": "OopperaSampo is a web service for searching and studying operas. The search results can be viewed as a table, on maps, and as statistical distributions.",
   "appDescription2": "Start by choosing source dataset(s) and input a place name on the search field. Alternatively you can search by area.",
-  "selectPerspective": "Valitse näkymä tiedon hakuun:",
+  "selectPerspective": "Valitse näkymä etsiäksesi ja selataksesi aineistoja:",
   "mainPageImageLicence": "Images used under educational license from Adobe Stock",
   "backendErrorText": "One of the backend services is not available at the moment. Please try again later.",
   "infoHeader": {
@@ -54,51 +54,29 @@
     "facetSearchFieldPlaceholder": "Hae...",
     "applyFacetSelection": "apply",
     "pieChart": {
-      "tooltip": "Pie chart"
+      "tooltip": "Ympyrädiagrammi"
     },
     "barChart": {
-      "tooltip": "",
-      "language": {
-        "title": "",
-        "xaxisTitle": "",
-        "yaxisTitle": "",
-        "seriesTitle": ""
-      }
+      "tooltip": "Pylväsdiagrammi"
     },
     "lineChart": {
-      "tooltip": "",
-      "productionTimespan": {
-        "title": "",
-        "xaxisTitle": "",
-        "yaxisTitle": "",
-        "seriesTitle": ""
-      }
+      "tooltip": "Viivakaavio"
     }
   },
   "tabs": {
     "table": "taulukko",
     "map": "",
     "pie_chart": "ympyräkaavio/pylväsdiagrammi",
-    "production_places": "",
-    "production_places_heatmap": "",
-    "last_known_locations": "",
-    "migrations": "",
     "network": "",
     "export": "",
-    "production_dates": "",
-    "event_dates": "",
-    "map_clusters": "",
-    "map_markers": "",
     "heatmap": "",
     "statistics": "",
-    "emloLetterNetwork": "",
-    "emloSentReceived": "",
     "download": "",
     "recommendations": ""
   },
   "table": {
     "rowsPerPage": "Rivejä per sivu",
-    "of": "of"
+    "of": "/"
   },
   "apexCharts": {
     "grouping": "Lajitteluperuste:",
@@ -110,16 +88,14 @@
     "other": "muu",
     "resultClasses": {
       "compositionsByComposer": "säveltäjä",
-      "compositionsByLibretist": "libretisti"
+      "compositionsByLibretist": "libretisti",
+      "performancesByConductor": "kapellimestari",
+      "performancesByDirector": "ohjaaja",
+      "performancesByProducer": "tuottaja",
+      "performancesByPerformancePlace": "esityspaikka"
     }
   },
   "lineChart": {
-    "productionCount": "",
-    "transferCount": "",
-    "observationCount": "",
-    "sentCount": "",
-    "receivedCount": "",
-    "allCount": ""
   },
   "exportToYasgui": "",
   "openInLinkedDataBrowser": "",
@@ -191,7 +167,7 @@
     "compositions": {
       "label": "Sävellykset",
       "facetResultsType": "",
-      "shortDescription": "",
+      "shortDescription": "Näkymä, jossa voi hakea sävellyksiä.",
       "longDescription": "",
       "instancePage": {
         "label": "Sävellys",
@@ -280,7 +256,7 @@
     "performances": {
       "label": "Esitykset",
       "facetResultsType": "",
-      "shortDescription": "",
+      "shortDescription": "Näkymä, jossa voi hakea esityksiä.",
       "longDescription": "",
       "instancePage": {
         "label": "Esitys",
@@ -345,7 +321,7 @@
     "people": {
       "label": "Henkilöt",
       "facetResultsType": "",
-      "shortDescription": "",
+      "shortDescription": "Näkymä, jossa voi hakea oopperaan liittyviä henkilöitä (säveltäjät, esiintyjät, jne.).",
       "longDescription": "",
       "instancePage": {
         "label": "Henkilö",
@@ -406,7 +382,7 @@
     "roles": {
       "label": "Roolihahmot",
       "facetResultsType": "",
-      "shortDescription": "",
+      "shortDescription": "Näkymä, jossa voi hakea sävellyksien roolihahmoja.",
       "longDescription": "",
       "instancePage": {
         "label": "Roolihahmo",
