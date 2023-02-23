@@ -21,10 +21,16 @@ export const performanceProperties = `
       OPTIONAL {
         ?id scop:estimatedPerformanceDateStart ?pdStart .
         ?id scop:estimatedPerformanceDateStop ?pdStop .
-        BIND(CONCAT(?pdStart, "–", ?pdStop) as ?pdRange)
+        BIND(CONCAT(STR(?pdStart), "–", STR(?pdStop)) as ?pdRange)
       }
-      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd, ?pdRange, "esitysajankohta ei tiedossa"), ")") as ?prefLabel__prefLabel)
+      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(STR(?pd), ?pdRange, "esitysajankohta ei tiedossa"), ")") as ?prefLabel__prefLabel)
       BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
+    }
+    UNION
+    {
+      ?id scop:composition/scop:composedBy ?composer__id .
+      ?composer__id skos:prefLabel ?composer__prefLabel .
+      BIND(CONCAT("/people/page/", REPLACE(STR(?composer__id), "^.*\\\\/(.+)", "$1")) AS ?composer__dataProviderUrl)
     }
     UNION
     {
@@ -176,4 +182,15 @@ export const performancesByPerformancePlaceQuery = `
   }
   GROUP BY ?category ?prefLabel
   ORDER BY DESC(?instanceCount)
+`
+
+export const performancesByYearQuery = `
+  SELECT ?category (COUNT (DISTINCT ?performance) as ?count) WHERE {
+    <FILTER>
+    ?performance a scop:Performance ;
+                scop:performanceDate ?date .
+    BIND(YEAR(xsd:dateTime(?date)) as ?category)
+  }
+  GROUP BY ?category
+  ORDER BY ?category
 `

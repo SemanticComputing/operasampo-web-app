@@ -67,6 +67,7 @@
     "table": "taulukko",
     "map": "",
     "pie_chart": "ympyräkaavio/pylväsdiagrammi",
+    "performances_per_year": "vuosittaiset esitykset",
     "network": "",
     "export": "",
     "heatmap": "",
@@ -275,6 +276,10 @@
         "composition": {
           "label": "Sävellys",
           "description": "Esityksen sävellys"
+        },
+        "composer": {
+          "label": "Säveltäjä",
+          "description": "Esityksen sävellyksen säveltäjä"
         },
         "choirLeader": {
           "label": "Kuoronjohtaja",

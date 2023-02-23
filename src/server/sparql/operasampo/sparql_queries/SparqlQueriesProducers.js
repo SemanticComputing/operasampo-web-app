@@ -32,9 +32,9 @@ export const producerProperties = `
       OPTIONAL {
         ?producedPerformances__id scop:estimatedPerformanceDateStart ?pdStart .
         ?producedPerformances__id scop:estimatedPerformanceDateStop ?pdStop .
-        BIND(CONCAT(?pdStart, "–", ?pdStop) as ?pdRange)
+        BIND(CONCAT(STR(?pdStart), "–", STR(?pdStop)) as ?pdRange)
       }
-      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd, ?pdRange, "esitysajankohta ei tiedossa"), ")") as ?producedPerformances__prefLabel)
+      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(STR(?pd), ?pdRange, "esitysajankohta ei tiedossa"), ")") as ?producedPerformances__prefLabel)
       BIND(CONCAT("/performances/page/", REPLACE(STR(?producedPerformances__id), "^.*\\\\/(.+)", "$1")) AS ?producedPerformances__dataProviderUrl)
     }
 `

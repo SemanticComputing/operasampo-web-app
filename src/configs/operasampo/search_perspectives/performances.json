@@ -119,6 +119,29 @@
                     ]
                 }
             }
+        },
+        "performanceLineChart": {
+            "tabID": 3,
+            "component": "ApexCharts",
+            "tabPath": "performances_per_year",
+            "tabIcon": "ShowChart",
+            "sparqlQuery": "performancesByYearQuery",
+            "facetClass": "performances",
+            "filterTarget": "performance",
+            "resultMapper": "mapLineChart",
+            "resultMapperConfig": {
+                "fillEmptyValues": true
+            },
+            "createChartData": "createSingleLineChartData",
+            "title": "Vuosittaiset esitykset",
+            "xaxisTitle": "Vuosi",
+            "xaxisType": "category",
+            "xaxisTickAmount": 30,
+            "yaxisTitle": "Lukumäärä",
+            "seriesTitle": "Lukumäärä",
+            "stroke": {
+                "width": 2
+            }
         }
     },
     "properties": [
@@ -142,6 +165,15 @@
         },
         {
             "id": "composition",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
+            "id": "composer",
             "valueType": "object",
             "makeLink": true,
             "externalLink": false,
@@ -255,6 +287,17 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:composition/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "composer": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:composition/scop:composedBy",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:composition/scop:composedBy/skos:prefLabel",
             "sortDirection": "desc"
         },
         "choirLeader": {
