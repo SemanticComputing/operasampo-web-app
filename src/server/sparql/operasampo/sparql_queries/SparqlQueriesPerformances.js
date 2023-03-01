@@ -167,6 +167,29 @@ export const performancesByProducerQuery = `
   ORDER BY DESC(?instanceCount)
 `
 
+export const performancesByComposerQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?performance) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?performance a scop:Performance .
+      ?performance scop:composition/scop:composedBy  ?category .
+      ?category skos:prefLabel ?prefLabel .
+    }
+    UNION
+    {
+      ?performance a scop:Performance .
+      FILTER NOT EXISTS {
+        ?performance scop:composition/scop:composedBy [] .
+      }
+      BIND("Tuntematon" as ?category)
+      BIND("Tuntematon" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
 export const performancesByPerformancePlaceQuery = `
   SELECT ?category ?prefLabel (COUNT(DISTINCT ?performance) as ?instanceCount)
   WHERE {

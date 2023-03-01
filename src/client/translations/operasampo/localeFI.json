@@ -90,9 +90,10 @@
     "resultClasses": {
       "compositionsByComposer": "säveltäjä",
       "compositionsByLibretist": "libretisti",
+      "performancesByComposer": "säveltäjä",
       "performancesByConductor": "kapellimestari",
       "performancesByDirector": "ohjaaja",
-      "performancesByProducer": "tuottaja",
+      "performancesByProducer": "tuotanto",
       "performancesByPerformancePlace": "esityspaikka"
     }
   },
@@ -294,7 +295,7 @@
           "description": "Esityksen ohjaaja"
         },
         "producer": {
-          "label": "Tuottaja",
+          "label": "Tuotanto",
           "description": "Esityksen tuottaja"
         },
         "translator": {

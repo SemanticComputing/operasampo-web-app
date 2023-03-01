@@ -50,6 +50,23 @@
             "dropdownForResultClasses": true,
             "defaultResultClass": "performancesByConductor",
             "resultClasses": {
+                "performancesByComposer": {
+                    "sparqlQuery": "performancesByComposerQuery",
+                    "filterTarget": "performance",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
                 "performancesByConductor": {
                     "sparqlQuery": "performancesByConductorQuery",
                     "filterTarget": "performance",
