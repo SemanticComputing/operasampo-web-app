@@ -68,6 +68,7 @@
     "map": "",
     "pie_chart": "ympyräkaavio/pylväsdiagrammi",
     "performances_per_year": "vuosittaiset esitykset",
+    "role_chart": "yleisimmät roolit",
     "network": "",
     "export": "",
     "heatmap": "",
@@ -386,6 +387,10 @@
         "additionalInfo": {
           "label": "Lisätietoja",
           "description": "Henkilön lisätietoja"
+        },
+        "roleCharacter": {
+          "label": "Roolihahmot",
+          "description": "Henkilön esittämät roolihahmot"
         }
       }
     },
