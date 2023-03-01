@@ -7,6 +7,7 @@ import { orderBy, has } from 'lodash'
 import ObjectListItem from './ObjectListItem'
 import ObjectListItemSources from './ObjectListItemSources'
 import ObjectListItemEvent from './ObjectListItemEvent'
+import ObjectListItemRole from './ObjectListItemRole'
 import classNames from 'classnames'
 
 const styles = () => ({
@@ -63,6 +64,17 @@ const ObjectListCollapsible = props => {
       return (
         <>
           <ObjectListItemEvent
+            data={itemData}
+            isFirstValue={isFirstValue}
+          />
+          {addThreeDots &&
+            <span className={classes.threeDots} onClick={() => props.onExpandClick(props.rowId)}> ...</span>}
+        </>
+      )
+    } else if (columnId === 'performanceRole') {
+      return (
+        <>
+          <ObjectListItemRole
             data={itemData}
             isFirstValue={isFirstValue}
           />

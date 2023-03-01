@@ -309,6 +309,17 @@
             "numberedList": false,
             "minWidth": 250,
             "onlyOnInstancePage": true
+        },
+        {
+            "id": "performanceRole",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "sortBy": "prefLabel",
+            "numberedList": false,
+            "minWidth": 200,
+            "expandedOnInstancePage": true
         }
     ],
     "facets": {
@@ -400,6 +411,17 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:performedIn/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "performanceRole": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "^scop:performance/scop:actor",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "^scop:performance/scop:actor/skos:prefLabel",
             "sortDirection": "desc"
         }
     }

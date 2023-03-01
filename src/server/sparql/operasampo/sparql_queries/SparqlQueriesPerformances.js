@@ -100,6 +100,26 @@ export const performanceProperties = `
     {
       ?id scop:editorNotes ?editorNotes .
     }
+    UNION
+    {
+      ?compositionId a scop:Composition ;
+                  ^scop:composition ?id .
+      ?performanceRole__id a scop:Role ;
+            scop:composition ?compositionId .
+      OPTIONAL {
+        ?performanceRoleId a scop:PerformanceRole ;
+                        scop:performance ?id ;
+                        scop:actor ?performerId ;
+                        scop:compositionRole ?performanceRole__id .
+        ?performerId skos:prefLabel ?performerLabel .
+        BIND(CONCAT("/people/page/", REPLACE(STR(?performerId), "^.*\\\\/(.+)", "$1")) AS ?performanceRole__roleValues__dataProviderUrl)
+      }
+      BIND(COALESCE(?performerId, <http://ldf.fi/MISSING_VALUE>) as ?performanceRole__roleValues__id)
+      BIND(COALESCE(?performerLabel, '-') as ?performanceRole__roleValues__prefLabel)
+      ?performanceRole__id skos:prefLabel ?performanceRole__prefLabel .
+      FILTER(LANG(?performanceRole__prefLabel) = 'fi')
+      BIND(CONCAT("/roles/page/", REPLACE(STR(?performanceRole__id), "^.*\\\\/(.+)", "$1")) AS ?performanceRole__dataProviderUrl)
+    }
 `
 
 export const performancesByConductorQuery = `

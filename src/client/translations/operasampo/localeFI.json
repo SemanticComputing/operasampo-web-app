@@ -330,6 +330,10 @@
         "additionalInfo": {
           "label": "Lisätietoja",
           "description": "Esityksen lisätietoja"
+        },
+        "performanceRole": {
+          "label": "Esiintyjät",
+          "description": "Esityksen esiintyjät"
         }
       }
     },
