@@ -218,6 +218,15 @@
             "minWidth": 200
         },
         {
+            "id": "translator",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
             "id": "performanceDate",
             "valueType": "string",
             "makeLink": false,
@@ -342,6 +351,17 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:producedBy/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "translator": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:translator",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:translator/skos:prefLabel",
             "sortDirection": "desc"
         },
         "place": {

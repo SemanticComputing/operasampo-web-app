@@ -297,6 +297,10 @@
           "label": "Tuottaja",
           "description": "Esityksen tuottaja"
         },
+        "translator": {
+          "label": "Kääntäjä",
+          "description": "Esityksen kääntäjä"
+        },
         "performanceDate": {
           "label": "Esitysajankohta",
           "description": "Esityksen esitysajankohta"
