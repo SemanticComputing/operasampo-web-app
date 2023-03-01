@@ -58,6 +58,10 @@ export const performanceProperties = `
     }
     UNION
     {
+      ?id scop:language ?language .
+    }
+    UNION
+    {
       ?id scop:translator ?translator__id .
       ?translator__id skos:prefLabel ?translator__prefLabel .
       BIND(CONCAT("/people/page/", REPLACE(STR(?translator__id), "^.*\\\\/(.+)", "$1")) AS ?translator__dataProviderUrl)

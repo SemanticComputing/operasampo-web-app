@@ -299,6 +299,10 @@
           "label": "Tuotanto",
           "description": "Esityksen tuottaja"
         },
+        "language": {
+          "label": "Kieli",
+          "description": "Esityksen kieli"
+        },
         "translator": {
           "label": "Kääntäjä",
           "description": "Esityksen kääntäjä"

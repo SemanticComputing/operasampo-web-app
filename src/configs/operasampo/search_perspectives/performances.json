@@ -235,6 +235,15 @@
             "minWidth": 200
         },
         {
+            "id": "language",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
             "id": "translator",
             "valueType": "object",
             "makeLink": true,
