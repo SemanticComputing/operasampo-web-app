@@ -283,6 +283,10 @@
           "label": "Säveltäjä",
           "description": "Esityksen sävellyksen säveltäjä"
         },
+        "libretist": {
+          "label": "Libretisti",
+          "description": "Esityksen sävellyksen libretisti"
+        },
         "choirLeader": {
           "label": "Kuoronjohtaja",
           "description": "Esityksen kuoronjohtaja"

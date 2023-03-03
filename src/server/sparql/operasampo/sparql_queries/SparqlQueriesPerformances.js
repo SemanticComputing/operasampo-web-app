@@ -34,6 +34,12 @@ export const performanceProperties = `
     }
     UNION
     {
+      ?id scop:composition/scop:libretist ?libretist__id .
+      ?libretist__id skos:prefLabel ?libretist__prefLabel .
+      BIND(CONCAT("/people/page/", REPLACE(STR(?libretist__id), "^.*\\\\/(.+)", "$1")) AS ?libretist__dataProviderUrl)
+    }
+    UNION
+    {
       ?id scop:choirLeadBy ?choirLeader__id .
       ?choirLeader__id skos:prefLabel ?choirLeader__prefLabel .
       BIND(CONCAT("/people/page/", REPLACE(STR(?choirLeader__id), "^.*\\\\/(.+)", "$1")) AS ?choirLeader__dataProviderUrl)

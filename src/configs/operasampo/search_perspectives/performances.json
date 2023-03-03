@@ -199,6 +199,15 @@
             "minWidth": 200
         },
         {
+            "id": "libretist",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
             "id": "choirLeader",
             "valueType": "object",
             "makeLink": true,
@@ -344,6 +353,17 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:composition/scop:composedBy/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "libretist": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:composition/scop:libretist",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:composition/scop:libretist/skos:prefLabel",
             "sortDirection": "desc"
         },
         "choirLeader": {
