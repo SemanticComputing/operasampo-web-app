@@ -211,16 +211,8 @@
           "description": "Sävellyksen libretisti"
         },
         "composed": {
-          "label": "Sävellysvuosi?",
-          "description": "Sävellyksen sävellysvuosi"
-        },
-        "compositionYear": {
-          "label": "Sävellysvuosi",
-          "description": "Sävellyksen sävellysvuosi"
-        },
-        "firstPerformedDate": {
-          "label": "Ensiesitysajankohta",
-          "description": "Sävellyksen ensiesitysajankohta"
+          "label": "Sävellysajankohta",
+          "description": "Sävellyksen sävellysajankohta"
         },
         "firstPerformancePlace": {
           "label": "Ensiesityspaikka",

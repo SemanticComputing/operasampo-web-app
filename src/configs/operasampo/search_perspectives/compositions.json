@@ -173,24 +173,6 @@
             "minWidth": 150
         },
         {
-            "id": "compositionYear",
-            "valueType": "string",
-            "makeLink": false,
-            "externalLink": false,
-            "sortValues": false,
-            "numberedList": false,
-            "minWidth": 150
-        },
-        {
-            "id": "firstPerformedDate",
-            "valueType": "string",
-            "makeLink": false,
-            "externalLink": false,
-            "sortValues": false,
-            "numberedList": false,
-            "minWidth": 150
-        },
-        {
             "id": "firstPerformancePlace",
             "valueType": "string",
             "makeLink": false,

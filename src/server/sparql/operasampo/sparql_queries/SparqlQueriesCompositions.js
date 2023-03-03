@@ -44,14 +44,6 @@ export const compositionProperties = `
     }
     UNION
     {
-      ?id scop:compositionYear ?compositionYear .
-    }
-    UNION
-    {
-      ?id scop:firstPerformedDate ?firstPerformedDate .
-    }
-    UNION
-    {
       ?id scop:firstPerformancePlace ?firstPerformancePlace .
     }
     UNION
