@@ -1,8 +1,8 @@
 {
     "id": "performances",
     "endpoint": {
-        "url": "http://localhost:3055/ds/sparql",
-        "useAuth": false,
+        "url": "https://ldf.fi/operasampo/sparql",
+        "useAuth": true,
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
     "sparqlQueriesFile": "SparqlQueriesPerformances.js",
