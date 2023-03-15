@@ -69,6 +69,7 @@
     "pie_chart": "ympyräkaavio/pylväsdiagrammi",
     "performances_per_year": "vuosittaiset esitykset",
     "role_chart": "yleisimmät roolit",
+    "role_network": "kanssaesiintyjäverkosto",
     "network": "",
     "export": "",
     "heatmap": "",

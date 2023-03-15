@@ -87,3 +87,26 @@ export const personRolesQuery = `
   GROUP BY ?category ?prefLabel
   ORDER BY DESC(?instanceCount)
 `
+
+export const personInstancePageNetworkLinksQuery = `
+  SELECT DISTINCT ?source ?target (COUNT(DISTINCT ?performance) as ?weight)
+  WHERE {
+    VALUES ?id { <ID> }
+    ?id ^scop:actor/scop:performance ?performance .
+    ?target ^scop:actor/scop:performance ?performance .
+    FILTER(?id != ?target)
+    BIND(?id as ?source)
+  }
+  GROUP BY ?source ?target
+`
+
+export const personNetworkNodesQuery = `
+  SELECT DISTINCT ?id ?prefLabel ?class ?href
+  WHERE {
+    VALUES ?class { scop:Person }
+    VALUES ?id { <ID_SET> }
+    ?id a ?class ;
+      skos:prefLabel ?prefLabel .
+    BIND(CONCAT("/people/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?href)
+  }
+`
