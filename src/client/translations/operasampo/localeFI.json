@@ -458,39 +458,39 @@
       }
     },
     "places": {
-      "label": "Paikat",
+      "label": "Esityspaikat",
       "facetResultsType": "",
-      "shortDescription": "",
+      "shortDescription": "Näkymä, jossa voi hakea esityspaikkoja.",
       "longDescription": "",
       "instancePage": {
-        "label": "Paikka",
+        "label": "Esityspaikka",
         "description": ""
       },
       "properties": {
         "uri": {
           "label": "URI",
-          "description": "Paikan URI"
+          "description": "Esityspaikan URI"
         },
         "prefLabel": {
           "label": "Nimi",
-          "description": "Paikan nimi",
+          "description": "Esityspaikan nimi",
           "textFacetInputPlaceholder": ""
         },
         "address": {
           "label": "Osoite",
-          "description": "Paikan osoite"
+          "description": "Esityspaikan osoite"
         },
         "city": {
           "label": "Kaupunki",
-          "description": "Kaupunki, jossa paikka sijaitsee"
+          "description": "Kaupunki, jossa esityspaikka sijaitsee"
         },
         "country": {
           "label": "Maa",
-          "description": "Maa, jossa paikka sijaitsee"
+          "description": "Maa, jossa esityspaikka sijaitsee"
         },
         "additionalInfo": {
           "label": "Lisätietoja",
-          "description": "Paikan lisätietoja"
+          "description": "Esityspaikan lisätietoja"
         }
       }
     }

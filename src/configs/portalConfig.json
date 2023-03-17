@@ -6,11 +6,11 @@
             "performances",
             "people",
             "compositions",
-            "roles"
+            "roles",
+            "places"
         ],
         "onlyInstancePages": [
-            "producers",
-            "places"
+            "producers"
         ]
     },
     "localeConfig": {
