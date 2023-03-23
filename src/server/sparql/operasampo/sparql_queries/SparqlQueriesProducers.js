@@ -26,15 +26,16 @@ export const producerProperties = `
       ?composition__id a scop:Composition ;
                       skos:prefLabel ?composition__prefLabel .
       FILTER(LANG(?composition__prefLabel) = 'fi')
+
+      OPTIONAL {
+        ?producedPerformances__id skos:prefLabel ?p_name .
+      }
       OPTIONAL {
         ?producedPerformances__id scop:performanceDate ?pd .
+        ?pd skos:prefLabel ?pd_label .
       }
-      OPTIONAL {
-        ?producedPerformances__id scop:estimatedPerformanceDateStart ?pdStart .
-        ?producedPerformances__id scop:estimatedPerformanceDateStop ?pdStop .
-        BIND(CONCAT(STR(?pdStart), "–", STR(?pdStop)) as ?pdRange)
-      }
-      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(STR(?pd), ?pdRange, "esitysajankohta ei tiedossa"), ")") as ?producedPerformances__prefLabel)
+      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd_label, "esitysajankohta ei tiedossa"), ")") as ?backup_label)
+      BIND(COALESCE(?p_name, ?backup_label) as ?producedPerformances__prefLabel)
       BIND(CONCAT("/performances/page/", REPLACE(STR(?producedPerformances__id), "^.*\\\\/(.+)", "$1")) AS ?producedPerformances__dataProviderUrl)
     }
 `

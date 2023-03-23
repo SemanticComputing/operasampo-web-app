@@ -16,14 +16,14 @@ export const performanceProperties = `
       FILTER(LANG(?composition__prefLabel) = 'fi')
       BIND(CONCAT("/compositions/page/", REPLACE(STR(?composition__id), "^.*\\\\/(.+)", "$1")) AS ?composition__dataProviderUrl)
       OPTIONAL {
-        ?id scop:performanceDate ?pd .
+        ?id skos:prefLabel ?p_name .
       }
       OPTIONAL {
-        ?id scop:estimatedPerformanceDateStart ?pdStart .
-        ?id scop:estimatedPerformanceDateStop ?pdStop .
-        BIND(CONCAT(STR(?pdStart), "–", STR(?pdStop)) as ?pdRange)
+        ?id scop:performanceDate ?pd .
+        ?pd skos:prefLabel ?pd_label .
       }
-      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(STR(?pd), ?pdRange, "esitysajankohta ei tiedossa"), ")") as ?prefLabel__prefLabel)
+      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd_label, "esitysajankohta ei tiedossa"), ")") as ?backup_label)
+      BIND(COALESCE(?p_name, ?backup_label) as ?prefLabel__prefLabel)
       BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
     }
     UNION
@@ -74,7 +74,8 @@ export const performanceProperties = `
     }
     UNION
     {
-      ?id scop:performanceDate ?performanceDate .
+      ?id scop:performanceDate ?performanceDate__id .
+      ?performanceDate__id skos:prefLabel ?performanceDate__prefLabel .
     }
     UNION
     {
@@ -247,7 +248,7 @@ export const performancesByYearQuery = `
   SELECT ?category (COUNT (DISTINCT ?performance) as ?count) WHERE {
     <FILTER>
     ?performance a scop:Performance ;
-                scop:performanceDate ?date .
+                scop:performanceDate/scop:timespanStart ?date .
     BIND(YEAR(xsd:dateTime(?date)) as ?category)
   }
   GROUP BY ?category
