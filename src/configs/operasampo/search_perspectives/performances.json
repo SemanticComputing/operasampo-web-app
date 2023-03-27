@@ -250,7 +250,8 @@
             "externalLink": false,
             "sortValues": true,
             "numberedList": false,
-            "minWidth": 200
+            "minWidth": 200,
+            "disableSort": true
         },
         {
             "id": "translator",
@@ -332,6 +333,9 @@
         }
     ],
     "facets": {
+        "prefLabel": {
+            "sortByPredicate": "skos:prefLabel"
+        },
         "composition": {
             "containerClass": "ten",
             "facetType": "list",
@@ -420,6 +424,19 @@
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:translator/skos:prefLabel",
             "sortDirection": "desc"
+        },
+        "performanceDate": {
+            "containerClass": "four",
+            "facetType": "timespan",
+            "filterType": "timespanFilter",
+            "predicate": "scop:performanceDate",
+            "startProperty": "scop:timespanStart",
+            "endProperty": "scop:timespanEnd",
+            "max": null,
+            "min": null,
+            "sortByPredicate": "scop:performanceDate/scop:timespanStart",
+            "sortByAscPredicate": "scop:performanceDate/scop:timespanStart",
+            "sortByDescPredicate": "scop:performanceDate/scop:timespanEnd"
         },
         "place": {
             "containerClass": "ten",
