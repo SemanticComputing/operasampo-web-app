@@ -24,7 +24,7 @@
                 "tabPath": "table",
                 "tabIcon": "CalendarViewDay",
                 "propertiesQueryBlock": "performanceProperties",
-                "pagesize": 10,
+                "pagesize": 15,
                 "sortBy": null,
                 "sortDirection": null
             },
@@ -138,7 +138,7 @@
             }
         },
         "performanceLineChart": {
-            "tabID": 3,
+            "tabID": 2,
             "component": "ApexCharts",
             "tabPath": "performances_per_year",
             "tabIcon": "ShowChart",
@@ -158,6 +158,75 @@
             "seriesTitle": "Lukumäärä",
             "stroke": {
                 "width": 2
+            }
+        },
+        "performancePlacesTimeline": {
+            "tabID": 3,
+            "component": "ApexChartsDouble",
+            "tabPath": "activity_timeseries",
+            "tabIcon": "Tune",
+            "upperResultClass": "performancePlacesDoubleUpper",
+            "lowerResultClass": "performancePlacesDoubleLower",
+            "resultClasses": {
+                "performancePlacesDoubleUpper": {
+                    "title": "Esitykset aikajanalla",
+                    "height": "70%",
+                    "sparqlQuery": "performancePlacesQuery",
+                    "facetClass": "performances",
+                    "filterTarget": "id",
+                    "resultMapper": "createCorrespondenceChartData",
+                    "resultMapperConfig": {
+                        "types": ["esityspaikka"],
+                        "numberTopResults": 20
+                    },
+                    "createChartData": "createTopTimelineChartData",
+                    "tooltip": { "x": { "format": "d MMM yyyy" } },
+                    "fill": { "opacity": [0.7, 0.5] },
+                    "legend": { "position": "bottom" },
+                    "grid": {
+                        "row": {
+                          "colors": ["#d5d5d5", "transparent"], 
+                          "opacity": 0.25
+                        },
+                        "column": { "colors": ["#a8a8a8", "transparent"] },
+                        "xaxis": { "lines": { "show": true } },
+                        "yaxis": { "lines": { "show": true } }
+                    }
+                },
+                "performancePlacesDoubleLower": {
+                    "height": "30%",
+                    "facetClass": "performances",
+                    "filterTarget": "performance",
+                    "sparqlQuery": "performancesPerformedQuery",
+                    "resultMapper": "createCorrespondenceChartDataLower",
+                    "resultMapperConfig": {
+                        "fillEmptyValues": true
+                    },
+                    "createChartData": "createTopTimelineChartData2",
+                    "title": { "text": "Esitykset vuosittain", "align": "left" },
+                    "xaxis": {
+                        "type": "datetime",
+                        "tooltip": { "enabled": true }
+                    },
+                    "yaxis": {
+                        "labels": { "minWidth": 150, "maxWidth": 300 }
+                    },
+                    "grid": {
+                        "column": { "colors": ["#a8a8a8", "transparent"] },
+                        "xaxis": { "lines": { "show": true } },
+                        "yaxis": { "lines": { "show": true } }
+                    },
+                    "tooltip": { "x": { "format": "yyyy" } },
+                    "stroke": { "curve": "stepline", "width": 1 },
+                    "fill": {
+                        "type": "gradient",
+                        "gradient": {
+                            "shadeIntensity": 1,
+                            "opacityFrom": 0.3,
+                            "opacityTo": 0.6
+                        }
+                    }
+                }
             }
         }
     },

@@ -254,3 +254,27 @@ export const performancesByYearQuery = `
   GROUP BY ?category
   ORDER BY ?category
 `
+
+export const performancePlacesQuery = `
+  SELECT DISTINCT ?id ?esityspaikka__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type 
+  WHERE {
+    <FILTER>
+    ?id a scop:Performance .
+    ?id scop:performanceDate/scop:timespanStart ?_date ;
+                scop:performedIn ?place .
+    ?place skos:prefLabel ?esityspaikka__label .
+    BIND("esityspaikka" AS ?type)
+  }
+`
+
+export const performancesPerformedQuery = `
+  SELECT DISTINCT (STR(?year) AS ?category) (COUNT(DISTINCT ?performance) AS ?performanceCount)
+  WHERE {
+    <FILTER>
+    ?performance a scop:Performance .
+    ?performance scop:performanceDate/scop:timespanStart ?_date ;
+                scop:performedIn ?place .
+    BIND(YEAR(?_date) AS ?year)
+  }
+  GROUP BY ?year ORDER BY ?year
+`
