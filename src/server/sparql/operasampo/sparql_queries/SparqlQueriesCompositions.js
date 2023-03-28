@@ -143,3 +143,29 @@ export const compositionsByLibretistQuery = `
   GROUP BY ?category ?prefLabel
   ORDER BY DESC(?instanceCount)
 `
+
+export const performancePlacesInstancePageQuery = `
+  SELECT DISTINCT ?id ?esityspaikka__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type 
+  WHERE {
+    VALUES ?id { <ID> }
+    ?performance a scop:Performance ;
+                scop:composition ?id .
+    ?performance scop:performanceDate/scop:timespanStart ?_date ;
+                scop:performedIn ?place .
+    ?place skos:prefLabel ?esityspaikka__label .
+    BIND("esityspaikka" AS ?type)
+  }
+`
+
+export const performancesPerformedInstancePageQuery = `
+  SELECT DISTINCT (STR(?year) AS ?category) (COUNT(DISTINCT ?performance) AS ?performanceCount)
+  WHERE {
+    VALUES ?id { <ID> }
+    ?performance a scop:Performance ;
+                scop:composition ?id .
+    ?performance scop:performanceDate/scop:timespanStart ?_date ;
+                scop:performedIn ?place .
+    BIND(YEAR(?_date) AS ?year)
+  }
+  GROUP BY ?year ORDER BY ?year
+`

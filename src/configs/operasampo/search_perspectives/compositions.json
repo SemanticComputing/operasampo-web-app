@@ -24,7 +24,7 @@
                 "tabPath": "table",
                 "tabIcon": "CalendarViewDay",
                 "propertiesQueryBlock": "compositionProperties",
-                "pagesize": 10,
+                "pagesize": 15,
                 "sortBy": null,
                 "sortDirection": null
             },
@@ -36,6 +36,76 @@
                         "component": "InstancePageTable",
                         "tabPath": "table",
                         "tabIcon": "CalendarViewDay"
+                    },
+                    "compositionInstancePagePlaceTimeline": {
+                        "tabID": 1,
+                        "component": "ApexChartsDouble",
+                        "pageType": "instancePage",
+                        "tabPath": "activity_timeseries",
+                        "tabIcon": "Tune",
+                        "upperResultClass": "compositionInstancePageDoubleUpper",
+                        "lowerResultClass": "compositionInstancePageDoubleLower",
+                        "resultClasses": {
+                            "compositionInstancePageDoubleUpper": {
+                                "title": "Esitykset aikajanalla",
+                                "pageType": "instancePage",
+                                "height": "60%",
+                                "sparqlQuery": "performancePlacesInstancePageQuery",
+                                "filterTarget": "instance",
+                                "resultMapper": "createCorrespondenceChartData",
+                                "resultMapperConfig": {
+                                    "types": ["esityspaikka"],
+                                    "numberTopResults": 20
+                                },
+                                "createChartData": "createTopTimelineChartData",
+                                "tooltip": { "x": { "format": "d MMM yyyy" } },
+                                "fill": { "opacity": [0.7, 0.5] },
+                                "legend": { "position": "bottom" },
+                                "grid": {
+                                    "row": {
+                                      "colors": ["#d5d5d5", "transparent"], 
+                                      "opacity": 0.25
+                                    },
+                                    "column": { "colors": ["#a8a8a8", "transparent"] },
+                                    "xaxis": { "lines": { "show": true } },
+                                    "yaxis": { "lines": { "show": true } }
+                                }
+                            },
+                            "compositionInstancePageDoubleLower": {
+                                "pageType": "instancePage",
+                                "height": "40%",
+                                "filterTarget": "instance",
+                                "sparqlQuery": "performancesPerformedInstancePageQuery",
+                                "resultMapper": "createCorrespondenceChartDataLower",
+                                "resultMapperConfig": {
+                                    "fillEmptyValues": true
+                                },
+                                "createChartData": "createTopTimelineChartData2",
+                                "title": { "text": "Esitykset vuosittain", "align": "left" },
+                                "xaxis": {
+                                    "type": "datetime",
+                                    "tooltip": { "enabled": true }
+                                },
+                                "yaxis": {
+                                    "labels": { "minWidth": 150, "maxWidth": 300 }
+                                },
+                                "grid": {
+                                    "column": { "colors": ["#a8a8a8", "transparent"] },
+                                    "xaxis": { "lines": { "show": true } },
+                                    "yaxis": { "lines": { "show": true } }
+                                },
+                                "tooltip": { "x": { "format": "yyyy" } },
+                                "stroke": { "curve": "stepline", "width": 1 },
+                                "fill": {
+                                    "type": "gradient",
+                                    "gradient": {
+                                        "shadeIntensity": 1,
+                                        "opacityFrom": 0.3,
+                                        "opacityTo": 0.6
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
