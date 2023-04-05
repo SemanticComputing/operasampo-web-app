@@ -388,6 +388,18 @@ const SemanticPortal = props => {
               {intl.getHTML('instructions')}
             </TextPage>
           </Route>}
+        {/* create a route for sources page */}
+        <Route path={`${rootUrlWithLang}/sources`}>
+          <TextPage layoutConfig={layoutConfig}>
+            {intl.getHTML('sources')}
+          </TextPage>
+        </Route>
+        {/* create a route for links page */}
+        <Route path={`${rootUrlWithLang}/links`}>
+          <TextPage layoutConfig={layoutConfig}>
+            {intl.getHTML('links')}
+          </TextPage>
+        </Route>
       </>
     </Box>
   )

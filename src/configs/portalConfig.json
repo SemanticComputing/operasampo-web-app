@@ -7,7 +7,9 @@
             "people",
             "compositions",
             "roles",
-            "places"
+            "places",
+            "sources",
+            "links"
         ],
         "onlyInstancePages": [
             "producers"
@@ -72,6 +74,16 @@
                     "externalLink": true,
                     "translatedUrl": "blogUrl",
                     "translatedText": "blog"
+                },
+                {
+                    "id": "sources",
+                    "translatedText": "portalSources",
+                    "internalLink": "/sources"
+                },
+                {
+                    "id": "links",
+                    "translatedText": "portalLinks",
+                    "internalLink": "/links"
                 }
             ]
         },
