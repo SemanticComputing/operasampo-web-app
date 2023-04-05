@@ -9,7 +9,7 @@
     "baseURI": "http://ldf.fi/operasampo/places/",
     "URITemplate": "<BASE_URI><LOCAL_ID>",
     "facetClass": "scop:Place",
-    "frontPageImage": "main_page/image-compositions.png",
+    "frontPageImage": "main_page/ts-place-card.jpg",
     "searchMode": "faceted-search",
     "defaultActiveFacets": [
         "prefLabel"
