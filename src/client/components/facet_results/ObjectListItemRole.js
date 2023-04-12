@@ -5,9 +5,14 @@ import ObjectListItemLink from './ObjectListItemLink'
 
 const styles = () => ({
   roleContainer: {
-    width: 350,
+    width: 200,
     display: 'inline-block',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    verticalAlign: 'top'
+  },
+  valueContainer: {
+    display: 'inline-block',
+    verticalAlign: 'top'
   }
 })
 
@@ -17,7 +22,6 @@ const styles = () => ({
 const ObjectListItemRole = props => {
   const { data, isFirstValue } = props
   const label = Array.isArray(data.prefLabel) ? data.prefLabel[0] : data.prefLabel
-  const valuesLabel = Array.isArray(data.roleValues.prefLabel) ? data.roleValues.prefLabel[0] : data.roleValues.prefLabel
   return (
     <>
       <span className={isFirstValue ? null : props.classes.roleContainer}>
@@ -27,11 +31,31 @@ const ObjectListItemRole = props => {
           externalLink={false}
         />&nbsp;
       </span>
-      <ObjectListItemLink
-        data={data.roleValues}
-        label={valuesLabel}
-        externalLink={false}
-      />
+      <span className={props.classes.valueContainer}>
+        {
+        Array.isArray(data.roleValues)
+          ? (
+            <ul>
+              {data.roleValues.map(item => {
+                return (
+                  <li key={item.id}>
+                    <ObjectListItemLink
+                      data={item}
+                      label={Array.isArray(item.prefLabel) ? item.prefLabel[0] : item.prefLabel}
+                      externalLink={false}
+                    />
+                  </li>
+                )
+              })}
+            </ul>
+            )
+          : <ObjectListItemLink
+              data={data.roleValues}
+              label={Array.isArray(data.roleValues.prefLabel) ? data.roleValues.prefLabel[0] : data.roleValues.prefLabel}
+              externalLink={false}
+            />
+        }
+      </span>
     </>
   )
 }

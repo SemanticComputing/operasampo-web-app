@@ -252,6 +252,18 @@
             "minWidth": 250,
             "onlyOnInstancePage": true,
             "expandedOnInstancePage": true
+        },
+        {
+            "id": "performanceRole",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "sortBy": "prefLabel",
+            "numberedList": false,
+            "minWidth": 200,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
         }
     ],
     "facets": {

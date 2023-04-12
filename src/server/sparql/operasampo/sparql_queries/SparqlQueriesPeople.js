@@ -56,8 +56,8 @@ export const personProperties = `
     }
     UNION
     {
-      ?id ^scop:actor ?performanceRole .
-      ?performanceRole a scop:PerformanceRole ;
+      ?id ^scop:actor ?pr .
+      ?pr a scop:PerformanceRole ;
                       scop:compositionRole ?roleCharacter__id .
       ?roleCharacter__id skos:prefLabel ?prefLabel_ ;
                         scop:composition ?composition .
@@ -67,6 +67,28 @@ export const personProperties = `
       BIND(COALESCE(?prefLabel_, ?roleCharacter__id) as ?rc_pref)
       BIND(CONCAT(?rc_pref, " (", ?comp_pref_fi, ")") as ?roleCharacter__prefLabel)
       BIND(CONCAT("/roles/page/", REPLACE(STR(?roleCharacter__id), "^.*\\\\/(.+)", "$1")) AS ?roleCharacter__dataProviderUrl)
+    }
+    UNION
+    {
+      ?performanceRole__performanceRoleId a scop:PerformanceRole ;
+            scop:actor ?id ;
+            scop:performance ?performanceRole__roleValues__id ;
+            scop:compositionRole ?performanceRole__id .
+      ?performanceRole__id scop:composition ?comp .
+      ?comp skos:prefLabel ?compLabel .
+      OPTIONAL {
+        ?performanceRole__roleValues__id skos:prefLabel ?performanceLabel .
+      }
+      OPTIONAL {
+        ?performanceRole__roleValues__id scop:performanceDate ?pd .
+        ?pd skos:prefLabel ?pdLabel .
+      }
+      BIND(CONCAT(?compLabel, " (", COALESCE(?pdLabel, "esitysajankohta ei tiedossa"), ")") as ?backupLabel)
+      BIND(COALESCE(?performanceLabel, ?backupLabel) as ?performanceRole__roleValues__prefLabel)
+      BIND(CONCAT("/performances/page/", REPLACE(STR(?performanceRole__roleValues__id), "^.*\\\\/(.+)", "$1")) AS ?performanceRole__roleValues__dataProviderUrl)
+      ?performanceRole__id skos:prefLabel ?performanceRole__prefLabel .
+      FILTER(LANG(?performanceRole__prefLabel) = 'fi')
+      BIND(CONCAT("/roles/page/", REPLACE(STR(?performanceRole__id), "^.*\\\\/(.+)", "$1")) AS ?performanceRole__dataProviderUrl)
     }
 `
 
