@@ -262,6 +262,10 @@
         "description": ""
       },
       "properties": {
+        "image": {
+          "label": "Kuva",
+          "description": "Kuva esityksen julisteesta"
+        },
         "uri": {
           "label": "URI",
           "description": "Esityksen URI"

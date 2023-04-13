@@ -127,6 +127,12 @@ export const performanceProperties = `
       FILTER(LANG(?performanceRole__prefLabel) = 'fi')
       BIND(CONCAT("/roles/page/", REPLACE(STR(?performanceRole__id), "^.*\\\\/(.+)", "$1")) AS ?performanceRole__dataProviderUrl)
     }
+    UNION 
+    {
+      ?id ^scop:performance ?image__id .
+      ?image__id a scop:PerformanceImage .
+      ?image__id scop:imageUrl ?image__url .
+    }
 `
 
 export const performancesByConductorQuery = `

@@ -39,13 +39,27 @@ const ImageGallerySRL = props => {
     data = [data]
     srlOptions = optionsSingleImage
   }
+
+  function importAll (r) {
+    const imageCache = {}
+    r.keys().map(item => (imageCache[item.replace('./', '')] = r(item)))
+    return imageCache
+  }
+
   const images = data.map(item => {
+    let tempUrl = item.url
+    const absoluteUrlRegExp = /^(?:[a-z]+:)?\/\//i
+    if (!absoluteUrlRegExp.test(item.url)) {
+      const importedImages = importAll(require.context('../../img/', true, /\.png/))
+      tempUrl = importedImages[item.url].default
+    }
     return {
-      src: item.url,
+      src: tempUrl,
       thumbnail: item.url,
       caption: item.description
     }
   })
+
   return (
     <>
       <Button aria-label='open larger image' onClick={() => openLightbox()}>
