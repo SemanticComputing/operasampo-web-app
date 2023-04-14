@@ -76,6 +76,7 @@ export const personProperties = `
             scop:compositionRole ?performanceRole__id .
       ?performanceRole__id scop:composition ?comp .
       ?comp skos:prefLabel ?compLabel .
+      FILTER(LANG(?compLabel) = 'fi')
       OPTIONAL {
         ?performanceRole__roleValues__id skos:prefLabel ?performanceLabel .
       }
