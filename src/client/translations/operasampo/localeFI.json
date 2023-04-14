@@ -109,19 +109,19 @@
   "resultsAsCSV": "",
   "facets": {
     "dateFacet": {
-      "invalidDate": "",
-      "toBeforeFrom": "",
-      "minDate": "",
-      "maxDate": "",
-      "cancel": "",
-      "fromLabel": "",
-      "toLabel": ""
+      "invalidDate": "Epäkelpo päivämäärä.",
+      "toBeforeFrom": "Alkupäivämäärän täytyy olla ennen loppupäivämäärää.",
+      "minDate": "Aikaisin sallittu päivämäärä on {minDate}",
+      "maxDate": "Myöhäisin sallittu päivämäärä on {maxDate}",
+      "cancel": "Peruuta",
+      "fromLabel": "Alku",
+      "toLabel": "Loppu"
     },
     "textFacet": {
-      "inputLabel": ""
+      "inputLabel": "Etsi nimellä"
     },
     "sliderFacet": {
-      "invalidStartOrEnd": ""
+      "invalidStartOrEnd": "Miniarvon täytyy olla pienempi kuin maksimiarvon. Pienin arvo voi olla {min} ja suurin arvo voi olla {max}."
     }
   },
   "leafletMap": {
@@ -463,7 +463,7 @@
           "description": "Tuottajan lisätietoja"
         },
         "producedPerformances": {
-          "label": "Tuotetut esityksen",
+          "label": "Tuotetut esitykset",
           "description": "Tuottajan tuottamat esitykset"
         }
       }

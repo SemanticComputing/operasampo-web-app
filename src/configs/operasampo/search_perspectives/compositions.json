@@ -24,7 +24,7 @@
                 "tabPath": "table",
                 "tabIcon": "CalendarViewDay",
                 "propertiesQueryBlock": "compositionProperties",
-                "pagesize": 15,
+                "pagesize": 20,
                 "sortBy": null,
                 "sortDirection": null
             },
@@ -240,7 +240,7 @@
             "externalLink": false,
             "sortValues": false,
             "numberedList": false,
-            "minWidth": 150
+            "minWidth": 200
         },
         {
             "id": "firstPerformancePlace",
@@ -249,7 +249,7 @@
             "externalLink": false,
             "sortValues": false,
             "numberedList": false,
-            "minWidth": 150
+            "minWidth": 200
         },
         {
             "id": "published",
@@ -258,7 +258,7 @@
             "externalLink": false,
             "sortValues": false,
             "numberedList": false,
-            "minWidth": 150
+            "minWidth": 200
         },
         {
             "id": "publishedDate",

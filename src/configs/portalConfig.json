@@ -23,6 +23,11 @@
                 "id": "fi",
                 "label": "Finnish",
                 "filename": "localeFI.json"
+            },
+            {
+                "id": "en",
+                "label": "English",
+                "filename": "localeEN.json"
             }
         ]
     },
