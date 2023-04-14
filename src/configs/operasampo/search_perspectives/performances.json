@@ -287,53 +287,7 @@
             "minWidth": 200
         },
         {
-            "id": "choirLeader",
-            "valueType": "object",
-            "makeLink": true,
-            "externalLink": false,
-            "sortValues": true,
-            "numberedList": false,
-            "minWidth": 200
-        },
-        {
-            "id": "conductor",
-            "valueType": "object",
-            "makeLink": true,
-            "externalLink": false,
-            "sortValues": true,
-            "numberedList": false,
-            "minWidth": 200
-        },
-        {
-            "id": "director",
-            "valueType": "object",
-            "makeLink": true,
-            "externalLink": false,
-            "sortValues": true,
-            "numberedList": false,
-            "minWidth": 200
-        },
-        {
             "id": "producer",
-            "valueType": "object",
-            "makeLink": true,
-            "externalLink": false,
-            "sortValues": true,
-            "numberedList": false,
-            "minWidth": 200
-        },
-        {
-            "id": "language",
-            "valueType": "string",
-            "makeLink": false,
-            "externalLink": false,
-            "sortValues": true,
-            "numberedList": false,
-            "minWidth": 200,
-            "disableSort": true
-        },
-        {
-            "id": "translator",
             "valueType": "object",
             "makeLink": true,
             "externalLink": false,
@@ -359,6 +313,63 @@
             "numberedList": false,
             "minWidth": 200
         },
+        {
+            "id": "performanceRole",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "sortBy": "prefLabel",
+            "numberedList": false,
+            "minWidth": 200,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "director",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
+            "id": "conductor",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
+            "id": "choirLeader",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
+            "id": "language",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200,
+            "disableSort": true
+        },
+        {
+            "id": "translator",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },   
         {
             "id": "season",
             "valueType": "string",
@@ -398,17 +409,6 @@
             "numberedList": false,
             "minWidth": 250,
             "onlyOnInstancePage": true
-        },
-        {
-            "id": "performanceRole",
-            "valueType": "object",
-            "makeLink": true,
-            "externalLink": false,
-            "sortValues": true,
-            "sortBy": "prefLabel",
-            "numberedList": false,
-            "minWidth": 200,
-            "expandedOnInstancePage": true
         }
     ],
     "facets": {
@@ -449,39 +449,6 @@
             "sortByPredicate": "scop:composition/scop:libretist/skos:prefLabel",
             "sortDirection": "desc"
         },
-        "choirLeader": {
-            "containerClass": "ten",
-            "facetType": "list",
-            "filterType": "uriFilter",
-            "predicate": "scop:choirLeadBy",
-            "searchField": true,
-            "sortButton": true,
-            "sortBy": "instanceCount",
-            "sortByPredicate": "scop:choirLeadBy/skos:prefLabel",
-            "sortDirection": "desc"
-        },
-        "conductor": {
-            "containerClass": "ten",
-            "facetType": "list",
-            "filterType": "uriFilter",
-            "predicate": "scop:conductedBy",
-            "searchField": true,
-            "sortButton": true,
-            "sortBy": "instanceCount",
-            "sortByPredicate": "scop:conductedBy/skos:prefLabel",
-            "sortDirection": "desc"
-        },
-        "director": {
-            "containerClass": "ten",
-            "facetType": "list",
-            "filterType": "uriFilter",
-            "predicate": "scop:directedBy",
-            "searchField": true,
-            "sortButton": true,
-            "sortBy": "instanceCount",
-            "sortByPredicate": "scop:directedBy/skos:prefLabel",
-            "sortDirection": "desc"
-        },
         "producer": {
             "containerClass": "ten",
             "facetType": "list",
@@ -491,17 +458,6 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:producedBy/skos:prefLabel",
-            "sortDirection": "desc"
-        },
-        "translator": {
-            "containerClass": "ten",
-            "facetType": "list",
-            "filterType": "uriFilter",
-            "predicate": "scop:translator",
-            "searchField": true,
-            "sortButton": true,
-            "sortBy": "instanceCount",
-            "sortByPredicate": "scop:translator/skos:prefLabel",
             "sortDirection": "desc"
         },
         "performanceDate": {
@@ -538,6 +494,50 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "^scop:performance/scop:actor/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "director": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:directedBy",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:directedBy/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "conductor": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:conductedBy",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:conductedBy/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "choirLeader": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:choirLeadBy",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:choirLeadBy/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "translator": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:translator",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:translator/skos:prefLabel",
             "sortDirection": "desc"
         }
     }
