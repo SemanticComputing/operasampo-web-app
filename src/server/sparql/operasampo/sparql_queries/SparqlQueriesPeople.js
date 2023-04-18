@@ -19,7 +19,9 @@ export const personProperties = `
     }
     UNION
     {
-      ?id scop:role ?role .
+      ?id scop:role ?role__id .
+      ?role__id skos:prefLabel ?role__prefLabel .
+      FILTER(LANG(?role__prefLabel) = 'fi')
     }
     UNION
     {

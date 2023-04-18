@@ -12,7 +12,8 @@
     "frontPageImage": "main_page/image-people.jpg",
     "searchMode": "faceted-search",
     "defaultActiveFacets": [
-        "prefLabel"
+        "prefLabel",
+        "role"
     ],
     "defaultTab": "table",
     "defaultInstancePageTab": "table",
@@ -171,7 +172,7 @@
         },
         {
             "id": "role",
-            "valueType": "string",
+            "valueType": "object",
             "makeLink": false,
             "externalLink": false,
             "sortValues": false,
@@ -273,6 +274,18 @@
             "filterType": "textFilter",
             "sortByPredicate": "skos:prefLabel",
             "textQueryProperty": "skos:prefLabel"
+        },
+        "role": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = 'fi')",
+            "filterType": "uriFilter",
+            "predicate": "scop:role",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:role/skos:prefLabel",
+            "sortDirection": "desc"
         }
     }
 }
