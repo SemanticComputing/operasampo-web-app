@@ -99,7 +99,7 @@
       "performancesByConductor": "conductor",
       "performancesByDirector": "director",
       "performancesByProducer": "producer",
-      "performancesByPerformancePlace": "place of performance"
+      "performancesByPerformancePlace": "performance venue"
     }
   },
   "lineChart": {
@@ -222,8 +222,8 @@
           "description": "Time of composition of the composition"
         },
         "firstPerformancePlace": {
-          "label": "First place of performance",
-          "description": "First place of performance of the composition"
+          "label": "First performance venue",
+          "description": "First performance venue of the composition"
         },
         "published": {
           "label": "Time of publication?",
@@ -319,8 +319,8 @@
           "description": "Time of performance of the performance"
         },
         "place": {
-          "label": "Place of performance",
-          "description": "Place of performance of the performance"
+          "label": "Performance venue",
+          "description": "Performance venue of the performance"
         },
         "season": {
           "label": "Season",
@@ -472,39 +472,39 @@
       }
     },
     "places": {
-      "label": "Places of performance",
-      "facetResultsType": "place(s) of performance",
-      "shortDescription": "Perspective for searching for places of performance.",
+      "label": "Performance venues",
+      "facetResultsType": "performance venue(s)",
+      "shortDescription": "Perspective for searching for performance venues.",
       "longDescription": "",
       "instancePage": {
-        "label": "Places of performance",
+        "label": "Performance venues",
         "description": ""
       },
       "properties": {
         "uri": {
           "label": "URI",
-          "description": "URI of the place of performance"
+          "description": "URI of the performance venue"
         },
         "prefLabel": {
           "label": "Name",
-          "description": "Name of the place of performance",
+          "description": "Name of the performance venue",
           "textFacetInputPlaceholder": ""
         },
         "address": {
           "label": "Address",
-          "description": "Address of the place of performance"
+          "description": "Address of the performance venue"
         },
         "city": {
           "label": "City",
-          "description": "City in which the place of performance is located in"
+          "description": "City in which the performance venue is located in"
         },
         "country": {
           "label": "Country",
-          "description": "Country in which the place of performance is located in"
+          "description": "Country in which the performance venue is located in"
         },
         "additionalInfo": {
           "label": "Additional information",
-          "description": "Additional information on the place of performance"
+          "description": "Additional information on the performance venue"
         }
       }
     },
