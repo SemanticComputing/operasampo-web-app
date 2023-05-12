@@ -25,3 +25,20 @@ export const roleProperties = `
       BIND(CONCAT("/people/page/", REPLACE(STR(?actor__id), "^.*\\\\/(.+)", "$1")) AS ?actor__dataProviderUrl)
     }
 `
+
+export const rolePerformersQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?performanceRole) as ?instanceCount)
+  WHERE {
+    BIND(<ID> as ?role)
+    ?role a scop:Role .
+    ?performanceRole a scop:PerformanceRole ;
+                    scop:compositionRole ?role .
+    ?performanceRole scop:actor ?category .
+    OPTIONAL {
+      ?category skos:prefLabel ?prefLabel_ .
+    }
+    BIND(COALESCE(?prefLabel_, ?category) as ?prefLabel)
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`

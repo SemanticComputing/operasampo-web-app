@@ -36,6 +36,31 @@
                         "component": "InstancePageTable",
                         "tabPath": "table",
                         "tabIcon": "CalendarViewDay"
+                    },
+                    "instacePagePerformers": {
+                        "tabID": 1,
+                        "component": "ApexCharts",
+                        "doNotRenderOnMount": true,
+                        "tabPath": "performer_chart",
+                        "tabIcon": "PieChart",
+                        "facetClass": "people",
+                        "sparqlQuery": "rolePerformersQuery",
+                        "resultMapper": "mapPieChart",
+                        "filterTarget": "performanceRole",
+                        "pageType": "instancePage",
+                        "sliceVisibilityThreshold": 0.01,
+                        "dropdownForResultClasses": false,
+                        "dropdownForChartTypes": true,
+                        "chartTypes": [
+                            {
+                                "id": "pie",
+                                "createChartData": "createApexPieChartData"
+                            },
+                            {
+                                "id": "bar",
+                                "createChartData": "createApexBarChartData"
+                            }
+                        ]
                     }
                 }
             }
@@ -76,7 +101,8 @@
             "externalLink": false,
             "sortValues": true,
             "numberedList": false,
-            "minWidth": 200
+            "minWidth": 200,
+            "expandedOnInstancePage": true
         }
     ],
     "facets": {

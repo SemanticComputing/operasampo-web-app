@@ -73,6 +73,7 @@
     "role_chart": "most common roles",
     "role_network": "co-performer network",
     "activity_timeseries": "performances on a timeline",
+    "performer_chart": "most common performers",
     "network": "network",
     "export": "export",
     "heatmap": "heatmap",
