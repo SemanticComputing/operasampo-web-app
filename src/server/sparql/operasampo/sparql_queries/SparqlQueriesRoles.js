@@ -42,3 +42,34 @@ export const rolePerformersQuery = `
   GROUP BY ?category ?prefLabel
   ORDER BY DESC(?instanceCount)
 `
+
+export const performersTimelineQuery = `
+  SELECT DISTINCT ?id ?actor__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type 
+  WHERE {
+    BIND(<ID> as ?id)
+    ?id a scop:Role .
+    ?performanceRole a scop:PerformanceRole ;
+                    scop:compositionRole ?id ;
+                    scop:performance ?performance ;
+                    scop:actor ?actor .
+    ?performance scop:performanceDate/scop:timespanStart ?_date .
+    ?actor skos:prefLabel ?actor__label .
+    BIND("actor" AS ?type)
+  }
+`
+
+export const performancesPerformedQuery = `
+  SELECT DISTINCT (STR(?year) AS ?category) (COUNT(DISTINCT ?performance) AS ?performanceCount)
+  WHERE {
+    BIND(<ID> as ?role)
+    ?role a scop:Role .
+    ?performanceRole a scop:PerformanceRole ;
+                    scop:compositionRole ?role ;
+                    scop:performance ?performance .
+    ?performance a scop:Performance .
+    ?performance scop:performanceDate/scop:timespanStart ?_date ;
+                scop:performedIn ?place .
+    BIND(YEAR(?_date) AS ?year)
+  }
+  GROUP BY ?year ORDER BY ?year
+`

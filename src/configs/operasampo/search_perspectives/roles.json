@@ -43,10 +43,8 @@
                         "doNotRenderOnMount": true,
                         "tabPath": "performer_chart",
                         "tabIcon": "PieChart",
-                        "facetClass": "people",
                         "sparqlQuery": "rolePerformersQuery",
                         "resultMapper": "mapPieChart",
-                        "filterTarget": "performanceRole",
                         "pageType": "instancePage",
                         "sliceVisibilityThreshold": 0.01,
                         "dropdownForResultClasses": false,
@@ -61,6 +59,72 @@
                                 "createChartData": "createApexBarChartData"
                             }
                         ]
+                    },
+                    "performersTimeline": {
+                        "tabID": 2,
+                        "component": "ApexChartsDouble",
+                        "tabPath": "performers_timeseries",
+                        "tabIcon": "Tune",
+                        "pageType": "instancePage",
+                        "upperResultClass": "performersDoubleUpper",
+                        "lowerResultClass": "performersDoubleLower",
+                        "resultClasses": {
+                            "performersDoubleUpper": {
+                                "title": "Esiintyjät aikajanalla",
+                                "height": "70%",
+                                "sparqlQuery": "performersTimelineQuery",
+                                "resultMapper": "createCorrespondenceChartData",
+                                "resultMapperConfig": {
+                                    "types": ["actor"],
+                                    "numberTopResults": 20
+                                },
+                                "createChartData": "createTopTimelineChartData",
+                                "tooltip": { "x": { "format": "d MMM yyyy" } },
+                                "fill": { "opacity": [0.7, 0.5] },
+                                "legend": { "position": "bottom" },
+                                "grid": {
+                                    "row": {
+                                      "colors": ["#d5d5d5", "transparent"], 
+                                      "opacity": 0.25
+                                    },
+                                    "column": { "colors": ["#a8a8a8", "transparent"] },
+                                    "xaxis": { "lines": { "show": true } },
+                                    "yaxis": { "lines": { "show": true } }
+                                }
+                            },
+                            "performersDoubleLower": {
+                                "height": "30%",
+                                "sparqlQuery": "performancesPerformedQuery",
+                                "resultMapper": "createCorrespondenceChartDataLower",
+                                "resultMapperConfig": {
+                                    "fillEmptyValues": true
+                                },
+                                "createChartData": "createTopTimelineChartData2",
+                                "title": { "text": "Esiintymiset vuosittain", "align": "left" },
+                                "xaxis": {
+                                    "type": "datetime",
+                                    "tooltip": { "enabled": true }
+                                },
+                                "yaxis": {
+                                    "labels": { "minWidth": 150, "maxWidth": 300 }
+                                },
+                                "grid": {
+                                    "column": { "colors": ["#a8a8a8", "transparent"] },
+                                    "xaxis": { "lines": { "show": true } },
+                                    "yaxis": { "lines": { "show": true } }
+                                },
+                                "tooltip": { "x": { "format": "yyyy" } },
+                                "stroke": { "curve": "stepline", "width": 1 },
+                                "fill": {
+                                    "type": "gradient",
+                                    "gradient": {
+                                        "shadeIntensity": 1,
+                                        "opacityFrom": 0.3,
+                                        "opacityTo": 0.6
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
