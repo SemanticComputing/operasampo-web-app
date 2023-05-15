@@ -135,3 +135,35 @@ export const personNetworkNodesQuery = `
     BIND(CONCAT("/people/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?href)
   }
 `
+
+export const rolesTimelineQuery = `
+  SELECT DISTINCT ?id ?rooli__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type 
+  WHERE {
+    BIND(<ID> as ?id)
+    ?id a scop:Person .
+    ?performanceRole a scop:PerformanceRole ;
+                    scop:actor ?id ;
+                    scop:compositionRole ?role ;
+                    scop:performance ?performance .
+    ?performance scop:performanceDate/scop:timespanStart ?_date .
+    ?role skos:prefLabel ?rooli__label .
+    FILTER(LANG(?rooli__label) = 'fi')
+    BIND("rooli" AS ?type)
+  }
+`
+
+export const performancesPerformedQuery = `
+  SELECT DISTINCT (STR(?year) AS ?category) (COUNT(DISTINCT ?performance) AS ?performanceCount)
+  WHERE {
+    BIND(<ID> as ?person)
+    ?person a scop:Person .
+    ?performanceRole a scop:PerformanceRole ;
+                    scop:actor ?person ;
+                    scop:performance ?performance .
+    ?performance a scop:Performance .
+    ?performance scop:performanceDate/scop:timespanStart ?_date ;
+                scop:performedIn ?place .
+    BIND(YEAR(?_date) AS ?year)
+  }
+  GROUP BY ?year ORDER BY ?year
+`
