@@ -169,3 +169,20 @@ export const performancesPerformedInstancePageQuery = `
   }
   GROUP BY ?year ORDER BY ?year
 `
+
+export const compositionVenuesQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?performance) as ?instanceCount)
+  WHERE {
+    BIND(<ID> as ?composition)
+    ?composition a scop:Composition .
+    ?performance a scop:Performance ;
+                scop:composition ?composition ;
+                scop:performedIn ?category .
+    OPTIONAL {
+      ?category skos:prefLabel ?prefLabel_ .
+    }
+    BIND(COALESCE(?prefLabel_, ?category) as ?prefLabel)
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`

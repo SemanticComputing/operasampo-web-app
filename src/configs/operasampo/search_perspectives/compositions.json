@@ -37,8 +37,31 @@
                         "tabPath": "table",
                         "tabIcon": "CalendarViewDay"
                     },
-                    "compositionInstancePagePlaceTimeline": {
+                    "instacePageVenues": {
                         "tabID": 1,
+                        "component": "ApexCharts",
+                        "doNotRenderOnMount": true,
+                        "tabPath": "venue_chart",
+                        "tabIcon": "PieChart",
+                        "sparqlQuery": "compositionVenuesQuery",
+                        "resultMapper": "mapPieChart",
+                        "pageType": "instancePage",
+                        "sliceVisibilityThreshold": 0.01,
+                        "dropdownForResultClasses": false,
+                        "dropdownForChartTypes": true,
+                        "chartTypes": [
+                            {
+                                "id": "pie",
+                                "createChartData": "createApexPieChartData"
+                            },
+                            {
+                                "id": "bar",
+                                "createChartData": "createApexBarChartData"
+                            }
+                        ]
+                    },
+                    "compositionInstancePagePlaceTimeline": {
+                        "tabID": 2,
                         "component": "ApexChartsDouble",
                         "pageType": "instancePage",
                         "tabPath": "activity_timeseries",

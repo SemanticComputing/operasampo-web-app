@@ -76,6 +76,7 @@
     "performer_chart": "most common performers",
     "performers_timeseries": "performers on a timeline",
     "roles_timeseries": "roles on a timeline",
+    "venue_chart": "most common performance venues",
     "network": "network",
     "export": "export",
     "heatmap": "heatmap",
