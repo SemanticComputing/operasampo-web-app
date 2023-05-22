@@ -24,7 +24,7 @@
                 "tabPath": "table",
                 "tabIcon": "CalendarViewDay",
                 "propertiesQueryBlock": "placeProperties",
-                "pagesize": 15,
+                "pagesize": 10,
                 "sortBy": null,
                 "sortDirection": null
             },
@@ -42,6 +42,16 @@
         }
     },
     "properties": [
+        {
+            "id": "image",
+            "valueType": "image",
+            "previewImageHeight": 150,
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "hideHeader": true
+        },
         {
             "id": "uri",
             "valueType": "object",
