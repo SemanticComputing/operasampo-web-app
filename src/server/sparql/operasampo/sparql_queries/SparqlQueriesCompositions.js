@@ -44,10 +44,6 @@ export const compositionProperties = `
     }
     UNION
     {
-      ?id scop:firstPerformancePlace ?firstPerformancePlace .
-    }
-    UNION
-    {
       ?id scop:published ?published .
     }
     UNION

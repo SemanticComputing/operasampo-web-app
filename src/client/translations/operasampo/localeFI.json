@@ -222,10 +222,6 @@
           "label": "Sävellysajankohta",
           "description": "Sävellyksen sävellysajankohta"
         },
-        "firstPerformancePlace": {
-          "label": "Ensiesityspaikka",
-          "description": "Sävellyksen ensiesityspaikka"
-        },
         "published": {
           "label": "Julkaisuajankohta?",
           "description": "Sävellyksen Julkaisuajankohta"

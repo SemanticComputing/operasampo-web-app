@@ -266,15 +266,6 @@
             "minWidth": 200
         },
         {
-            "id": "firstPerformancePlace",
-            "valueType": "string",
-            "makeLink": false,
-            "externalLink": false,
-            "sortValues": false,
-            "numberedList": false,
-            "minWidth": 200
-        },
-        {
             "id": "published",
             "valueType": "string",
             "makeLink": false,

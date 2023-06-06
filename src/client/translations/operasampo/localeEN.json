@@ -225,10 +225,6 @@
           "label": "Time of composition",
           "description": "Time of composition of the composition"
         },
-        "firstPerformancePlace": {
-          "label": "First performance venue",
-          "description": "First performance venue of the composition"
-        },
         "published": {
           "label": "Time of publication?",
           "description": "Time of publication of the composition"
