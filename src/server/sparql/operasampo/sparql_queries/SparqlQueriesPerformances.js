@@ -3,7 +3,7 @@ const perspectiveID = 'performances'
 export const performanceProperties = `
     {
       ?id a scop:Performance .
-      
+
       BIND(?id as ?uri__id)
       BIND(?id as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)
@@ -130,8 +130,8 @@ export const performanceProperties = `
     UNION 
     {
       ?id ^scop:performance ?image__id .
-      ?image__id a scop:PerformanceImage .
-      ?image__id scop:imageUrl ?image__url .
+      ?image__id a scop:PerformanceImage ;
+                scop:imageUrl ?image__url .
     }
 `
 
