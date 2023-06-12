@@ -31,10 +31,6 @@ export const placeProperties = `
     }
     UNION
     {
-      ?id scop:editorNotes ?editorNotes .
-    }
-    UNION
-    {
       ?id ^scop:place ?image__id .
       ?image__id a scop:PlaceImage ;
                 scop:imageUrl ?image__url ;

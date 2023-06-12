@@ -21,8 +21,8 @@ export const producerProperties = `
     UNION
     {
       ?id ^scop:producedBy ?producedPerformances__id .
-      ?producedPerformances__id a scop:Performance .
-      ?producedPerformances__id scop:composition ?composition__id .
+      ?producedPerformances__id a scop:Performance ;
+                                scop:composition ?composition__id .
       ?composition__id a scop:Composition ;
                       skos:prefLabel ?composition__prefLabel .
       FILTER(LANG(?composition__prefLabel) = 'fi')

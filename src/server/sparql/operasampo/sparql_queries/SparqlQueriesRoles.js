@@ -32,8 +32,8 @@ export const rolePerformersQuery = `
     BIND(<ID> as ?role)
     ?role a scop:Role .
     ?performanceRole a scop:PerformanceRole ;
-                    scop:compositionRole ?role .
-    ?performanceRole scop:actor ?category .
+                    scop:compositionRole ?role ;
+                    scop:actor ?category .
     OPTIONAL {
       ?category skos:prefLabel ?prefLabel_ .
     }
@@ -66,8 +66,8 @@ export const performancesPerformedQuery = `
     ?performanceRole a scop:PerformanceRole ;
                     scop:compositionRole ?role ;
                     scop:performance ?performance .
-    ?performance a scop:Performance .
-    ?performance scop:performanceDateStart ?_date ;
+    ?performance a scop:Performance ;
+                scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
     BIND(YEAR(?_date) AS ?year)
   }

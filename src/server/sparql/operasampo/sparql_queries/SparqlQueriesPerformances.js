@@ -3,6 +3,7 @@ const perspectiveID = 'performances'
 export const performanceProperties = `
     {
       ?id a scop:Performance .
+      
       BIND(?id as ?uri__id)
       BIND(?id as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)
@@ -185,8 +186,8 @@ export const performancesByProducerQuery = `
   WHERE {
     <FILTER>
     {
-      ?performance a scop:Performance .
-      ?performance scop:producedBy ?category .
+      ?performance a scop:Performance ;
+                  scop:producedBy ?category .
       ?category skos:prefLabel ?prefLabel .
     }
     UNION
@@ -208,8 +209,8 @@ export const performancesByComposerQuery = `
   WHERE {
     <FILTER>
     {
-      ?performance a scop:Performance .
-      ?performance scop:composition/scop:composedBy  ?category .
+      ?performance a scop:Performance ;
+                  scop:composition/scop:composedBy  ?category .
       ?category skos:prefLabel ?prefLabel .
     }
     UNION
@@ -231,8 +232,8 @@ export const performancesByPerformancePlaceQuery = `
   WHERE {
     <FILTER>
     {
-      ?performance a scop:Performance .
-      ?performance scop:performedIn ?category .
+      ?performance a scop:Performance ;
+                  scop:performedIn ?category .
       ?category skos:prefLabel ?prefLabel .
     }
     UNION
@@ -264,9 +265,9 @@ export const performancePlacesQuery = `
   SELECT DISTINCT ?id ?esityspaikka__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type 
   WHERE {
     <FILTER>
-    ?id a scop:Performance .
-    ?id scop:performanceDateStart ?_date ;
-                scop:performedIn ?place .
+    ?id a scop:Performance ;
+          scop:performanceDateStart ?_date ;
+          scop:performedIn ?place .
     ?place skos:prefLabel ?esityspaikka__label .
     BIND("esityspaikka" AS ?type)
   }
@@ -276,8 +277,8 @@ export const performancesPerformedQuery = `
   SELECT DISTINCT (STR(?year) AS ?category) (COUNT(DISTINCT ?performance) AS ?performanceCount)
   WHERE {
     <FILTER>
-    ?performance a scop:Performance .
-    ?performance scop:performanceDateStart ?_date ;
+    ?performance a scop:Performance ;
+                scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
     BIND(YEAR(?_date) AS ?year)
   }

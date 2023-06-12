@@ -60,10 +60,10 @@ export const compositionProperties = `
     }
     UNION
     {
-      ?id ^scop:composition ?performance__id .
-      ?performance__id a scop:Performance .
-      ?id skos:prefLabel ?label .
+      ?id ^scop:composition ?performance__id ;
+          skos:prefLabel ?label .
       FILTER(LANG(?label) = 'fi')
+      ?performance__id a scop:Performance .
       OPTIONAL {
         ?performance__id skos:prefLabel ?p_name .
       }
@@ -99,8 +99,8 @@ export const compositionsByComposerQuery = `
   WHERE {
     <FILTER>
     {
-      ?composition a scop:Composition .
-      ?composition scop:composedBy ?category .
+      ?composition a scop:Composition ;
+                  scop:composedBy ?category .
       ?category skos:prefLabel ?prefLabel .
     }
     UNION
@@ -122,8 +122,8 @@ export const compositionsByLibretistQuery = `
   WHERE {
     <FILTER>
     {
-      ?composition a scop:Composition .
-      ?composition scop:libretist ?category .
+      ?composition a scop:Composition ;
+                  scop:libretist ?category .
       ?category skos:prefLabel ?prefLabel .
     }
     UNION

@@ -5,6 +5,7 @@ export const personProperties = `
       ?id skos:prefLabel ?prefLabel__id .
       BIND(?prefLabel__id AS ?prefLabel__prefLabel)
       BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
+      
       BIND(?id as ?uri__id)
       BIND(?id as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)
@@ -160,8 +161,8 @@ export const performancesPerformedQuery = `
     ?performanceRole a scop:PerformanceRole ;
                     scop:actor ?person ;
                     scop:performance ?performance .
-    ?performance a scop:Performance .
-    ?performance scop:performanceDateStart ?_date ;
+    ?performance a scop:Performance ;
+                scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
     BIND(YEAR(?_date) AS ?year)
   }
