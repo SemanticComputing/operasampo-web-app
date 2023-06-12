@@ -122,6 +122,7 @@ export const updateFacetOption = (state, action) => {
     'timespanFilter',
     'integerFilter',
     'dateFilter',
+    'directTimespanFilter',
     'integerFilterRange'
   ]
   if (filterTypes.includes(action.option)) {
@@ -171,7 +172,7 @@ const updateFacetFilter = (state, action) => {
       ...state.facets[facetID],
       textFilter: value
     }
-  } else if (oldFacet.filterType === 'timespanFilter' || oldFacet.filterType === 'dateFilter') {
+  } else if (oldFacet.filterType === 'timespanFilter' || oldFacet.filterType === 'dateFilter' || oldFacet.filterType === 'directTimespanFilter') {
     if (value == null) {
       newFacet = {
         ...state.facets[facetID],

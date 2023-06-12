@@ -52,7 +52,7 @@ export const performersTimelineQuery = `
                     scop:compositionRole ?id ;
                     scop:performance ?performance ;
                     scop:actor ?actor .
-    ?performance scop:performanceDate/scop:timespanStart ?_date .
+    ?performance scop:performanceDateStart ?_date .
     ?actor skos:prefLabel ?actor__label .
     BIND("actor" AS ?type)
   }
@@ -67,7 +67,7 @@ export const performancesPerformedQuery = `
                     scop:compositionRole ?role ;
                     scop:performance ?performance .
     ?performance a scop:Performance .
-    ?performance scop:performanceDate/scop:timespanStart ?_date ;
+    ?performance scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
     BIND(YEAR(?_date) AS ?year)
   }

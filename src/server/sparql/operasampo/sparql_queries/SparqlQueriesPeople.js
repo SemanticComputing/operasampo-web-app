@@ -83,8 +83,8 @@ export const personProperties = `
         ?performanceRole__roleValues__id skos:prefLabel ?performanceLabel .
       }
       OPTIONAL {
-        ?performanceRole__roleValues__id scop:performanceDate ?pd .
-        ?pd skos:prefLabel ?pdLabel .
+        ?performanceRole__roleValues__id scop:performanceDateStart ?pd .
+        BIND(STR(?pd) as ?pdLabel)
       }
       BIND(CONCAT(?compLabel, " (", COALESCE(?pdLabel, "esitysajankohta ei tiedossa"), ")") as ?backupLabel)
       BIND(COALESCE(?performanceLabel, ?backupLabel) as ?performanceRole__roleValues__prefLabel)
@@ -145,7 +145,7 @@ export const rolesTimelineQuery = `
                     scop:actor ?id ;
                     scop:compositionRole ?role ;
                     scop:performance ?performance .
-    ?performance scop:performanceDate/scop:timespanStart ?_date .
+    ?performance scop:performanceDateStart ?_date .
     ?role skos:prefLabel ?rooli__label .
     FILTER(LANG(?rooli__label) = 'fi')
     BIND("rooli" AS ?type)
@@ -161,7 +161,7 @@ export const performancesPerformedQuery = `
                     scop:actor ?person ;
                     scop:performance ?performance .
     ?performance a scop:Performance .
-    ?performance scop:performanceDate/scop:timespanStart ?_date ;
+    ?performance scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
     BIND(YEAR(?_date) AS ?year)
   }

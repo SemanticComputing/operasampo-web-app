@@ -463,15 +463,15 @@
         "performanceDate": {
             "containerClass": "six",
             "facetType": "timespan",
-            "filterType": "dateFilter",
-            "predicate": "scop:performanceDate",
-            "startProperty": "scop:timespanStart",
-            "endProperty": "scop:timespanEnd",
+            "filterType": "directTimespanFilter",
+            "predicate": "scop:performanceDateStart",
+            "startProperty": "scop:performanceDateStart",
+            "endProperty": "scop:performanceDateEnd",
             "min": "1750-01-01",
             "max": "1970-01-01",
-            "sortByPredicate": "scop:performanceDate/scop:timespanStart",
-            "sortByAscPredicate": "scop:performanceDate/scop:timespanStart",
-            "sortByDescPredicate": "scop:performanceDate/scop:timespanEnd"
+            "sortByPredicate": "scop:performanceDateStart",
+            "sortByAscPredicate": "scop:performanceDateStart",
+            "sortByDescPredicate": "scop:performanceDateEnd"
         },
         "place": {
             "containerClass": "ten",

@@ -68,8 +68,8 @@ export const compositionProperties = `
         ?performance__id skos:prefLabel ?p_name .
       }
       OPTIONAL {
-        ?performance__id scop:performanceDate ?pd .
-        ?pd skos:prefLabel ?pd_label .
+        ?performance__id scop:performanceDateStart ?pd .
+        BIND(STR(?pd) as ?pd_label)
       }
       BIND(CONCAT(?label, " (", COALESCE(?pd_label, "esitysajankohta ei tiedossa"), ")") as ?backup_label)
       BIND(COALESCE(?p_name, ?backup_label) as ?performance__prefLabel)
@@ -146,7 +146,7 @@ export const performancePlacesInstancePageQuery = `
     VALUES ?id { <ID> }
     ?performance a scop:Performance ;
                 scop:composition ?id .
-    ?performance scop:performanceDate/scop:timespanStart ?_date ;
+    ?performance scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
     ?place skos:prefLabel ?esityspaikka__label .
     BIND("esityspaikka" AS ?type)
@@ -159,7 +159,7 @@ export const performancesPerformedInstancePageQuery = `
     VALUES ?id { <ID> }
     ?performance a scop:Performance ;
                 scop:composition ?id .
-    ?performance scop:performanceDate/scop:timespanStart ?_date ;
+    ?performance scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
     BIND(YEAR(?_date) AS ?year)
   }

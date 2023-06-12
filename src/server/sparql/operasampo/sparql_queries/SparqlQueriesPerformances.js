@@ -19,8 +19,8 @@ export const performanceProperties = `
         ?id skos:prefLabel ?p_name .
       }
       OPTIONAL {
-        ?id scop:performanceDate ?pd .
-        ?pd skos:prefLabel ?pd_label .
+        ?id scop:performanceDateStart ?pd .
+        BIND(STR(?pd) as ?pd_label)
       }
       BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd_label, "esitysajankohta ei tiedossa"), ")") as ?backup_label)
       BIND(COALESCE(?p_name, ?backup_label) as ?prefLabel__prefLabel)
@@ -74,8 +74,9 @@ export const performanceProperties = `
     }
     UNION
     {
-      ?id scop:performanceDate ?performanceDate__id .
-      ?performanceDate__id skos:prefLabel ?performanceDate__prefLabel .
+      ?id scop:performanceDateStart ?performanceDate__start ;
+          scop:performanceDateEnd ?performanceDate__end .
+      BIND(IF(?performanceDate__start = ?performanceDate__end, STR(?performanceDate__start), CONCAT(STR(?performanceDate__start), '–', STR(?performanceDate__end))) as ?performanceDate__prefLabel)
     }
     UNION
     {
@@ -254,7 +255,7 @@ export const performancesByYearQuery = `
   SELECT ?category (COUNT (DISTINCT ?performance) as ?count) WHERE {
     <FILTER>
     ?performance a scop:Performance ;
-                scop:performanceDate/scop:timespanStart ?date .
+                scop:performanceDateStart ?date .
     BIND(YEAR(xsd:dateTime(?date)) as ?category)
   }
   GROUP BY ?category
@@ -266,7 +267,7 @@ export const performancePlacesQuery = `
   WHERE {
     <FILTER>
     ?id a scop:Performance .
-    ?id scop:performanceDate/scop:timespanStart ?_date ;
+    ?id scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
     ?place skos:prefLabel ?esityspaikka__label .
     BIND("esityspaikka" AS ?type)
@@ -278,7 +279,7 @@ export const performancesPerformedQuery = `
   WHERE {
     <FILTER>
     ?performance a scop:Performance .
-    ?performance scop:performanceDate/scop:timespanStart ?_date ;
+    ?performance scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
     BIND(YEAR(?_date) AS ?year)
   }

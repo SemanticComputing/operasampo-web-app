@@ -170,6 +170,21 @@ class FacetBar extends React.Component {
           />
         )
         break
+      case 'directTimespanFilter':
+        // console.log(someFacetIsFetching)
+        facetComponent = (
+          <DateFacet
+            facetID={facetID}
+            facet={facet}
+            facetClass={this.props.facetClass}
+            resultClass={this.props.resultClass}
+            facetUpdateID={facetUpdateID}
+            fetchFacet={this.props.fetchFacet}
+            someFacetIsFetching={someFacetIsFetching}
+            updateFacetOption={this.props.updateFacetOption}
+          />
+        )
+        break
       case 'integerFilter':
         facetComponent = (
           <SliderFacet

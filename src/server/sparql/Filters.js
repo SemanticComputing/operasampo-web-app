@@ -64,6 +64,16 @@ export const generateConstraintsBlock = ({
             inverse: inverse
           })
           break
+        case 'directTimespanFilter':
+          filterStr += generateDirectTimespanFilter({
+            backendSearchConfig,
+            facetClass: facetClass,
+            facetID: c.facetID,
+            filterTarget: filterTarget,
+            values: c.values,
+            inverse: inverse
+          })
+          break
         case 'dateNoTimespanFilter':
           filterStr += generateDateNoTimespanFilter({
             backendSearchConfig,
@@ -205,6 +215,45 @@ const generateTimespanFilter = ({
     # FILTER(
     #  (?startA >= ?startB) && (?endA <= ?endB) && (?startA <= ?endA)
     # )
+  `
+  if (inverse) {
+    return `
+    FILTER NOT EXISTS {
+        ${filterStr}
+    }
+    `
+  } else {
+    return filterStr
+  }
+}
+
+const generateDirectTimespanFilter = ({
+  backendSearchConfig,
+  facetClass,
+  facetID,
+  filterTarget,
+  values,
+  inverse
+}) => {
+  const facetConfig = backendSearchConfig[facetClass].facets[facetID]
+  const { start, end } = values
+  let selectionStart = start
+  let selectionEnd = end
+  const dataType = has(facetConfig, 'dataType') ? facetConfig.dataType : 'xsd:date'
+  if (dataType === 'xsd:dateTime') {
+    selectionStart = `${selectionStart}T00:00:00Z`
+    selectionEnd = `${selectionEnd}T00:00:00Z`
+  }
+  const filterStr = `
+    ?${filterTarget}  ${facetConfig.startProperty} ?startA ;
+                      ${facetConfig.endProperty} ?endA .       
+    BIND("${selectionStart}"^^${dataType} as ?startB)
+    BIND("${selectionEnd}"^^${dataType} as ?endB)      
+    # Determine whether two date ranges overlap: https://stackoverflow.com/a/325964/6028835
+    # Also make sure that starts and ends are in right order in the RDF data.
+    FILTER(
+      (?startA <= ?endB) && (?endA >= ?startB) && (?startA <= ?endA)
+    )
   `
   if (inverse) {
     return `
