@@ -6,7 +6,7 @@
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
     "sparqlQueriesFile": "SparqlQueriesPerformances.js",
-    "baseURI": "http://ldf.fi/operasampo/performances/",
+    "baseURI": "http://ldf.fi/operasampo/",
     "URITemplate": "<BASE_URI><LOCAL_ID>",
     "facetClass": "scop:Performance",
     "frontPageImage": "main_page/performances-card.jpg",

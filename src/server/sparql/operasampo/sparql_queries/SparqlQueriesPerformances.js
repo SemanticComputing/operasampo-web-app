@@ -3,8 +3,6 @@ const perspectiveID = 'performances'
 export const performanceProperties = `
     {
       ?id a scop:Performance .
-      # ?id skos:prefLabel ?prefLabel__id .
-      # BIND(?prefLabel__id AS ?prefLabel__prefLabel)
       BIND(?id as ?uri__id)
       BIND(?id as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)

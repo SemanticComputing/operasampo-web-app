@@ -6,7 +6,7 @@
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
     "sparqlQueriesFile": "SparqlQueriesProducers.js",
-    "baseURI": "http://ldf.fi/operasampo/producers/",
+    "baseURI": "http://ldf.fi/operasampo/",
     "URITemplate": "<BASE_URI><LOCAL_ID>",
     "facetClass": "scop:Producer",
     "defaultInstancePageTab": "table",

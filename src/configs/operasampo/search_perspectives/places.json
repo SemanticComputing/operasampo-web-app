@@ -6,7 +6,7 @@
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
     "sparqlQueriesFile": "SparqlQueriesPlaces.js",
-    "baseURI": "http://ldf.fi/operasampo/places/",
+    "baseURI": "http://ldf.fi/operasampo/",
     "URITemplate": "<BASE_URI><LOCAL_ID>",
     "facetClass": "scop:Place",
     "frontPageImage": "main_page/venues-card.jpg",

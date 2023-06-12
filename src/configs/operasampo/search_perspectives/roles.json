@@ -6,7 +6,7 @@
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
     "sparqlQueriesFile": "SparqlQueriesRoles.js",
-    "baseURI": "http://ldf.fi/operasampo/roles/",
+    "baseURI": "http://ldf.fi/operasampo/",
     "URITemplate": "<BASE_URI><LOCAL_ID>",
     "facetClass": "scop:Role",
     "frontPageImage": "main_page/roles-card.jpg",
