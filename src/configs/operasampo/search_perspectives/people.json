@@ -297,6 +297,30 @@
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:role/skos:prefLabel",
             "sortDirection": "desc"
+        },
+        "roleCharacter": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = 'fi')",
+            "filterType": "uriFilter",
+            "predicate": "^scop:actor/scop:compositionRole",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "^scop:actor/scop:compositionRole/skos:prefLabel",
+            "sortDirection": "desc"
+        },
+        "composition": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = 'fi')",
+            "filterType": "uriFilter",
+            "predicate": "(((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "((((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist)/skos:prefLabel",
+            "sortDirection": "desc"
         }
     }
 }

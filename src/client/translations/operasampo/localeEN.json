@@ -410,6 +410,10 @@
         "performanceRole": {
           "label": "Performances by role character",
           "description": "Performances in which this person has performed grouped by role character"
+        },
+        "composition": {
+          "label": "Related to composition",
+          "description": "Compositions to which a person is somehow related to. The person can have perfromed in one of the performances of this composition, taken part in the performance in another way (e.g. as a director) or taken part in the creation of the composition itself as a composer or libretist."
         }
       }
     },

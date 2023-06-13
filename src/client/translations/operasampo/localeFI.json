@@ -407,6 +407,10 @@
         "performanceRole": {
           "label": "Esitykset roolihahmottain",
           "description": "Esitykset, joissa henkilö on esiintynyt ryhmiteltynä roolihahmon mukaan"
+        },
+        "composition": {
+          "label": "Liittyen sävellykseen",
+          "description": "Sävellykset, joihin henkilö liittyy jollain tavalla. Henkilön on voinut esiintyä kyseisen sävellyksen jossain esityksessä, osallistunut esitykseen muussa roolissa (esim. ohjaajana) tai osallistunut itse sävellyksen tekoon säveltäjänä tai libretistinä."
         }
       }
     },
