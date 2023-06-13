@@ -404,7 +404,7 @@
           "description": "Additional information on the person"
         },
         "roleCharacter": {
-          "label": "Role characters",
+          "label": "Role character",
           "description": "Role characters performed by this person"
         },
         "performanceRole": {

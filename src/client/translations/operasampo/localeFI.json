@@ -401,7 +401,7 @@
           "description": "Henkilön lisätietoja"
         },
         "roleCharacter": {
-          "label": "Roolihahmot",
+          "label": "Roolihahmo",
           "description": "Henkilön esittämät roolihahmot"
         },
         "performanceRole": {
