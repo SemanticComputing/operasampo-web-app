@@ -425,7 +425,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:composition/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "composer": {
             "containerClass": "ten",
@@ -436,7 +437,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:composition/scop:composedBy/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "libretist": {
             "containerClass": "ten",
@@ -447,7 +449,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:composition/scop:libretist/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "producer": {
             "containerClass": "ten",
@@ -458,7 +461,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:producedBy/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "performanceDate": {
             "containerClass": "six",
@@ -483,7 +487,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:performedIn/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "performanceRole": {
             "containerClass": "ten",
@@ -505,7 +510,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:directedBy/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "conductor": {
             "containerClass": "ten",
@@ -516,7 +522,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:conductedBy/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "choirLeader": {
             "containerClass": "ten",
@@ -527,7 +534,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:choirLeadBy/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "translator": {
             "containerClass": "ten",
@@ -538,7 +546,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:translator/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         }
     }
 }
