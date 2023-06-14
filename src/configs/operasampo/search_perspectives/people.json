@@ -296,7 +296,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:role/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         },
         "roleCharacter": {
             "containerClass": "ten",
@@ -320,7 +321,8 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "((((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist)/skos:prefLabel",
-            "sortDirection": "desc"
+            "sortDirection": "desc",
+            "pieChartButton": true
         }
     }
 }
