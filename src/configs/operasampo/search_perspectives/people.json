@@ -195,6 +195,35 @@
                     }
                 }
             }
+        },
+        "performancesByProperty": {
+            "tabID": 1,
+            "component": "ApexCharts",
+            "doNotRenderOnMount": true,
+            "tabPath": "pie_chart",
+            "tabIcon": "PieChart",
+            "facetClass": "people",
+            "dropdownForResultClasses": true,
+            "defaultResultClass": "peopleByRole",
+            "resultClasses": {
+                "peopleByRole": {
+                    "sparqlQuery": "peopleByRoleQuery",
+                    "filterTarget": "person",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                }
+            }
         }
     },
     "properties": [

@@ -5,7 +5,7 @@ export const personProperties = `
       ?id skos:prefLabel ?prefLabel__id .
       BIND(?prefLabel__id AS ?prefLabel__prefLabel)
       BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
-      
+
       BIND(?id as ?uri__id)
       BIND(?id as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)
@@ -167,4 +167,28 @@ export const performancesPerformedQuery = `
     BIND(YEAR(?_date) AS ?year)
   }
   GROUP BY ?year ORDER BY ?year
+`
+
+export const peopleByRoleQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?person) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?person a scop:Person ;
+              scop:role ?category .
+      ?category skos:prefLabel ?prefLabel .
+      FILTER(LANG(?prefLabel) = 'fi')
+    }
+    UNION
+    {
+      ?person a scop:Person .
+      FILTER NOT EXISTS {
+        ?person scop:role [] .
+      }
+      BIND("Tuntematon" as ?category)
+      BIND("Tuntematon" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
 `

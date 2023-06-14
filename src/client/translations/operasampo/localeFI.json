@@ -103,7 +103,8 @@
       "performancesByConductor": "kapellimestari",
       "performancesByDirector": "ohjaaja",
       "performancesByProducer": "tuotanto",
-      "performancesByPerformancePlace": "esityspaikka"
+      "performancesByPerformancePlace": "esityspaikka",
+      "peopleByRole": "rooli"
     }
   },
   "lineChart": {

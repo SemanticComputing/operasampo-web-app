@@ -103,7 +103,8 @@
       "performancesByConductor": "conductor",
       "performancesByDirector": "director",
       "performancesByProducer": "producer",
-      "performancesByPerformancePlace": "performance venue"
+      "performancesByPerformancePlace": "performance venue",
+      "peopleByRole": "role"
     }
   },
   "lineChart": {
