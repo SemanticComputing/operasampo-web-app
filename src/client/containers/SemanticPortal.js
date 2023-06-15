@@ -400,6 +400,12 @@ const SemanticPortal = props => {
             {intl.getHTML('links')}
           </TextPage>
         </Route>
+        {/* create a route for licenses page */}
+        <Route path={`${rootUrlWithLang}/licenses`}>
+          <TextPage layoutConfig={layoutConfig}>
+            {intl.getHTML('licenses')}
+          </TextPage>
+        </Route>
       </>
     </Box>
   )
