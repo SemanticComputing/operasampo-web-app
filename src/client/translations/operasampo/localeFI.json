@@ -105,7 +105,8 @@
       "performancesByDirector": "ohjaaja",
       "performancesByProducer": "tuotanto",
       "performancesByPerformancePlace": "esityspaikka",
-      "peopleByRole": "rooli"
+      "peopleByRole": "rooli",
+      "peopleByRelatedComposition": "liittyen sävellykseen"
     }
   },
   "lineChart": {

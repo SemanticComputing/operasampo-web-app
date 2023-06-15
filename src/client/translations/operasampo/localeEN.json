@@ -105,7 +105,8 @@
       "performancesByDirector": "director",
       "performancesByProducer": "producer",
       "performancesByPerformancePlace": "performance venue",
-      "peopleByRole": "role"
+      "peopleByRole": "role",
+      "peopleByRelatedComposition": "related composition"
     }
   },
   "lineChart": {

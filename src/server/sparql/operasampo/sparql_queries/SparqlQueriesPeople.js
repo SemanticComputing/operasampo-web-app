@@ -192,3 +192,27 @@ export const peopleByRoleQuery = `
   GROUP BY ?category ?prefLabel
   ORDER BY DESC(?instanceCount)
 `
+
+export const peopleByRelatedCompositionQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?person) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?person a scop:Person ;
+              (((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist ?category .
+      ?category skos:prefLabel ?prefLabel .
+      FILTER(LANG(?prefLabel) = 'fi')
+    }
+    UNION
+    {
+      ?person a scop:Person .
+      FILTER NOT EXISTS {
+        ?person (((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist [] .
+      }
+      BIND("Tuntematon" as ?category)
+      BIND("Tuntematon" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`

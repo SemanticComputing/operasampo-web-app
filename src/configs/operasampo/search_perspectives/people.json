@@ -210,7 +210,24 @@
                     "sparqlQuery": "peopleByRoleQuery",
                     "filterTarget": "person",
                     "resultMapper": "mapPieChart",
-                    "sliceVisibilityThreshold": 0.01,
+                    "sliceVisibilityThreshold": 0.0001,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
+                "peopleByRelatedComposition": {
+                    "sparqlQuery": "peopleByRelatedCompositionQuery",
+                    "filterTarget": "person",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.005,
                     "dropdownForChartTypes": true,
                     "chartTypes": [
                         {
