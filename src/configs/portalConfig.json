@@ -63,7 +63,7 @@
             "showLanguageButton": true,
             "showSearchField": false,
             "feedbackLink": "https://link.webropolsurveys.com/S/5444B4424BE7638E",
-            "externalInstructions": false,
+            "externalInstructions": true,
             "externalAboutPage": false,
             "reducedHeight": 48,
             "defaultHeight": 64,

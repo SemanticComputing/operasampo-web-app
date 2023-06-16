@@ -31,7 +31,8 @@
     },
     "searchBarPlaceHolder": "Hae kaikesta sisällöstä",
     "searchBarPlaceHolderShort": "Hae",
-    "instructions": "ohjeet"
+    "instructions": "ohjeet",
+    "instructionsUrl": "https://seco.cs.aalto.fi/projects/oopperasampo/oopperasammon-ohje.pdf"
   },
   "facetBar": {
     "results": "Tulokset",
