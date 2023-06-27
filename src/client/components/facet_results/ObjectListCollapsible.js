@@ -14,7 +14,7 @@ const styles = () => ({
   resultTableList: props => ({
     maxHeight: props.tableData && props.tableData.paginatedResultsRowContentMaxHeight
       ? props.tableData.paginatedResultsRowContentMaxHeight
-      : 200,
+      : 400,
     overflow: 'auto'
   }),
   valueList: props => ({
