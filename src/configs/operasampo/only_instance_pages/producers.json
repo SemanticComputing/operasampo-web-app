@@ -2,7 +2,7 @@
     "id": "producers",
     "endpoint": {
         "url": "https://ldf.fi/operasampo/sparql",
-        "useAuth": true,
+        "useAuth": false,
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
     "sparqlQueriesFile": "SparqlQueriesProducers.js",
