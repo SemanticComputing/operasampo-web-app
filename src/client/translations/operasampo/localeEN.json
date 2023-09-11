@@ -230,12 +230,8 @@
           "description": "Time of composition of the composition"
         },
         "published": {
-          "label": "Time of publication?",
-          "description": "Time of publication of the composition"
-        },
-        "publishedDate": {
-          "label": "Time of publication",
-          "description": "Time of publication of the composition"
+          "label": "Premier",
+          "description": "Premier of the composition"
         },
         "opus": {
           "label": "Opus",

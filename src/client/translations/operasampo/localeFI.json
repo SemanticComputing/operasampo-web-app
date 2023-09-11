@@ -227,12 +227,8 @@
           "description": "Sävellyksen sävellysajankohta"
         },
         "published": {
-          "label": "Julkaisuajankohta?",
-          "description": "Sävellyksen Julkaisuajankohta"
-        },
-        "publishedDate": {
-          "label": "Julkaisuajankohta",
-          "description": "Sävellyksen julkaisuajankohta"
+          "label": "Ensiesitys",
+          "description": "Sävellyksen ensiesitys"
         },
         "opus": {
           "label": "Opus",

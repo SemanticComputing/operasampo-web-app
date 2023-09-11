@@ -275,15 +275,6 @@
             "minWidth": 200
         },
         {
-            "id": "publishedDate",
-            "valueType": "string",
-            "makeLink": false,
-            "externalLink": false,
-            "sortValues": false,
-            "numberedList": false,
-            "minWidth": 150
-        },
-        {
             "id": "opus",
             "valueType": "string",
             "makeLink": false,
