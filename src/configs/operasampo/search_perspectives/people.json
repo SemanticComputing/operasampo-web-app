@@ -292,6 +292,26 @@
             "minWidth": 100
         },
         {
+            "id": "composedWork",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 200,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "libretto",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 200,
+            "expandedOnInstancePage": true
+        },
+        {
             "id": "roleCharacter",
             "valueType": "object",
             "makeLink": true,

@@ -407,6 +407,14 @@
           "label": "Additional information",
           "description": "Additional information on the person"
         },
+        "composedWork": {
+          "label": "Compositions",
+          "description": "Compositions composed by the person"
+        },
+        "libretto": {
+          "label": "Libretti",
+          "description": "Libretti written by the person"
+        },
         "roleCharacter": {
           "label": "Role character",
           "description": "Role characters performed by this person"

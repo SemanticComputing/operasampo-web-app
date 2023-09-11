@@ -59,6 +59,20 @@ export const personProperties = `
     }
     UNION
     {
+      ?id ^scop:composedBy ?composedWork__id .
+      ?composedWork__id skos:prefLabel ?composedWork__prefLabel .
+      FILTER(LANG(?composedWork__prefLabel) = 'fi')
+      BIND(CONCAT("/compositions/page/", REPLACE(STR(?composedWork__id), "^.*\\\\/(.+)", "$1")) AS ?composedWork__dataProviderUrl)
+    }
+    UNION
+    {
+      ?id ^scop:libretist ?libretto__id .
+      ?libretto__id skos:prefLabel ?libretto__prefLabel .
+      FILTER(LANG(?libretto__prefLabel) = 'fi')
+      BIND(CONCAT("/compositions/page/", REPLACE(STR(?libretto__id), "^.*\\\\/(.+)", "$1")) AS ?libretto__dataProviderUrl)
+    }
+    UNION
+    {
       ?id ^scop:actor ?pr .
       ?pr a scop:PerformanceRole ;
                       scop:compositionRole ?roleCharacter__id .

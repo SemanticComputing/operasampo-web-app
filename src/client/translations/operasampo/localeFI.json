@@ -404,6 +404,14 @@
           "label": "Lisätietoja",
           "description": "Henkilön lisätietoja"
         },
+        "composedWork": {
+          "label": "Sävellykset",
+          "description": "Henkilön säveltämät sävellykset"
+        },
+        "libretto": {
+          "label": "Libretot",
+          "description": "Henkilön kirjoittamat libretot"
+        },
         "roleCharacter": {
           "label": "Roolihahmo",
           "description": "Henkilön esittämät roolihahmot"
