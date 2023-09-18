@@ -69,7 +69,7 @@ export const performancesPerformedQuery = `
     ?performance a scop:Performance ;
                 scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
-    BIND(YEAR(?_date) AS ?year)
+    BIND(YEAR(xsd:date(?_date)) AS ?year)
   }
   GROUP BY ?year ORDER BY ?year
 `

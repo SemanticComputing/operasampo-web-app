@@ -69,7 +69,7 @@ export const compositionProperties = `
       }
       OPTIONAL {
         ?performance__id scop:performanceDateStart ?pd .
-        BIND(STR(?pd) as ?pd_label)
+        BIND(STR(xsd:date(?pd)) as ?pd_label)
       }
       BIND(CONCAT(?label, " (", COALESCE(?pd_label, "esitysajankohta ei tiedossa"), ")") as ?backup_label)
       BIND(COALESCE(?p_name, ?backup_label) as ?performance__prefLabel)
@@ -161,7 +161,7 @@ export const performancesPerformedInstancePageQuery = `
                 scop:composition ?id .
     ?performance scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
-    BIND(YEAR(?_date) AS ?year)
+    BIND(YEAR(xsd:date(?_date)) AS ?year)
   }
   GROUP BY ?year ORDER BY ?year
 `

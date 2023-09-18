@@ -252,7 +252,7 @@ const generateDirectTimespanFilter = ({
     # Determine whether two date ranges overlap: https://stackoverflow.com/a/325964/6028835
     # Also make sure that starts and ends are in right order in the RDF data.
     FILTER(
-      (?startA <= ?endB) && (?endA >= ?startB) && (?startA <= ?endA)
+      (xsd:date(?startA) <= ?endB) && (xsd:date(?endA) >= ?startB) && (?startA <= ?endA)
     )
   `
   if (inverse) {

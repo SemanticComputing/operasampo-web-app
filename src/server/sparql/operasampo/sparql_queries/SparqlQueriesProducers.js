@@ -32,7 +32,7 @@ export const producerProperties = `
       }
       OPTIONAL {
         ?producedPerformances__id scop:performanceDateStart ?pd .
-        BIND(STR(?pd) as ?pd_label)
+        BIND(STR(xsd:date(?pd)) as ?pd_label)
       }
       BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd_label, "esitysajankohta ei tiedossa"), ")") as ?backup_label)
       BIND(COALESCE(?p_name, ?backup_label) as ?producedPerformances__prefLabel)

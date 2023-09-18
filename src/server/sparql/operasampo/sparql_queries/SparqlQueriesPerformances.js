@@ -19,7 +19,7 @@ export const performanceProperties = `
       }
       OPTIONAL {
         ?id scop:performanceDateStart ?pd .
-        BIND(STR(?pd) as ?pd_label)
+        BIND(STR(xsd:date(?pd)) as ?pd_label)
       }
       BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd_label, "esitysajankohta ei tiedossa"), ")") as ?backup_label)
       BIND(COALESCE(?p_name, ?backup_label) as ?prefLabel__prefLabel)
@@ -73,8 +73,10 @@ export const performanceProperties = `
     }
     UNION
     {
-      ?id scop:performanceDateStart ?performanceDate__start ;
-          scop:performanceDateEnd ?performanceDate__end .
+      ?id scop:performanceDateStart ?performanceDate_s ;
+          scop:performanceDateEnd ?performanceDate_e .
+      BIND(xsd:date(?performanceDate_s) as ?performanceDate__start)
+      BIND(xsd:date(?performanceDate_e) as ?performanceDate__end)
       BIND(IF(?performanceDate__start = ?performanceDate__end, STR(?performanceDate__start), CONCAT(STR(?performanceDate__start), '–', STR(?performanceDate__end))) as ?performanceDate__prefLabel)
     }
     UNION
@@ -255,7 +257,7 @@ export const performancesByYearQuery = `
     <FILTER>
     ?performance a scop:Performance ;
                 scop:performanceDateStart ?date .
-    BIND(YEAR(xsd:dateTime(?date)) as ?category)
+    BIND(YEAR(xsd:date(?date)) as ?category)
   }
   GROUP BY ?category
   ORDER BY ?category
@@ -280,7 +282,7 @@ export const performancesPerformedQuery = `
     ?performance a scop:Performance ;
                 scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
-    BIND(YEAR(?_date) AS ?year)
+    BIND(YEAR(xsd:date(?_date)) AS ?year)
   }
   GROUP BY ?year ORDER BY ?year
 `

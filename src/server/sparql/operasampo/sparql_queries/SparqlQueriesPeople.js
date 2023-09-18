@@ -99,7 +99,7 @@ export const personProperties = `
       }
       OPTIONAL {
         ?performanceRole__roleValues__id scop:performanceDateStart ?pd .
-        BIND(STR(?pd) as ?pdLabel)
+        BIND(STR(xsd:date(?pd)) as ?pdLabel)
       }
       BIND(CONCAT(?compLabel, " (", COALESCE(?pdLabel, "esitysajankohta ei tiedossa"), ")") as ?backupLabel)
       BIND(COALESCE(?performanceLabel, ?backupLabel) as ?performanceRole__roleValues__prefLabel)
@@ -178,7 +178,7 @@ export const performancesPerformedQuery = `
     ?performance a scop:Performance ;
                 scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
-    BIND(YEAR(?_date) AS ?year)
+    BIND(YEAR(xsd:date(?_date)) AS ?year)
   }
   GROUP BY ?year ORDER BY ?year
 `
