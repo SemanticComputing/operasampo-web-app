@@ -108,6 +108,14 @@ export const personProperties = `
       FILTER(LANG(?performanceRole__prefLabel) = 'fi')
       BIND(CONCAT("/roles/page/", REPLACE(STR(?performanceRole__id), "^.*\\\\/(.+)", "$1")) AS ?performanceRole__dataProviderUrl)
     }
+    UNION
+    {
+      ?id scop:biographySampo ?biographySampo__id, ?biographySampo__prefLabel, ?biographySampo__dataProviderUrl .
+    }
+    UNION
+    {
+      ?id scop:wikidata ?wikidata__id, ?wikidata__prefLabel, ?wikidata__dataProviderUrl .
+    }
 `
 
 export const personRolesQuery = `

@@ -260,7 +260,7 @@
             "externalLink": false,
             "sortValues": true,
             "numberedList": false,
-            "minWidth": 100
+            "minWidth": 150
         },
         {
             "id": "firstName",
@@ -339,6 +339,26 @@
             "makeLink": false,
             "externalLink": false,
             "sortValues": false,
+            "numberedList": false,
+            "minWidth": 250,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "biographySampo",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 250,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "wikidata",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
             "numberedList": false,
             "minWidth": 250,
             "onlyOnInstancePage": true

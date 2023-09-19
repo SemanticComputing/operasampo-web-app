@@ -419,6 +419,14 @@
         "composition": {
           "label": "Liittyen sävellykseen",
           "description": "Sävellykset, joihin henkilö liittyy jollain tavalla. Henkilön on voinut esiintyä kyseisen sävellyksen jossain esityksessä, osallistunut esitykseen muussa roolissa (esim. ohjaajana) tai osallistunut itse sävellyksen tekoon säveltäjänä tai libretistinä."
+        },
+        "biographySampo": {
+          "label": "Biografiasampo-resurssi",
+          "description": "Henkilön resurssi Biografiasammossa"
+        },
+        "wikidata": {
+          "label": "Wikidata-resurssi",
+          "description": "Henkilön resurssi Wikidatassa"
         }
       }
     },
