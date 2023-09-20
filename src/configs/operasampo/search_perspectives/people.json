@@ -341,7 +341,8 @@
             "sortValues": false,
             "numberedList": false,
             "minWidth": 250,
-            "onlyOnInstancePage": true
+            "onlyOnInstancePage": true,
+            "renderAsHTML": true
         },
         {
             "id": "biographySampo",

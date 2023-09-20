@@ -388,7 +388,8 @@
             "sortValues": true,
             "numberedList": false,
             "minWidth": 200,
-            "onlyOnInstancePage": true
+            "onlyOnInstancePage": true,
+            "renderAsHTML": true
         },
         {
             "id": "tickets",
@@ -398,7 +399,8 @@
             "sortValues": true,
             "numberedList": false,
             "minWidth": 200,
-            "onlyOnInstancePage": true
+            "onlyOnInstancePage": true,
+            "renderAsHTML": true
         },
         {
             "id": "additionalInfo",
@@ -408,7 +410,8 @@
             "sortValues": false,
             "numberedList": false,
             "minWidth": 250,
-            "onlyOnInstancePage": true
+            "onlyOnInstancePage": true,
+            "renderAsHTML": true
         }
     ],
     "facets": {

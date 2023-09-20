@@ -104,7 +104,8 @@
             "externalLink": false,
             "sortValues": false,
             "numberedList": false,
-            "minWidth": 250
+            "minWidth": 250,
+            "renderAsHTML": true
         }
     ],
     "facets": {
