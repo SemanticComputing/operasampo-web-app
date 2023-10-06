@@ -498,6 +498,10 @@
         "description": ""
       },
       "properties": {
+        "image": {
+          "label": "Kuva",
+          "description": "Kuva esityspaikasta"
+        },
         "uri": {
           "label": "URI",
           "description": "Esityspaikan URI"

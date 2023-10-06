@@ -501,6 +501,10 @@
         "description": ""
       },
       "properties": {
+        "image": {
+          "label": "Picture",
+          "description": "Picture of the perfomance venue"
+        },
         "uri": {
           "label": "URI",
           "description": "URI of the performance venue"
