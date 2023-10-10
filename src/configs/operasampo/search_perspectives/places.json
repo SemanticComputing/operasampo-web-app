@@ -105,7 +105,8 @@
             "sortValues": false,
             "numberedList": false,
             "minWidth": 250,
-            "renderAsHTML": true
+            "renderAsHTML": true,
+            "onlyOnInstancePage": true
         }
     ],
     "facets": {
