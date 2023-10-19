@@ -3,6 +3,7 @@ const perspectiveID = 'places'
 export const placeProperties = `
     {
       ?id skos:prefLabel ?prefLabel__id .
+      FILTER(LANG(?prefLabel__id) = 'fi')
       BIND(?prefLabel__id AS ?prefLabel__prefLabel)
       BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
       BIND(?id as ?uri__id)
