@@ -71,6 +71,16 @@
             "minWidth": 200
         },
         {
+            "id": "altLabel",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 150,
+            "expandedOnInstancePage": true
+        },
+        {
             "id": "address",
             "valueType": "string",
             "makeLink": false,

@@ -514,6 +514,11 @@
           "description": "Name of the performance venue",
           "textFacetInputPlaceholder": ""
         },
+        "altLabel": {
+          "label": "Other names",
+          "description": "Alternative (e.g., previous) names of the performance venue",
+          "textFacetInputPlaceholder": ""
+        },
         "address": {
           "label": "Address",
           "description": "Address of the performance venue"

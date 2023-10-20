@@ -511,6 +511,11 @@
           "description": "Esityspaikan nimi",
           "textFacetInputPlaceholder": ""
         },
+        "altLabel": {
+          "label": "Muut nimet",
+          "description": "Esityspaikan vaihtoehtoiset (esim. entiset) nimet",
+          "textFacetInputPlaceholder": ""
+        },
         "address": {
           "label": "Osoite",
           "description": "Esityspaikan osoite"

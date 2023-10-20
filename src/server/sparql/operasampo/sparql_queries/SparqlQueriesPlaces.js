@@ -12,6 +12,10 @@ export const placeProperties = `
     }
     UNION
     {
+      ?id skos:altLabel ?altLabel .
+    }
+    UNION
+    {
       ?id scop:address ?address .
       FILTER(LANG(?address) = 'fi')
     }
