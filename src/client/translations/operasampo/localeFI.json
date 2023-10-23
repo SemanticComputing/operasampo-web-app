@@ -22,9 +22,10 @@
     "feedback": "palaute",
     "info": {
       "info": "Info",
-      "blog": "Projektin blogi",
+      "blog": "Tutkimushankkeen kotisivu",
       "blogUrl": "https://seco.cs.aalto.fi/projects/oopperasampo/",
       "aboutThePortal": "Tietoa portaalista",
+      "aboutUrl": "https://seco.cs.aalto.fi/projects/oopperasampo/about.pdf",
       "portalSources": "Lähteet",
       "portalLinks": "Linkkejä",
       "imageLicenses": "Kuvien lisenssitiedot"

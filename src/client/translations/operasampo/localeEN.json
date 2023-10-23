@@ -22,9 +22,10 @@
     "feedback": "feedback",
     "info": {
       "info": "Info",
-      "blog": "Project blog",
+      "blog": "Research project homepage",
       "blogUrl": "https://seco.cs.aalto.fi/projects/oopperasampo/",
       "aboutThePortal": "About the Portal",
+      "aboutUrl": "https://seco.cs.aalto.fi/projects/oopperasampo/about.pdf",
       "portalSources": "Sources",
       "portalLinks": "Links",
       "imageLicenses": "Image license information"
