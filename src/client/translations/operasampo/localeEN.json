@@ -364,6 +364,10 @@
           "description": "Name of the person",
           "textFacetInputPlaceholder": ""
         },
+        "altLabel": {
+          "label": "Also known as",
+          "description": "Other names or spellings used by the person"
+        },
         "firstName": {
           "label": "First name",
           "description": "First name of the person"

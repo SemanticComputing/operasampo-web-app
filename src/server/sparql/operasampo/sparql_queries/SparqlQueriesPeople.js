@@ -12,6 +12,10 @@ export const personProperties = `
     }
     UNION
     {
+      ?id skos:altLabel ?altLabel .
+    }
+    UNION
+    {
       ?id foaf:firstName ?firstName .
     }
     UNION

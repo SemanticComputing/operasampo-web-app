@@ -361,6 +361,10 @@
           "description": "Henkilön nimi",
           "textFacetInputPlaceholder": ""
         },
+        "altLabel": {
+          "label": "Tunnettu nimillä",
+          "description": "Muut henkilön käyttämät nimet tai kirjoitusasut nimille"
+        },
         "firstName": {
           "label": "Etunimi",
           "description": "Henkilön etunimi"

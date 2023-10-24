@@ -263,6 +263,17 @@
             "minWidth": 150
         },
         {
+            "id": "altLabel",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100,
+            "onlyOnInstancePage": true,
+            "expandedOnInstancePage": true
+        },
+        {
             "id": "firstName",
             "valueType": "string",
             "makeLink": false,
@@ -289,7 +300,8 @@
             "externalLink": false,
             "sortValues": false,
             "numberedList": false,
-            "minWidth": 100
+            "minWidth": 100,
+            "expandedOnInstancePage": true
         },
         {
             "id": "composedWork",
