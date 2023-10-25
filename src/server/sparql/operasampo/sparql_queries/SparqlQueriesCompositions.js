@@ -149,6 +149,7 @@ export const performancePlacesInstancePageQuery = `
     ?performance scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
     ?place skos:prefLabel ?esityspaikka__label .
+    FILTER(LANG(?esityspaikka__label) = 'fi')
     BIND("esityspaikka" AS ?type)
   }
 `
