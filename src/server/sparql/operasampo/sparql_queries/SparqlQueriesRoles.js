@@ -14,6 +14,7 @@ export const roleProperties = `
       ?id scop:composition ?composition__id .
       ?composition__id a scop:Composition ;
                       skos:prefLabel ?composition__prefLabel .
+      FILTER(LANG(?composition__prefLabel) = 'fi')
       BIND(CONCAT("/compositions/page/", REPLACE(STR(?composition__id), "^.*\\\\/(.+)", "$1")) AS ?composition__dataProviderUrl)
     }
     UNION
