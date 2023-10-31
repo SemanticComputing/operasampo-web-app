@@ -64,15 +64,7 @@ export const compositionProperties = `
           skos:prefLabel ?label .
       FILTER(LANG(?label) = 'fi')
       ?performance__id a scop:Performance .
-      OPTIONAL {
-        ?performance__id skos:prefLabel ?p_name .
-      }
-      OPTIONAL {
-        ?performance__id scop:performanceDateStart ?pd .
-        BIND(STR(xsd:date(?pd)) as ?pd_label)
-      }
-      BIND(CONCAT(?label, " (", COALESCE(?pd_label, "esitysajankohta ei tiedossa"), ")") as ?backup_label)
-      BIND(COALESCE(?p_name, ?backup_label) as ?performance__prefLabel)
+      ?performance__id skos:prefLabel ?performance__prefLabel .
       BIND(CONCAT("/performances/page/", REPLACE(STR(?performance__id), "^.*\\\\/(.+)", "$1")) AS ?performance__dataProviderUrl)
     }
     UNION

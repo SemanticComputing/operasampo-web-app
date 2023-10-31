@@ -98,15 +98,7 @@ export const personProperties = `
       ?performanceRole__id scop:composition ?comp .
       ?comp skos:prefLabel ?compLabel .
       FILTER(LANG(?compLabel) = 'fi')
-      OPTIONAL {
-        ?performanceRole__roleValues__id skos:prefLabel ?performanceLabel .
-      }
-      OPTIONAL {
-        ?performanceRole__roleValues__id scop:performanceDateStart ?pd .
-        BIND(STR(xsd:date(?pd)) as ?pdLabel)
-      }
-      BIND(CONCAT(?compLabel, " (", COALESCE(?pdLabel, "esitysajankohta ei tiedossa"), ")") as ?backupLabel)
-      BIND(COALESCE(?performanceLabel, ?backupLabel) as ?performanceRole__roleValues__prefLabel)
+      ?performanceRole__roleValues__id skos:prefLabel ?performanceRole__roleValues__prefLabel .
       BIND(CONCAT("/performances/page/", REPLACE(STR(?performanceRole__roleValues__id), "^.*\\\\/(.+)", "$1")) AS ?performanceRole__roleValues__dataProviderUrl)
       ?performanceRole__id skos:prefLabel ?performanceRole__prefLabel .
       FILTER(LANG(?performanceRole__prefLabel) = 'fi')

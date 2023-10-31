@@ -2,8 +2,9 @@ const perspectiveID = 'performances'
 
 export const performanceProperties = `
     {
-      ?id a scop:Performance .
-
+      ?id skos:prefLabel ?prefLabel__id .
+      BIND(?prefLabel__id AS ?prefLabel__prefLabel)
+      BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
       BIND(?id as ?uri__id)
       BIND(?id as ?uri__dataProviderUrl)
       BIND(?id as ?uri__prefLabel)
@@ -14,16 +15,6 @@ export const performanceProperties = `
       ?composition__id skos:prefLabel ?composition__prefLabel .
       FILTER(LANG(?composition__prefLabel) = 'fi')
       BIND(CONCAT("/compositions/page/", REPLACE(STR(?composition__id), "^.*\\\\/(.+)", "$1")) AS ?composition__dataProviderUrl)
-      OPTIONAL {
-        ?id skos:prefLabel ?p_name .
-      }
-      OPTIONAL {
-        ?id scop:performanceDateStart ?pd .
-        BIND(STR(xsd:date(?pd)) as ?pd_label)
-      }
-      BIND(CONCAT(?composition__prefLabel, " (", COALESCE(?pd_label, "esitysajankohta ei tiedossa"), ")") as ?backup_label)
-      BIND(COALESCE(?p_name, ?backup_label) as ?prefLabel__prefLabel)
-      BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?prefLabel__dataProviderUrl)
     }
     UNION
     {
