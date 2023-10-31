@@ -12,7 +12,7 @@
     "frontPageImage": "main_page/performances-card.jpg",
     "searchMode": "faceted-search",
     "defaultActiveFacets": [
-        "composition"
+        "prefLabel"
     ],
     "defaultTab": "table",
     "defaultInstancePageTab": "table",
@@ -416,7 +416,11 @@
     ],
     "facets": {
         "prefLabel": {
-            "sortByPredicate": "skos:prefLabel"
+            "containerClass": "one",
+            "facetType": "text",
+            "filterType": "textFilter",
+            "sortByPredicate": "skos:prefLabel",
+            "textQueryProperty": "skos:prefLabel"
         },
         "composition": {
             "containerClass": "ten",
