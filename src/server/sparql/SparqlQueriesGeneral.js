@@ -102,6 +102,28 @@ export const facetValuesQueryTimespan = `
   }
 `
 
+export const facetValuesQueryDirectTimespan = `
+  # ignore selections from other facets
+  SELECT ?min ?max {
+    {
+      SELECT (MIN(?start) AS ?min) {
+        VALUES ?facetClass { <FACET_CLASS> }
+        ?instance <FACET_CLASS_PREDICATE> ?facetClass .
+        ?instance <START_PROPERTY> ?start .
+        <FACET_VALUE_FILTER>
+      }
+    }
+    {
+      SELECT (MAX(?end) AS ?max) {
+        VALUES ?facetClass { <FACET_CLASS> }
+        ?instance <FACET_CLASS_PREDICATE> ?facetClass .
+        ?instance <END_PROPERTY> ?end .
+        <FACET_VALUE_FILTER>
+      }
+    }
+  }
+`
+
 export const facetValuesRange = `
   # ignore selections from other facets
   SELECT (MIN(?value) AS ?min) (MAX(?value) AS ?max) {

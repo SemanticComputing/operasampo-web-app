@@ -469,7 +469,7 @@
         },
         "performanceDate": {
             "containerClass": "six",
-            "facetType": "timespan",
+            "facetType": "directTimespan",
             "filterType": "directTimespanFilter",
             "predicate": "scop:performanceDateStart",
             "startProperty": "scop:performanceDateStart",

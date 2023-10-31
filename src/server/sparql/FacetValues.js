@@ -3,6 +3,7 @@ import { has } from 'lodash'
 import {
   facetValuesQuery,
   facetValuesQueryTimespan,
+  facetValuesQueryDirectTimespan,
   facetValuesRange,
   hierarchicalFacetValuesQuery
 } from './SparqlQueriesGeneral'
@@ -46,6 +47,10 @@ export const getFacet = async ({
       break
     case 'timespan':
       q = facetValuesQueryTimespan
+      mapper = mapTimespanFacet
+      break
+    case 'directTimespan':
+      q = facetValuesQueryDirectTimespan
       mapper = mapTimespanFacet
       break
     case 'integer':
@@ -121,7 +126,7 @@ export const getFacet = async ({
     q = q.replace('<ORDER_BY>', '# no need for ordering')
 
     if (facetConfig.maxHierarchyLevel) {
-      q = q.replace(/<HIERARCHY>/g, generateHierarchyBlock({depth: facetConfig.maxHierarchyLevel}))
+      q = q.replace(/<HIERARCHY>/g, generateHierarchyBlock({ depth: facetConfig.maxHierarchyLevel }))
       q = q.replace(/<PREDICATE>/g, facetConfig.predicate)
       q = q.replace(/<PARENTPROPERTY>/g, facetConfig.parentProperty)
     } else {
@@ -166,7 +171,7 @@ export const getFacet = async ({
         : ''
     )
   }
-  if (facetConfig.facetType === 'timespan') {
+  if (facetConfig.facetType === 'timespan' || facetConfig.facetType === 'directTimespan') {
     q = q.replace('<START_PROPERTY>', facetConfig.startProperty)
     q = q.replace('<END_PROPERTY>', facetConfig.endProperty)
   }
@@ -334,7 +339,7 @@ export const generateHierarchyBlock = ({
             ?instance <PREDICATE>${parentPath} ?id .
           }
       `
-      if ( i < (depth - 1) ) {
+      if (i < (depth - 1)) {
         block = block + `
           UNION
         `
@@ -342,5 +347,4 @@ export const generateHierarchyBlock = ({
     }
     return (block)
   }
-
 }
