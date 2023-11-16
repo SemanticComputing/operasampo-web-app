@@ -328,7 +328,7 @@
             "valueType": "object",
             "makeLink": true,
             "externalLink": false,
-            "sortValues": false,
+            "sortValues": true,
             "numberedList": false,
             "minWidth": 250,
             "expandedOnInstancePage": true
