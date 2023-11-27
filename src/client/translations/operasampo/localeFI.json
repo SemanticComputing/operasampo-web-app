@@ -57,7 +57,7 @@
     "min": "Min",
     "max": "Max",
     "facetSearchFieldPlaceholder": "Hae...",
-    "applyFacetSelection": "apply",
+    "applyFacetSelection": "käytä",
     "pieChart": {
       "tooltip": "Ympyrädiagrammi"
     },
