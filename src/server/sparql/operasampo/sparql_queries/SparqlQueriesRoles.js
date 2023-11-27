@@ -45,7 +45,7 @@ export const rolePerformersQuery = `
 `
 
 export const performersTimelineQuery = `
-  SELECT DISTINCT ?id ?actor__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type 
+  SELECT DISTINCT ?id ?actor__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type ?performance_label ?performance_url
   WHERE {
     BIND(<ID> as ?id)
     ?id a scop:Role .
@@ -53,6 +53,8 @@ export const performersTimelineQuery = `
                     scop:compositionRole ?id ;
                     scop:performance ?performance ;
                     scop:actor ?actor .
+    ?performance skos:prefLabel ?performance_label .
+    BIND(CONCAT("/performances/page/", REPLACE(STR(?performance), "^.*\\\\/(.+)", "$1")) AS ?performance_url)
     ?performance scop:performanceDateStart ?_date .
     ?actor skos:prefLabel ?actor__label .
     BIND("actor" AS ?type)

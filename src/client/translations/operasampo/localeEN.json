@@ -113,6 +113,20 @@
   },
   "lineChart": {
   },
+  "timeseries": {
+    "venue": "venue: ",
+    "actor": "actor: ",
+    "role": "role: ",
+    "performance": "performance: ",
+    "performanceCount": "performance count: ",
+    "titles": {
+      "performancesOnATimeline": "Performances on a timeline",
+      "rolesOnATimeline": "Roles on a timeline",
+      "performersOnATimeline": "Performers on a timeline",
+      "annualPerformances": "Annual performances",
+      "annualAppearances": "Annual appearances"
+    }
+  },
   "exportToYasgui": "open the result table query in yasgui sparql editor",
   "openInLinkedDataBrowser": "open in linked data browser",
   "resultsAsCSV": "download the search results as a CSV table",

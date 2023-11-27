@@ -194,6 +194,81 @@ export const createTopTimelineChartData = ({
   return apexChartOptionsWithData
 }
 
+export const createClickableMarkersTopTimelineChartData = ({
+  resultClass,
+  facetClass,
+  perspectiveState,
+  results,
+  resultClassConfig,
+  screenSize,
+  rootUrl
+}) => {
+  // console.log('topN', results.topN)
+  const {
+    title,
+    fill,
+    tooltip,
+    legend,
+    grid,
+    zType,
+    intlTitle
+  } = resultClassConfig
+  results.series.forEach(x => { x.name = intl.get(`lineChart.${x.name}`) || x.name })
+  const localizedTitle = intlTitle ? intl.get(`timeseries.titles.${intlTitle}`) : title
+  const apexChartOptionsWithData = {
+    chart: {
+      id: 'topN',
+      type: 'scatter',
+      width: '100%',
+      height: '100%',
+      fontFamily: 'Roboto',
+      toolbar: {
+        autoSelected: 'pan',
+        show: true
+      },
+      events: {
+        markerClick: function (event, chartContext, { seriesIndex, dataPointIndex, config }) {
+          const markerUrl = results.series[seriesIndex].data[dataPointIndex][2][1]
+          const localizedUrl = rootUrl ? (rootUrl + markerUrl) : markerUrl
+          window.open(localizedUrl)
+        }
+      }
+    },
+    series: results.series,
+    title: {
+      text: localizedTitle.replace(/{}/g, results.topN.toString()),
+      align: 'left'
+    },
+    xaxis: {
+      type: 'datetime',
+      min: results.minUTC,
+      max: results.maxUTC,
+      lines: {
+        show: true
+      }
+    },
+    yaxis: {
+      min: -1,
+      max: results.topTies.length,
+      tickAmount: results.topTies.length + 1,
+      reversed: true,
+      labels: {
+        formatter: function (value) {
+          return (value >= 0) ? results.topTies[value] || '' : ''
+        },
+        minWidth: 150,
+        maxWidth: 300,
+        align: 'right'
+      }
+    },
+    ...(grid) && { grid },
+    ...(tooltip) && { tooltip: { ...tooltip, y: { title: { formatter: (seriesName) => intl.get(`timeseries.${seriesName}`) } }, z: { title: intl.get(`timeseries.${zType}`), formatter: function (value, { series, seriesIndex, dataPointIndex, w }) { return value[0] } } } },
+    ...(legend) && { legend },
+    ...(fill) && { fill }
+  }
+  return apexChartOptionsWithData
+}
+
 export const createTopTimelineChartData2 = ({
   resultClass,
   facetClass,
@@ -209,9 +284,11 @@ export const createTopTimelineChartData2 = ({
     tooltip,
     xaxis,
     yaxis,
-    grid
+    grid,
+    intlTitle
   } = resultClassConfig
   results.forEach(x => { x.name = intl.get(`lineChart.${x.name}`) || x.name })
+  const localizedTitle = intlTitle ? { ...title, text: intl.get(`timeseries.titles.${intlTitle}`) } : title
   const apexChartOptionsWithData = {
     series: results,
     chart: {
@@ -230,11 +307,11 @@ export const createTopTimelineChartData2 = ({
         */
     },
     dataLabels: { enabled: false },
-    ...(title) && { title },
+    ...(title) && { title: localizedTitle },
     ...(xaxis) && { xaxis },
     ...(yaxis) && { yaxis },
     ...(grid) && { grid },
-    ...(tooltip) && { tooltip },
+    ...(tooltip) && { tooltip: { ...tooltip, y: { title: { formatter: (seriesName) => intl.get(`timeseries.${seriesName}`) } } } },
     ...(stroke) && { stroke },
     ...(fill) && { fill }
   }

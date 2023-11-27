@@ -265,7 +265,8 @@ const ResultClassRoute = props => {
         instanceAnalysisDataUpdateID: perspectiveState.instanceAnalysisDataUpdateID,
         instanceAnalysisData: perspectiveState.instanceAnalysisData,
         facetUpdateID: facetState ? facetState.facetUpdateID : null,
-        fetchData: props.fetchResults
+        fetchData: props.fetchResults,
+        rootUrl: rootUrl
       }
       const upperApexProps = {
         ...commonApexProps,

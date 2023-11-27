@@ -156,7 +156,7 @@ export const personNetworkNodesQuery = `
 `
 
 export const rolesTimelineQuery = `
-  SELECT DISTINCT ?id ?rooli__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type 
+  SELECT DISTINCT ?id ?role__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type ?performance_label ?performance_url
   WHERE {
     BIND(<ID> as ?id)
     ?id a scop:Person .
@@ -164,10 +164,12 @@ export const rolesTimelineQuery = `
                     scop:actor ?id ;
                     scop:compositionRole ?role ;
                     scop:performance ?performance .
+    ?performance skos:prefLabel ?performance_label .
+    BIND(CONCAT("/performances/page/", REPLACE(STR(?performance), "^.*\\\\/(.+)", "$1")) AS ?performance_url)
     ?performance scop:performanceDateStart ?_date .
-    ?role skos:prefLabel ?rooli__label .
-    FILTER(LANG(?rooli__label) = 'fi')
-    BIND("rooli" AS ?type)
+    ?role skos:prefLabel ?role__label .
+    FILTER(LANG(?role__label) = 'fi')
+    BIND("role" AS ?type)
   }
 `
 

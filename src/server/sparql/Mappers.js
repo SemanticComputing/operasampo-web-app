@@ -565,6 +565,9 @@ export const createCorrespondenceChartData = ({ sparqlBindings, config }) => {
   //  Dates '1663-10-26' to UTC -9662204389000
   sparqlBindings.forEach(b => { b.date = Date.parse(b.date) })
 
+  sparqlBindings.forEach(b => { b.performance_label = b.performance_label ? b.performance_label : '' })
+  sparqlBindings.forEach(b => { b.performance_url = b.performance_url ? b.performance_url : '' })
+
   //  find the N most common values in the data
   const cnAll = new Counter(sparqlBindings.map(ob => ob[ob.type + '__label']))
   const topTies = cnAll.mostCommonLabels(topN)
@@ -575,9 +578,9 @@ export const createCorrespondenceChartData = ({ sparqlBindings, config }) => {
     const v = topTies.indexOf(ob[ob.type + '__label'])
     //  one of the top correspondences (v > -1) or in other (topTies.length)
     if (v > -1) {
-      datas[ob.type].push([ob.date, v])
+      datas[ob.type].push([ob.date, v, [ob.performance_label, ob.performance_url]])
     } else if (lastLabel) {
-      datas[ob.type].push([ob.date, topTies.length])
+      datas[ob.type].push([ob.date, topTies.length, [ob.performance_label, ob.performance_url]])
     }
   })
 

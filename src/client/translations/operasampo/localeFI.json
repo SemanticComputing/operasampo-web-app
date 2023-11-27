@@ -113,6 +113,20 @@
   },
   "lineChart": {
   },
+  "timeseries": {
+    "venue": "esityspaikka: ",
+    "actor": "esiintyjä: ",
+    "role": "rooli: ",
+    "performance": "esitys: ",
+    "performanceCount": "esitysten lukumäärä: ",
+    "titles": {
+      "performancesOnATimeline": "Esitykset aikajanalla",
+      "rolesOnATimeline": "Roolit aikajanalla",
+      "performersOnATimeline": "Esiintyjät aikajanalla",
+      "annualPerformances": "Esitykset vuosittain",
+      "annualAppearances": "Esiintymiset vuosittain"
+    }
+  },
   "exportToYasgui": "",
   "openInLinkedDataBrowser": "",
   "resultsAsCSV": "",

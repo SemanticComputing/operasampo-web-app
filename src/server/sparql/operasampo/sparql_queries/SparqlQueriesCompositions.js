@@ -133,16 +133,18 @@ export const compositionsByLibretistQuery = `
 `
 
 export const performancePlacesInstancePageQuery = `
-  SELECT DISTINCT ?id ?esityspaikka__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type 
+  SELECT DISTINCT ?id ?venue__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type ?performance_label ?performance_url
   WHERE {
     VALUES ?id { <ID> }
     ?performance a scop:Performance ;
+                skos:prefLabel ?performance_label ;
                 scop:composition ?id .
+    BIND(CONCAT("/performances/page/", REPLACE(STR(?performance), "^.*\\\\/(.+)", "$1")) AS ?performance_url)
     ?performance scop:performanceDateStart ?_date ;
                 scop:performedIn ?place .
-    ?place skos:prefLabel ?esityspaikka__label .
-    FILTER(LANG(?esityspaikka__label) = 'fi')
-    BIND("esityspaikka" AS ?type)
+    ?place skos:prefLabel ?venue__label .
+    FILTER(LANG(?venue__label) = 'fi')
+    BIND("venue" AS ?type)
   }
 `
 

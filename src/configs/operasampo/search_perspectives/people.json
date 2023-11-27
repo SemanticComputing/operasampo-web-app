@@ -138,14 +138,16 @@
                         "resultClasses": {
                             "rolesDoubleUpper": {
                                 "title": "Roolit aikajanalla",
+                                "intlTitle": "rolesOnATimeline",
                                 "height": "70%",
                                 "sparqlQuery": "rolesTimelineQuery",
                                 "resultMapper": "createCorrespondenceChartData",
                                 "resultMapperConfig": {
-                                    "types": ["rooli"],
+                                    "types": ["role"],
                                     "numberTopResults": 20
                                 },
-                                "createChartData": "createTopTimelineChartData",
+                                "zType": "performance",
+                                "createChartData": "createClickableMarkersTopTimelineChartData",
                                 "tooltip": { "x": { "format": "d MMM yyyy" } },
                                 "fill": { "opacity": [0.7, 0.5] },
                                 "legend": { "position": "bottom" },
@@ -168,6 +170,7 @@
                                 },
                                 "createChartData": "createTopTimelineChartData2",
                                 "title": { "text": "Esiintymiset vuosittain", "align": "left" },
+                                "intlTitle": "annualAppearances",
                                 "xaxis": {
                                     "type": "datetime",
                                     "tooltip": { "enabled": true }

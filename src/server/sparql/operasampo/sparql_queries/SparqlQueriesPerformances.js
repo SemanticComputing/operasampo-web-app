@@ -255,15 +255,17 @@ export const performancesByYearQuery = `
 `
 
 export const performancePlacesQuery = `
-  SELECT DISTINCT ?id ?esityspaikka__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type 
+  SELECT DISTINCT ?id ?venue__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type ?performance_label ?performance_url
   WHERE {
     <FILTER>
     ?id a scop:Performance ;
+          skos:prefLabel ?performance_label ;
           scop:performanceDateStart ?_date ;
           scop:performedIn ?place .
-    ?place skos:prefLabel ?esityspaikka__label .
-    FILTER(LANG(?esityspaikka__label) = 'fi')
-    BIND("esityspaikka" AS ?type)
+    BIND(CONCAT("/${perspectiveID}/page/", REPLACE(STR(?id), "^.*\\\\/(.+)", "$1")) AS ?performance_url)
+    ?place skos:prefLabel ?venue__label .
+    FILTER(LANG(?venue__label) = 'fi')
+    BIND("venue" AS ?type)
   }
 `
 
