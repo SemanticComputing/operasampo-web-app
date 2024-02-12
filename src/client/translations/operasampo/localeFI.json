@@ -432,7 +432,7 @@
           "description": "Henkilön esittämät roolihahmot"
         },
         "performanceRole": {
-          "label": "Esitykset roolihahmottain",
+          "label": "Esitykset roolihahmoittain",
           "description": "Esitykset, joissa henkilö on esiintynyt ryhmiteltynä roolihahmon mukaan"
         },
         "composition": {
