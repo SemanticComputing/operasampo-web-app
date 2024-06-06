@@ -13,6 +13,7 @@
   "appDescription1": "OopperaSampo is a web service for searching and studying operas. The search results can be viewed as a table, on maps, and as statistical distributions.",
   "appDescription2": "Start by choosing source dataset(s) and input a place name on the search field. Alternatively you can search by area.",
   "selectPerspective": "Valitse näkymä etsiäksesi ja selataksesi aineistoja:",
+  "selectPerspectiveExternal": "Lisäaineistoja:",
   "mainPageImageLicence": "Portaalin kuvien <a href=\"/fi/licenses\">lisenssitiedot</a>",
   "backendErrorText": "One of the backend services is not available at the moment. Please try again later.",
   "infoHeader": {

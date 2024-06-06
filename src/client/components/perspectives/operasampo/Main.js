@@ -14,6 +14,15 @@ import { getSpacing } from '../../../helpers/helpers'
 const Main = props => {
   const { perspectives, screenSize, layoutConfig } = props
   const { mainPage } = layoutConfig
+  const internalPerspectives = []
+  const externalPerspectives = []
+  perspectives.forEach(perspective => {
+    if (perspective.externalUrl || perspective.searchMode === 'dummy-internal') {
+      externalPerspectives.push(perspective)
+    } else {
+      internalPerspectives.push(perspective)
+    }
+  })
   let headingVariant = 'h5'
   let subheadingVariant = 'body1'
   let descriptionVariant = 'body1'
@@ -145,9 +154,39 @@ const Main = props => {
         </Box>
         <Grid
           container spacing={screenSize === 'sm' ? 2 : 1}
-          justifyContent={screenSize === 'xs' || screenSize === 'sm' ? 'center' : 'flex-start'}
+          justifyContent='center'
         >
-          {perspectives.map(perspective => {
+          {internalPerspectives.map(perspective => {
+            const hideCard = (has(perspective.hideCardOnFrontPage) && perspective.hideCardOnFrontPage)
+            if (!hideCard) {
+              return (
+                <MainCard
+                  key={perspective.id}
+                  perspective={perspective}
+                  cardHeadingVariant='h5'
+                  rootUrl={props.rootUrl}
+                />
+              )
+            }
+            return null
+          })}
+        </Grid>
+        <Typography
+          sx={theme => ({
+            marginTop: theme.spacing(1),
+            marginBottom: theme.spacing(1)
+          })}
+          variant={descriptionVariant}
+          align='center'
+          color='textPrimary'
+        >
+          {intl.get('selectPerspectiveExternal')}
+        </Typography>
+        <Grid
+          container spacing={screenSize === 'sm' ? 2 : 1}
+          justifyContent='center'
+        >
+          {externalPerspectives.map(perspective => {
             const hideCard = (has(perspective.hideCardOnFrontPage) && perspective.hideCardOnFrontPage)
             if (!hideCard) {
               return (
