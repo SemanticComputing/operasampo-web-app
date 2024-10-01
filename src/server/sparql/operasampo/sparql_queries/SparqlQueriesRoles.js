@@ -28,13 +28,14 @@ export const roleProperties = `
 `
 
 export const rolePerformersQuery = `
-  SELECT ?category ?prefLabel (COUNT(DISTINCT ?performanceRole) as ?instanceCount)
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?performance) as ?instanceCount)
   WHERE {
     BIND(<ID> as ?role)
     ?role a scop:Role .
     ?performanceRole a scop:PerformanceRole ;
                     scop:compositionRole ?role ;
-                    scop:actor ?category .
+                    scop:actor ?category ;
+                    scop:performance ?performance .
     OPTIONAL {
       ?category skos:prefLabel ?prefLabel_ .
     }
