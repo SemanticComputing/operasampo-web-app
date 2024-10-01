@@ -125,6 +125,9 @@ export const performanceProperties = `
       ?id ^scop:performance ?image__id .
       ?image__id a scop:PerformanceImage ;
                 scop:imageUrl ?image__url .
+      OPTIONAL {
+        ?image__id scop:copyright ?image__description .
+      }
     }
 `
 
