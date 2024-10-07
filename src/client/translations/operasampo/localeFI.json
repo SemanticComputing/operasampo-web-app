@@ -319,6 +319,18 @@
           "label": "Tuotanto",
           "description": "Esityksen tuottaja"
         },
+        "costumeDesigner": {
+          "label": "Puvustaja",
+          "description": "Esityksen puvustaja"
+        },
+        "choreographer": {
+          "label": "Koreografi",
+          "description":"Esityksen koreografi"
+        },
+        "scenographer": {
+          "label": "Lavastaja",
+          "description": "Esityksen lavastaja"
+        },
         "language": {
           "label": "Kieli",
           "description": "Esityksen kieli"

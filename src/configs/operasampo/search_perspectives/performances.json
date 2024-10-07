@@ -355,6 +355,33 @@
             "minWidth": 200
         },
         {
+            "id": "costumeDesigner",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
+            "id": "choreographer",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
+            "id": "scenographer",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "numberedList": false,
+            "minWidth": 200
+        },
+        {
             "id": "language",
             "valueType": "string",
             "makeLink": false,
@@ -544,6 +571,42 @@
             "sortButton": true,
             "sortBy": "instanceCount",
             "sortByPredicate": "scop:choirLeadBy/skos:prefLabel",
+            "sortDirection": "desc",
+            "pieChartButton": true
+        },
+        "costumeDesigner": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:costumeDesignBy",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:costumeDesignBy/skos:prefLabel",
+            "sortDirection": "desc",
+            "pieChartButton": true
+        },
+        "choreographer": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:choreographyBy",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:choreographyBy/skos:prefLabel",
+            "sortDirection": "desc",
+            "pieChartButton": true
+        },
+        "scenographer": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:scenographyBy",
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:scenographyBy/skos:prefLabel",
             "sortDirection": "desc",
             "pieChartButton": true
         },

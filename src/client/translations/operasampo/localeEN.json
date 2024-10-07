@@ -318,6 +318,18 @@
           "label": "Director",
           "description": "Director of the performance"
         },
+        "costumeDesigner": {
+          "label": "Costume Designer",
+          "description": "Costume designer of the performance"
+        },
+        "choreographer": {
+          "label": "Choreographer",
+          "description":"Choreographer of the performance"
+        },
+        "scenographer": {
+          "label": "Scenographer",
+          "description": "Scenographer of the performance"
+        },
         "producer": {
           "label": "Producer",
           "description": "Producer of the performance"

@@ -48,6 +48,24 @@ export const performanceProperties = `
     }
     UNION
     {
+      ?id scop:costumeDesignBy ?costumeDesigner__id .
+      ?costumeDesigner__id skos:prefLabel ?costumeDesigner__prefLabel .
+      BIND(CONCAT("/people/page/", REPLACE(STR(?costumeDesigner__id), "^.*\\\\/(.+)", "$1")) AS ?costumeDesigner__dataProviderUrl)
+    }
+    UNION
+    {
+      ?id scop:choreographyBy ?choreographer__id .
+      ?choreographer__id skos:prefLabel ?choreographer__prefLabel .
+      BIND(CONCAT("/people/page/", REPLACE(STR(?choreographer__id), "^.*\\\\/(.+)", "$1")) AS ?choreographer__dataProviderUrl)
+    }
+    UNION
+    {
+      ?id scop:scenographyBy ?scenographer__id .
+      ?scenographer__id skos:prefLabel ?scenographer__prefLabel .
+      BIND(CONCAT("/people/page/", REPLACE(STR(?scenographer__id), "^.*\\\\/(.+)", "$1")) AS ?scenographer__dataProviderUrl)
+    }
+    UNION
+    {
       ?id scop:producedBy ?producer__id .
       ?producer__id skos:prefLabel ?producer__prefLabel .
       BIND(CONCAT("/producers/page/", REPLACE(STR(?producer__id), "^.*\\\\/(.+)", "$1")) AS ?producer__dataProviderUrl)
