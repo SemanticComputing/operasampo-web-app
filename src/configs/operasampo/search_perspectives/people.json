@@ -307,6 +307,46 @@
             "expandedOnInstancePage": true
         },
         {
+            "id": "dateOfBirth",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "placeOfBirth",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "dateOfDeath",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100,
+            "onlyOnInstancePage": true
+        },
+        {
+            "id": "placeOfDeath",
+            "valueType": "string",
+            "makeLink": false,
+            "externalLink": false,
+            "sortValues": false,
+            "numberedList": false,
+            "minWidth": 100,
+            "onlyOnInstancePage": true
+        },
+        {
             "id": "composedWork",
             "valueType": "object",
             "makeLink": true,
@@ -418,11 +458,11 @@
             "facetType": "list",
             "facetLabelFilter": "FILTER(LANG(?prefLabel_) = 'fi')",
             "filterType": "uriFilter",
-            "predicate": "(((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist",
+            "predicate": "(((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator|^scop:costumeDesignBy|^scop:choreographyBy|^scop:scenographyBy)/scop:composition)|^scop:composedBy|^scop:libretist",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "((((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist)/skos:prefLabel",
+            "sortByPredicate": "((((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator|^scop:costumeDesignBy|^scop:choreographyBy|^scop:scenographyBy)/scop:composition)|^scop:composedBy|^scop:libretist)/skos:prefLabel",
             "sortDirection": "desc",
             "pieChartButton": true
         }
