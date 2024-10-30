@@ -27,6 +27,8 @@
       "blogUrl": "https://seco.cs.aalto.fi/projects/oopperasampo/",
       "aboutThePortal": "About the Portal",
       "aboutUrl": "https://seco.cs.aalto.fi/projects/oopperasampo/about.pdf",
+      "dataset": "Dataset",
+      "datasetUrl": "https://www.ldf.fi/dataset/operasampo/",
       "portalSources": "Sources",
       "portalLinks": "Links",
       "imageLicenses": "Image license information"

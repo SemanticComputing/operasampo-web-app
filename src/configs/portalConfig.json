@@ -82,6 +82,12 @@
                     "translatedText": "blog"
                 },
                 {
+                    "id": "dataset",
+                    "externalLink": true,
+                    "translatedUrl": "datasetUrl",
+                    "translatedText": "dataset"
+                },
+                {
                     "id": "sources",
                     "translatedText": "portalSources",
                     "internalLink": "/sources"
