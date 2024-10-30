@@ -67,6 +67,23 @@
                         }
                     ]
                 },
+                "performancesByComposition": {
+                    "sparqlQuery": "performancesByCompositionQuery",
+                    "filterTarget": "performance",
+                    "resultMapper": "mapPieChart",
+                    "sliceVisibilityThreshold": 0.01,
+                    "dropdownForChartTypes": true,
+                    "chartTypes": [
+                        {
+                            "id": "pie",
+                            "createChartData": "createApexPieChartData"
+                        },
+                        {
+                            "id": "bar",
+                            "createChartData": "createApexBarChartData"
+                        }
+                    ]
+                },
                 "performancesByConductor": {
                     "sparqlQuery": "performancesByConductorQuery",
                     "filterTarget": "performance",
@@ -318,6 +335,17 @@
         },
         {
             "id": "performanceRole",
+            "valueType": "object",
+            "makeLink": true,
+            "externalLink": false,
+            "sortValues": true,
+            "sortBy": "prefLabel",
+            "numberedList": false,
+            "minWidth": 200,
+            "expandedOnInstancePage": true
+        },
+        {
+            "id": "otherPerformer",
             "valueType": "object",
             "makeLink": true,
             "externalLink": false,

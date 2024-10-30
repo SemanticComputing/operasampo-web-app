@@ -140,6 +140,15 @@ export const performanceProperties = `
     }
     UNION 
     {
+      ?otherPerformanceRoleId a scop:PerformanceRole ;
+                      scop:performance ?id ;
+                      scop:actor ?otherPerformer__id ;
+                      scop:compositionRole <http://ldf.fi/operasampo/roles_unknown> .
+      ?otherPerformer__id skos:prefLabel ?otherPerformer__prefLabel .
+      BIND(CONCAT("/people/page/", REPLACE(STR(?otherPerformer__id), "^.*\\\\/(.+)", "$1")) AS ?otherPerformer__dataProviderUrl)
+    }
+    UNION 
+    {
       ?id ^scop:performance ?image__id .
       ?image__id a scop:PerformanceImage ;
                 scop:imageUrl ?image__url .

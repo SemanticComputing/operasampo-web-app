@@ -370,8 +370,12 @@
           "description": "Additional information on the performance"
         },
         "performanceRole": {
-          "label": "Performers",
-          "description": "Performers of the performance"
+          "label": "Performers by role",
+          "description": "Performers of the performance by role"
+        },
+        "otherPerformer": {
+          "label": "Other performers",
+          "description": "Other performers of the performance (roles unknown)"
         }
       }
     },

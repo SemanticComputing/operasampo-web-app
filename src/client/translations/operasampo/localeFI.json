@@ -367,8 +367,12 @@
           "description": "Esityksen lisätietoja"
         },
         "performanceRole": {
-          "label": "Esiintyjät",
-          "description": "Esityksen esiintyjät"
+          "label": "Esiintyjät rooleittain",
+          "description": "Esityksen esiintyjät rooleittain"
+        },
+        "otherPerformer": {
+          "label": "Muut esiintyjät",
+          "description": "Esityksen muut esiintyjät (roolihahmot ei tiedossa)"
         }
       }
     },
