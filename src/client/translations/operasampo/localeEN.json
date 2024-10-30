@@ -106,6 +106,7 @@
       "compositionsByComposer": "composer",
       "compositionsByLibretist": "libretist",
       "performancesByComposer": "composer",
+      "performancesByComposition": "composition",
       "performancesByConductor": "conductor",
       "performancesByDirector": "director",
       "performancesByProducer": "producer",
@@ -321,7 +322,7 @@
           "description": "Director of the performance"
         },
         "costumeDesigner": {
-          "label": "Costume Designer",
+          "label": "Costume designer",
           "description": "Costume designer of the performance"
         },
         "choreographer": {

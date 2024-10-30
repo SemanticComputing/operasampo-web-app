@@ -106,6 +106,7 @@
       "compositionsByComposer": "säveltäjä",
       "compositionsByLibretist": "libretisti",
       "performancesByComposer": "säveltäjä",
+      "performancesByComposition": "sävellys",
       "performancesByConductor": "kapellimestari",
       "performancesByDirector": "ohjaaja",
       "performancesByProducer": "tuotanto",

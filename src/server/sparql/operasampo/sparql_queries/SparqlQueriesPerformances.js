@@ -224,7 +224,7 @@ export const performancesByComposerQuery = `
     <FILTER>
     {
       ?performance a scop:Performance ;
-                  scop:composition/scop:composedBy  ?category .
+                  scop:composition/scop:composedBy ?category .
       ?category skos:prefLabel ?prefLabel .
     }
     UNION
@@ -232,6 +232,30 @@ export const performancesByComposerQuery = `
       ?performance a scop:Performance .
       FILTER NOT EXISTS {
         ?performance scop:composition/scop:composedBy [] .
+      }
+      BIND("Tuntematon" as ?category)
+      BIND("Tuntematon" as ?prefLabel)
+    }
+  }
+  GROUP BY ?category ?prefLabel
+  ORDER BY DESC(?instanceCount)
+`
+
+export const performancesByCompositionQuery = `
+  SELECT ?category ?prefLabel (COUNT(DISTINCT ?performance) as ?instanceCount)
+  WHERE {
+    <FILTER>
+    {
+      ?performance a scop:Performance ;
+                  scop:composition ?category .
+      ?category skos:prefLabel ?prefLabel .
+      FILTER(LANG(?prefLabel) = 'fi')
+    }
+    UNION
+    {
+      ?performance a scop:Performance .
+      FILTER NOT EXISTS {
+        ?performance scop:composition [] .
       }
       BIND("Tuntematon" as ?category)
       BIND("Tuntematon" as ?prefLabel)
