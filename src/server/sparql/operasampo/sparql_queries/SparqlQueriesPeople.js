@@ -95,9 +95,6 @@ export const personProperties = `
             scop:actor ?id ;
             scop:performance ?performanceRole__roleValues__id ;
             scop:compositionRole ?performanceRole__id .
-      ?performanceRole__id scop:composition ?comp .
-      ?comp skos:prefLabel ?compLabel .
-      FILTER(LANG(?compLabel) = 'fi')
       ?performanceRole__roleValues__id skos:prefLabel ?performanceRole__roleValues__prefLabel .
       BIND(CONCAT("/performances/page/", REPLACE(STR(?performanceRole__roleValues__id), "^.*\\\\/(.+)", "$1")) AS ?performanceRole__roleValues__dataProviderUrl)
       ?performanceRole__id skos:prefLabel ?performanceRole__prefLabel .
