@@ -520,6 +520,7 @@
         "producer": {
             "containerClass": "ten",
             "facetType": "list",
+            "facetLabelFilter": "FILTER(LANG(?prefLabel_) = 'fi')",
             "filterType": "uriFilter",
             "predicate": "scop:producedBy",
             "searchField": true,

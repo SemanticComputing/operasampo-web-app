@@ -68,6 +68,7 @@ export const performanceProperties = `
     {
       ?id scop:producedBy ?producer__id .
       ?producer__id skos:prefLabel ?producer__prefLabel .
+      FILTER(LANG(?producer__prefLabel) = 'fi')
       BIND(CONCAT("/producers/page/", REPLACE(STR(?producer__id), "^.*\\\\/(.+)", "$1")) AS ?producer__dataProviderUrl)
     }
     UNION
