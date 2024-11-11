@@ -373,6 +373,10 @@
         "otherPerformer": {
           "label": "Muut esiintyjät",
           "description": "Esityksen muut esiintyjät (roolihahmot ei tiedossa)"
+        },
+        "performer": {
+          "label": "Esiintyjät",
+          "description": "Esityksen esiintyjät"
         }
       }
     },

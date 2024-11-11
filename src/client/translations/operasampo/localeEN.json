@@ -376,6 +376,10 @@
         "otherPerformer": {
           "label": "Other performers",
           "description": "Other performers of the performance (roles unknown)"
+        },
+        "performer": {
+          "label": "Performers",
+          "description": "Performers of the performance"
         }
       }
     },

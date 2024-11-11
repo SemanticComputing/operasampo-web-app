@@ -555,7 +555,7 @@
             "sortDirection": "desc",
             "pieChartButton": true
         },
-        "performanceRole": {
+        "performer": {
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
