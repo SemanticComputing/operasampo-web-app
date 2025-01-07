@@ -88,7 +88,9 @@
     "heatmap": "",
     "statistics": "",
     "download": "",
-    "recommendations": ""
+    "recommendations": "",
+    "export_csv": "CSV",
+    "export_sparql": "SPARQL-kysely"
   },
   "table": {
     "rowsPerPage": "Rivejä per sivu",
@@ -131,7 +133,7 @@
       "annualAppearances": "Esiintymiset vuosittain"
     }
   },
-  "exportToYasgui": "",
+  "exportToYasgui": "avaa tuloskysely YASGUI-editorissa",
   "openInLinkedDataBrowser": "",
   "resultsAsCSV": "",
   "facets": {

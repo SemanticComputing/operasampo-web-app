@@ -181,6 +181,23 @@
                     ]
                 }
             }
+        },
+        "exportCSV": {
+            "tabID": 2,
+            "component": "ExportCSV",
+            "tabPath": "export_csv",
+            "tabIcon": "CloudDownload",
+            "facetClass": "compositions",
+            "sparqlQuery": "csvCompositionQuery",
+            "filterTarget": "id"
+        },
+        "exportSPARQL": {
+            "tabID": 3,
+            "component": "Export",
+            "tabPath": "export_sparql",
+            "tabIcon": "ArrowForward",
+            "resultClass": "compositions",
+            "facetClass": "compositions"
         }
     },
     "properties": [

@@ -48,10 +48,6 @@ export const compositionProperties = `
     }
     UNION
     {
-      ?id scop:publishedDate ?publishedDate .
-    }
-    UNION
-    {
       ?id scop:opus ?opus .
     }
     UNION
@@ -176,4 +172,39 @@ export const compositionVenuesQuery = `
   }
   GROUP BY ?category ?prefLabel
   ORDER BY DESC(?instanceCount)
+`
+
+export const csvCompositionQuery = `
+  SELECT DISTINCT ?id ?label (GROUP_CONCAT(DISTINCT ?altLabel; separator="; ") AS ?alternative_labels) ?composer ?composer_label (GROUP_CONCAT(DISTINCT ?libretist; separator="; ") AS ?libretists) (GROUP_CONCAT(DISTINCT ?libretistLabel; separator="; ") AS ?labeled_libretists) (GROUP_CONCAT(DISTINCT ?language; separator="; ") AS ?languages) ?composed (GROUP_CONCAT(DISTINCT ?published; separator="; ") AS ?premiere) (GROUP_CONCAT(DISTINCT ?additionalInfo; separator="; ") AS ?additional_information)
+  WHERE {
+    <FILTER>
+    ?id a scop:Composition ;
+      skos:prefLabel ?label .
+    FILTER(LANG(?label) = 'fi')
+
+    OPTIONAL { ?id skos:altLabel ?altLabel . }
+
+    OPTIONAL { 
+      ?id scop:composedBy ?composer . 
+      ?composer skos:prefLabel ?composer_label .
+    }
+
+    OPTIONAL { 
+      ?id scop:libretist ?libretist . 
+      ?libretist skos:prefLabel ?libretistLabel .
+    }
+
+    OPTIONAL { ?id scop:language ?language . }
+
+    OPTIONAL { ?id scop:composed ?composed . }
+
+    OPTIONAL { ?id scop:published ?published . }
+
+    OPTIONAL { 
+      ?id scop:additionalInfo ?additionalInfo .
+      FILTER(LANG(?additionalInfo) = 'fi')
+    }
+  } 
+  GROUP BY ?id ?label ?composer ?composer_label ?composed
+  ORDER BY ?id
 `

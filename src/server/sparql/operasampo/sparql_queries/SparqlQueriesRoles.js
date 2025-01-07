@@ -77,3 +77,33 @@ export const performancesPerformedQuery = `
   }
   GROUP BY ?year ORDER BY ?year
 `
+
+export const csvRoleQuery = `
+  SELECT DISTINCT ?id ?label (GROUP_CONCAT(DISTINCT ?altLabel; separator="; ") AS ?alternative_labels) (GROUP_CONCAT(DISTINCT ?performer; separator="; ") AS ?performers) (GROUP_CONCAT(DISTINCT ?performerLabel; separator="; ") AS ?labeled_performers) ?composition ?composition_label (GROUP_CONCAT(DISTINCT ?additionalInfo; separator="; ") AS ?additional_information)
+  WHERE {
+    <FILTER>
+    ?id a scop:Role ;
+      skos:prefLabel ?label .
+    FILTER(LANG(?label) = 'fi')
+
+    OPTIONAL { ?id skos:altLabel ?altLabel . }
+
+    OPTIONAL { 
+      ?id scop:composition ?composition . 
+      ?composition skos:prefLabel ?composition_label .
+      FILTER(LANG(?composition_label) = "fi")
+    }
+
+    OPTIONAL {
+      ?id ^scop:compositionRole/scop:actor ?performer .
+      ?performer skos:prefLabel ?performerLabel .
+    }
+
+    OPTIONAL { 
+      ?id scop:additionalInfo ?additionalInfo .
+      FILTER(LANG(?additionalInfo) = 'fi')
+    }
+  } 
+  GROUP BY ?id ?label ?composition ?composition_label
+  ORDER BY ?id
+`

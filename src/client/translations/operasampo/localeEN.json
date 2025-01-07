@@ -88,7 +88,9 @@
     "heatmap": "heatmap",
     "statistics": "statistics",
     "download": "download",
-    "recommendations": "recommendations"
+    "recommendations": "recommendations",
+    "export_csv": "CSV",
+    "export_sparql": "SPARQL query"
   },
   "table": {
     "rowsPerPage": "Rows per page",

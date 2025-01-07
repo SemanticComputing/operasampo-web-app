@@ -39,6 +39,23 @@
                     }
                 }
             }
+        },
+        "exportCSV": {
+            "tabID": 1,
+            "component": "ExportCSV",
+            "tabPath": "export_csv",
+            "tabIcon": "CloudDownload",
+            "facetClass": "places",
+            "sparqlQuery": "csvPlaceQuery",
+            "filterTarget": "id"
+        },
+        "exportSPARQL": {
+            "tabID": 2,
+            "component": "Export",
+            "tabPath": "export_sparql",
+            "tabIcon": "ArrowForward",
+            "resultClass": "places",
+            "facetClass": "places"
         }
     },
     "properties": [
