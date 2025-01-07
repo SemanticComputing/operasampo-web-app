@@ -234,3 +234,49 @@ export const peopleByRelatedCompositionQuery = `
   GROUP BY ?category ?prefLabel
   ORDER BY DESC(?instanceCount)
 `
+
+export const csvPersonQuery = `
+  SELECT DISTINCT 
+  ?id ?label (GROUP_CONCAT(DISTINCT ?altLabel; separator="; ") AS ?alternative_labels) 
+  (GROUP_CONCAT(DISTINCT ?firstName; separator="; ") AS ?first_names) (GROUP_CONCAT(DISTINCT ?lastName; separator="; ") AS ?last_names) 
+  (GROUP_CONCAT(DISTINCT ?occupationRole; separator="; ") AS ?occupation_roles)
+  (GROUP_CONCAT(DISTINCT ?nationality; separator="; ") AS ?nationalities) (GROUP_CONCAT(DISTINCT ?language; separator="; ") AS ?languages)
+  ?date_of_birth ?place_of_birth ?date_of_death ?place_of_death
+  (GROUP_CONCAT(DISTINCT ?additionalInfo; separator="; ") AS ?additional_information) 
+  ?biographysampo_uri ?wikidata_uri
+  WHERE {
+    <FILTER>
+    ?id a scop:Person ;
+      skos:prefLabel ?label .
+    FILTER(LANG(?label) = 'fi')
+
+    OPTIONAL { ?id skos:altLabel ?altLabel . }
+
+    OPTIONAL { ?id foaf:firstNAme ?firstName . }
+    OPTIONAL { ?id foaf:surname ?lastName . }
+
+    OPTIONAL {
+      ?id scop:role/skos:prefLabel ?occupationRole .
+      FILTER(LANG(?occupationRole) = 'fi')
+    }
+
+    OPTIONAL { ?id scop:nationality ?nationality . }
+    OPTIONAL { ?id scop:language ?language . }
+
+    OPTIONAL { ?id scop:dateOfBirth ?date_of_birth . }
+    OPTIONAL { ?id scop:placeOfBirth ?place_of_birth . }
+
+    OPTIONAL { ?id scop:dateOfDeath ?date_of_death . }
+    OPTIONAL { ?id scop:placeOfDeath ?place_of_death . }
+
+    OPTIONAL { 
+      ?id scop:additionalInfo ?additionalInfo .
+      FILTER(LANG(?additionalInfo) = 'fi')
+    }
+
+    OPTIONAL { ?id scop:biographySampo ?biographysampo_uri . }
+    OPTIONAL { ?id scop:wikidata ?wikidata_uri . }
+  } 
+  GROUP BY ?id ?label ?date_of_birth ?place_of_birth ?date_of_death ?place_of_death ?biographysampo_uri ?wikidata_uri
+  ORDER BY ?id
+`

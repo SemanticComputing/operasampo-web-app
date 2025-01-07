@@ -335,3 +335,68 @@ export const performancesPerformedQuery = `
   }
   GROUP BY ?year ORDER BY ?year
 `
+
+export const csvPerformanceQuery = `
+  SELECT DISTINCT ?id ?label 
+  (GROUP_CONCAT(DISTINCT ?composer; separator="; ") AS ?composers) (GROUP_CONCAT(DISTINCT ?libretist; separator="; ") AS ?libretists)
+  (GROUP_CONCAT(DISTINCT ?conductor; separator="; ") AS ?conductors) (GROUP_CONCAT(DISTINCT ?director; separator="; ") AS ?directors)
+  (GROUP_CONCAT(DISTINCT ?costume_designer; separator="; ") AS ?costume_designers) (GROUP_CONCAT(DISTINCT ?choreographer; separator="; ") AS ?choreographers) (GROUP_CONCAT(DISTINCT ?scenographer; separator="; ") AS ?scenographers)
+  (GROUP_CONCAT(DISTINCT ?producer; separator="; ") AS ?producers)
+  (GROUP_CONCAT(DISTINCT ?language; separator="; ") AS ?languages) (GROUP_CONCAT(DISTINCT ?translator; separator="; ") AS ?translators)
+  ?performance_date_start ?performance_date_end ?venue ?season
+  (GROUP_CONCAT(DISTINCT ?orchestra; separator="; ") AS ?orchestras) (GROUP_CONCAT(DISTINCT ?tickets; separator="; ") AS ?ticket_information)
+  (GROUP_CONCAT(DISTINCT ?performer; separator="; ") AS ?performers)
+  (GROUP_CONCAT(DISTINCT ?additionalInfo; separator="; ") AS ?additional_information)
+  WHERE {
+    <FILTER>
+    ?id a scop:Performance ;
+      skos:prefLabel ?label .
+    FILTER(LANG(?label) = 'fi')
+
+    OPTIONAL { ?id scop:composition ?composition . }
+
+    OPTIONAL { ?id scop:composition/scop:composedBy ?composer . }
+    OPTIONAL { ?id scop:composition/scop:libretist ?libretist . }
+
+    OPTIONAL { ?id scop:conductedBy ?conductor . }
+    OPTIONAL { ?id scop:directedBy ?director . }
+    OPTIONAL { ?id scop:costumeDesignBy ?costume_designer . }
+    OPTIONAL { ?id scop:choreographyBy ?choreographer . }
+    OPTIONAL { ?id scop:scenographyBy ?scenographer . }
+
+    OPTIONAL { ?id scop:producedBy ?producer . }
+
+    OPTIONAL { ?id scop:language ?language . }
+    OPTIONAL { ?id scop:translator ?translator . }
+
+    OPTIONAL { ?id scop:performanceDateStart ?performance_date_start . }
+    OPTIONAL { ?id scop:performanceDateEnd ?performance_date_end . }
+
+    OPTIONAL { ?id scop:performedIn ?venue . }
+
+    OPTIONAL { ?id scop:season ?season . }
+
+    OPTIONAL { 
+      ?id scop:orchestra ?orchestra . 
+      FILTER(LANG(?orchestra) = 'fi')
+    }
+
+    OPTIONAL { 
+      ?id scop:tickets ?tickets . 
+      FILTER(LANG(?tickets) = 'fi')
+    }
+
+    OPTIONAL {
+      ?performanceRole a scop:PerformanceRole ;
+          scop:performance ?id ;
+          scop:actor ?performer .
+    }
+
+    OPTIONAL { 
+      ?id scop:additionalInfo ?additionalInfo .
+      FILTER(LANG(?additionalInfo) = 'fi')
+    }
+  } 
+  GROUP BY ?id ?label ?performance_date_start ?performance_date_end ?venue ?season
+  ORDER BY ?id
+`

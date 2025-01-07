@@ -248,6 +248,23 @@
                     }
                 }
             }
+        },
+        "exportCSV": {
+            "tabID": 4,
+            "component": "ExportCSV",
+            "tabPath": "export_csv",
+            "tabIcon": "CloudDownload",
+            "facetClass": "performances",
+            "sparqlQuery": "csvPerformanceQuery",
+            "filterTarget": "id"
+        },
+        "exportSPARQL": {
+            "tabID": 5,
+            "component": "Export",
+            "tabPath": "export_sparql",
+            "tabIcon": "ArrowForward",
+            "resultClass": "performances",
+            "facetClass": "performances"
         }
     },
     "properties": [
