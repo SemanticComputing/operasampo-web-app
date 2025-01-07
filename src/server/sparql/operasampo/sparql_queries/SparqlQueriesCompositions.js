@@ -175,7 +175,11 @@ export const compositionVenuesQuery = `
 `
 
 export const csvCompositionQuery = `
-  SELECT DISTINCT ?id ?label (GROUP_CONCAT(DISTINCT ?altLabel; separator="; ") AS ?alternative_labels) ?composer ?composer_label (GROUP_CONCAT(DISTINCT ?libretist; separator="; ") AS ?libretists) (GROUP_CONCAT(DISTINCT ?libretistLabel; separator="; ") AS ?labeled_libretists) (GROUP_CONCAT(DISTINCT ?language; separator="; ") AS ?languages) ?composed (GROUP_CONCAT(DISTINCT ?published; separator="; ") AS ?premiere) (GROUP_CONCAT(DISTINCT ?additionalInfo; separator="; ") AS ?additional_information)
+  SELECT DISTINCT 
+  ?id ?label (GROUP_CONCAT(DISTINCT ?altLabel; separator="; ") AS ?alternative_labels) 
+  (GROUP_CONCAT(DISTINCT ?composer; separator="; ") AS ?composers) (GROUP_CONCAT(DISTINCT ?composerLabel; separator="; ") AS ?labeled_composers) 
+  (GROUP_CONCAT(DISTINCT ?libretist; separator="; ") AS ?libretists) (GROUP_CONCAT(DISTINCT ?libretistLabel; separator="; ") AS ?labeled_libretists) 
+  (GROUP_CONCAT(DISTINCT ?language; separator="; ") AS ?languages) ?composed (GROUP_CONCAT(DISTINCT ?published; separator="; ") AS ?premiere) (GROUP_CONCAT(DISTINCT ?additionalInfo; separator="; ") AS ?additional_information)
   WHERE {
     <FILTER>
     ?id a scop:Composition ;
@@ -186,7 +190,7 @@ export const csvCompositionQuery = `
 
     OPTIONAL { 
       ?id scop:composedBy ?composer . 
-      ?composer skos:prefLabel ?composer_label .
+      ?composer skos:prefLabel ?composerLabel .
     }
 
     OPTIONAL { 
@@ -205,6 +209,6 @@ export const csvCompositionQuery = `
       FILTER(LANG(?additionalInfo) = 'fi')
     }
   } 
-  GROUP BY ?id ?label ?composer ?composer_label ?composed
+  GROUP BY ?id ?label ?composed
   ORDER BY ?id
 `
