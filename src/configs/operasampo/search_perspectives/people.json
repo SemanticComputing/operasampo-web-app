@@ -144,6 +144,7 @@
                                 "resultMapper": "createCorrespondenceChartData",
                                 "resultMapperConfig": {
                                     "types": ["role"],
+                                    "lastLabel": "...",
                                     "numberTopResults": 20
                                 },
                                 "zType": "performance",

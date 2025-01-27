@@ -79,6 +79,7 @@
                                 "resultMapper": "createCorrespondenceChartData",
                                 "resultMapperConfig": {
                                     "types": ["venue"],
+                                    "lastLabel": "...",
                                     "numberTopResults": 20
                                 },
                                 "zType": "performance",
