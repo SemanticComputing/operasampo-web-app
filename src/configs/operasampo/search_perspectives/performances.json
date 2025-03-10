@@ -657,6 +657,19 @@
             "sortDirection": "desc",
             "pieChartButton": true
         },
+        "language": {
+            "containerClass": "ten",
+            "facetType": "list",
+            "filterType": "uriFilter",
+            "predicate": "scop:language",
+            "literal": true,
+            "searchField": true,
+            "sortButton": true,
+            "sortBy": "instanceCount",
+            "sortByPredicate": "scop:language",
+            "sortDirection": "desc",
+            "pieChartButton": true
+        },
         "translator": {
             "containerClass": "ten",
             "facetType": "list",
