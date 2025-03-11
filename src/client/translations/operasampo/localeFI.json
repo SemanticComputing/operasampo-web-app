@@ -73,7 +73,7 @@
   },
   "tabs": {
     "table": "taulukko",
-    "map": "",
+    "map": "kartta",
     "pie_chart": "ympyräkaavio/pylväsdiagrammi",
     "performances_per_year": "vuosittaiset esitykset",
     "role_chart": "yleisimmät roolit",
@@ -82,13 +82,16 @@
     "performer_chart": "yleisimmät esiintyjät",
     "performers_timeseries": "esiintyjät aikajanalla",
     "roles_timeseries": "roolit aikajanalla",
+    "performances_timeseries": "esitykset aikajanalla",
     "venue_chart": "yleisimmät esityspaikat",
-    "network": "",
-    "export": "",
-    "heatmap": "",
-    "statistics": "",
-    "download": "",
-    "recommendations": "",
+    "compositions": "sävellykset",
+    "performances": "esitykset",
+    "network": "verkosto",
+    "export": "vie",
+    "heatmap": "lämpökartta",
+    "statistics": "tilastot",
+    "download": "lataa",
+    "recommendations": "suositukset",
     "export_csv": "CSV",
     "export_sparql": "SPARQL-kysely"
   },
@@ -513,6 +516,12 @@
         "label": "Tuottaja",
         "description": ""
       },
+      "producerInstancePagePerformances": {
+        "label": "Esitykset sävellyksittäin",
+        "item": {
+          "label": "Sävellys"
+        }
+      },
       "properties": {
         "uri": {
           "label": "URI",
@@ -528,6 +537,14 @@
           "description": "Tuottajan lisätietoja"
         },
         "producedPerformances": {
+          "label": "Tuotetut esitykset",
+          "description": "Tuottajan tuottamat esitykset"
+        },
+        "compositionPrefLabel": {
+          "label": "Sävellyksen nimi",
+          "description": "Sävellyksen nimi"
+        },
+        "performance": {
           "label": "Tuotetut esitykset",
           "description": "Tuottajan tuottamat esitykset"
         }

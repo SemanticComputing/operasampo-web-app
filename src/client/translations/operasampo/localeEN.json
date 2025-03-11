@@ -82,7 +82,10 @@
     "performer_chart": "most common performers",
     "performers_timeseries": "performers on a timeline",
     "roles_timeseries": "roles on a timeline",
+    "performances_timeseries": "performances on a timeline",
     "venue_chart": "most common performance venues",
+    "compositions": "compositions",
+    "performances": "performances",
     "network": "network",
     "export": "export",
     "heatmap": "heatmap",
@@ -516,6 +519,12 @@
         "label": "Producer",
         "description": ""
       },
+      "producerInstancePagePerformances": {
+        "label": "Performances",
+        "item": {
+          "label": "Performance"
+        }
+      },
       "properties": {
         "uri": {
           "label": "URI",
@@ -531,6 +540,14 @@
           "description": "Additional information on the producer"
         },
         "producedPerformances": {
+          "label": "Produced performances",
+          "description": "Performances produced by the producer"
+        },
+        "compositionPrefLabel": {
+          "label": "Name of composition",
+          "description": "Name of the composition"
+        },
+        "performance": {
           "label": "Produced performances",
           "description": "Performances produced by the producer"
         }
