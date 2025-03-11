@@ -37,8 +37,69 @@
                         "tabPath": "table",
                         "tabIcon": "CalendarViewDay"
                     },
-                    "instacePageVenues": {
+                    "compositionInstancePagePerformances": {
                         "tabID": 1,
+                        "component": "InstancePageTableList",
+                        "fetchResultsWhenMounted": true,
+                        "tabPath": "performances",
+                        "tabIcon": "CalendarViewDay",
+                        "sparqlQuery": "compositionPerformancesQuery",
+                        "filterTarget": "performance",
+                        "properties": [
+                            {
+                                "id": "performancePrefLabel",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 500,
+                                "expandedOnInstancePage": true
+                            },
+                            {
+                                "id": "director",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 500,
+                                "expandedOnInstancePage": true
+                            },
+                            {
+                                "id": "producer",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 500,
+                                "expandedOnInstancePage": true
+                            },
+                            {
+                                "id": "language",
+                                "valueType": "string",
+                                "makeLink": false,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 500,
+                                "expandedOnInstancePage": true
+                            },
+                            {
+                                "id": "place",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 500,
+                                "expandedOnInstancePage": true
+                            }
+                        ]
+                    },
+                    "instacePageVenues": {
+                        "tabID": 2,
                         "component": "ApexCharts",
                         "doNotRenderOnMount": true,
                         "tabPath": "venue_chart",
@@ -61,7 +122,7 @@
                         ]
                     },
                     "compositionInstancePagePlaceTimeline": {
-                        "tabID": 2,
+                        "tabID": 3,
                         "component": "ApexChartsDouble",
                         "pageType": "instancePage",
                         "tabPath": "activity_timeseries",

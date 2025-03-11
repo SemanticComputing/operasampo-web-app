@@ -212,3 +212,53 @@ export const csvCompositionQuery = `
   GROUP BY ?id ?label ?composed
   ORDER BY ?id
 `
+
+export const compositionPerformancesQuery = `
+  SELECT ?id ?uri__id ?uri__prefLabel ?uri__dataProviderUrl ?prefLabel__id 
+  ?object__id ?object__prefLabel 
+  ?object__performancePrefLabel__id ?object__performancePrefLabel__prefLabel ?object__performancePrefLabel__dataProviderUrl
+  ?object__director__id ?object__director__prefLabel ?object__director__dataProviderUrl
+  ?object__producer__id ?object__producer__prefLabel ?object__producer__dataProviderUrl
+  ?object__language
+  ?object__place__id ?object__place__prefLabel ?object__place__dataProviderUrl
+  WHERE {
+    <FILTER>
+    BIND(<ID> as ?id)
+    BIND(?id as ?uri__id)
+    BIND(?id as ?uri__prefLabel)
+    BIND(?id as ?uri__dataProviderUrl)
+    ?id skos:prefLabel ?prefLabel__id .
+    BIND(?prefLabel__id as ?prefLabel__prefLabel)
+    ?id ^scop:composition ?object__id .
+    ?object__id a scop:Performance.
+    {
+      ?object__id skos:prefLabel ?object__performancePrefLabel__id .
+      BIND(?object__performancePrefLabel__id as ?object__performancePrefLabel__prefLabel)
+      BIND(CONCAT("/performances/page/", REPLACE(STR(?object__id), "^.*\\\\/(.+)", "$1")) AS ?object__performancePrefLabel__dataProviderUrl)
+    }
+    UNION
+    {
+      ?object__id scop:directedBy ?object__director__id .
+      ?object__director__id skos:prefLabel ?object__director__prefLabel .
+      BIND(CONCAT("/people/page/", REPLACE(STR(?object__director__id), "^.*\\\\/(.+)", "$1")) AS ?object__director__dataProviderUrl)
+    }
+    UNION
+    {
+      ?object__id scop:producedBy ?object__producer__id .
+      ?object__producer__id skos:prefLabel ?object__producer__prefLabel .
+      FILTER(LANG(?object__producer__prefLabel) = 'fi')
+      BIND(CONCAT("/producers/page/", REPLACE(STR(?object__producer__id), "^.*\\\\/(.+)", "$1")) AS ?object__producer__dataProviderUrl)
+    }
+    UNION
+    {
+      ?object__id scop:language ?object__language .
+    }
+    UNION
+    {
+      ?object__id scop:performedIn ?object__place__id .
+      ?object__place__id skos:prefLabel ?object__place__prefLabel .
+      FILTER(LANG(?object__place__prefLabel) = 'fi')
+      BIND(CONCAT("/places/page/", REPLACE(STR(?object__place__id), "^.*\\\\/(.+)", "$1")) AS ?object__place__dataProviderUrl)
+    }
+  }
+`

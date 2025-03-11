@@ -215,6 +215,12 @@
         "label": "Composition",
         "description": ""
       },
+      "compositionInstancePagePerformances": {
+        "label": "Performances",
+        "item": {
+          "label": "Performance"
+        }
+      },
       "properties": {
         "uri": {
           "label": "URI",
@@ -276,6 +282,22 @@
         "role": {
           "label": "Role characters",
           "description": "Role characters of the composition"
+        },
+        "performancePrefLabel": {
+          "label": "Name of performance",
+          "description": "Name of the performance"
+        },
+        "director": {
+          "label": "Director",
+          "description": "Director of the performance"
+        },
+        "producer": {
+          "label": "Producer",
+          "description": "Producer of the performance"
+        },
+        "place": {
+          "label": "Performance venue",
+          "description": "Performance venue of the performance"
         }
       }
     },

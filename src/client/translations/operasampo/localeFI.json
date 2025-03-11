@@ -212,6 +212,12 @@
         "label": "Sävellys",
         "description": ""
       },
+      "compositionInstancePagePerformances": {
+        "label": "Esitykset",
+        "item": {
+          "label": "Esitys"
+        }
+      },
       "properties": {
         "uri": {
           "label": "URI",
@@ -273,6 +279,22 @@
         "role": {
           "label": "Roolihahmot",
           "description": "Sävellyksen roolihahmot"
+        },
+        "performancePrefLabel": {
+          "label": "Esityksen nimi",
+          "description": "Esityksen nimi"
+        },
+        "director": {
+          "label": "Ohjaaja",
+          "description": "Esityksen ohjaaja"
+        },
+        "producer": {
+          "label": "Tuotanto",
+          "description": "Esityksen tuottaja"
+        },
+        "place": {
+          "label": "Esityspaikka",
+          "description": "Esityksen esityspaikka"
         }
       }
     },
