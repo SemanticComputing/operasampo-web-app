@@ -562,6 +562,12 @@
         "label": "Performance venues",
         "description": ""
       },
+      "placeInstancePagePerformances": {
+        "label": "Performances",
+        "item": {
+          "label": "Performance"
+        }
+      },
       "properties": {
         "image": {
           "label": "Picture",
@@ -596,6 +602,14 @@
         "additionalInfo": {
           "label": "Additional information",
           "description": "Additional information on the performance venue"
+        },
+        "compositionPrefLabel": {
+          "label": "Name of composition",
+          "description": "Name of the composition"
+        },
+        "performance": {
+          "label": "Performed performances",
+          "description": "Performances performed in the venue"
         }
       }
     },

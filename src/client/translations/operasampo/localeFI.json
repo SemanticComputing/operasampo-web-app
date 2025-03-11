@@ -559,6 +559,12 @@
         "label": "Esityspaikka",
         "description": ""
       },
+      "placeInstancePagePerformances": {
+        "label": "Esitykset",
+        "item": {
+          "label": "Esitys"
+        }
+      },
       "properties": {
         "image": {
           "label": "Kuva",
@@ -593,6 +599,14 @@
         "additionalInfo": {
           "label": "Lisätietoja",
           "description": "Esityspaikan lisätietoja"
+        },
+        "compositionPrefLabel": {
+          "label": "Sävellyksen nimi",
+          "description": "Sävellyksen nimi"
+        },
+        "performance": {
+          "label": "Esitetyt esitykset",
+          "description": "Esityspaikassa esitetyt esitykset"
         }
       }
     },

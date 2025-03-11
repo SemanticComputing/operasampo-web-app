@@ -76,3 +76,63 @@ export const csvPlaceQuery = `
   GROUP BY ?id ?label ?address ?city ?country
   ORDER BY ?id
 `
+
+export const placePerformancesQuery = `
+  SELECT ?id ?uri__id ?uri__prefLabel ?uri__dataProviderUrl ?prefLabel__id 
+  ?object__id ?object__prefLabel 
+  ?object__compositionPrefLabel__id ?object__compositionPrefLabel__prefLabel ?object__compositionPrefLabel__dataProviderUrl
+  ?object__performance__id ?object__performance__prefLabel ?object__performance__dataProviderUrl
+  WHERE {
+    <FILTER>
+    BIND(<ID> as ?id)
+    BIND(?id as ?uri__id)
+    BIND(?id as ?uri__prefLabel)
+    BIND(?id as ?uri__dataProviderUrl)
+    ?id skos:prefLabel ?prefLabel__id .
+    BIND(?prefLabel__id as ?prefLabel__prefLabel)
+    ?id ^scop:performedIn/scop:composition ?object__id .
+    {
+      ?object__id skos:prefLabel ?object__compositionPrefLabel__id .
+      BIND(?object__compositionPrefLabel__id as ?object__compositionPrefLabel__prefLabel)
+      BIND(CONCAT("/compositions/page/", REPLACE(STR(?object__id), "^.*\\\\/(.+)", "$1")) AS ?object__compositionPrefLabel__dataProviderUrl)
+    }
+    UNION
+    {
+      ?object__id ^scop:composition ?object__performance__id .
+      ?object__performance__id a scop:Performance ;
+                              scop:performedIn ?id ;
+                              skos:prefLabel ?object__performance__prefLabel .
+      BIND(CONCAT("/performances/page/", REPLACE(STR(?object__performance__id), "^.*\\\\/(.+)", "$1")) AS ?object__performance__dataProviderUrl)
+    }
+  }
+`
+
+export const performancesTimelineQuery = `
+  SELECT DISTINCT ?id ?composition__label (xsd:date(?_date) AS ?date) (year(xsd:date(?_date)) AS ?year) ?type ?performance_label ?performance_url
+  WHERE {
+    BIND(<ID> as ?id)
+    ?id a scop:Place .
+    ?performance a scop:Performance ;
+                    scop:performedIn ?id ;
+                    scop:composition ?composition .
+    ?performance skos:prefLabel ?performance_label .
+    BIND(CONCAT("/performances/page/", REPLACE(STR(?performance), "^.*\\\\/(.+)", "$1")) AS ?performance_url)
+    ?performance scop:performanceDateStart ?_date .
+    ?composition skos:prefLabel ?composition__label .
+    FILTER(LANG(?composition__label) = 'fi')
+    BIND("composition" AS ?type)
+  }
+`
+
+export const performancesPerformedQuery = `
+  SELECT DISTINCT (STR(?year) AS ?category) (COUNT(DISTINCT ?performance) AS ?performanceCount)
+  WHERE {
+    BIND(<ID> as ?place)
+    ?place a scop:Place .
+    ?performance a scop:Performance ;
+                scop:performanceDateStart ?_date ;
+                scop:performedIn ?place .
+    BIND(YEAR(xsd:date(?_date)) AS ?year)
+  }
+  GROUP BY ?year ORDER BY ?year
+`

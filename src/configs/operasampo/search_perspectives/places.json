@@ -36,6 +36,107 @@
                         "component": "InstancePageTable",
                         "tabPath": "table",
                         "tabIcon": "CalendarViewDay"
+                    },
+                    "placeInstancePagePerformances": {
+                        "tabID": 1,
+                        "component": "InstancePageTableList",
+                        "fetchResultsWhenMounted": true,
+                        "tabPath": "performances",
+                        "tabIcon": "CalendarViewDay",
+                        "sparqlQuery": "placePerformancesQuery",
+                        "filterTarget": "performance",
+                        "properties": [
+                            {
+                                "id": "compositionPrefLabel",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 500,
+                                "expandedOnInstancePage": true
+                            },
+                            {
+                                "id": "performance",
+                                "valueType": "object",
+                                "makeLink": true,
+                                "externalLink": false,
+                                "sortValues": true,
+                                "numberedList": false,
+                                "minWidth": 500,
+                                "expandedOnInstancePage": true
+                            }
+                        ]
+                    },
+                    "performanceTimeline": {
+                        "tabID": 2,
+                        "component": "ApexChartsDouble",
+                        "tabPath": "performances_timeseries",
+                        "tabIcon": "Tune",
+                        "pageType": "instancePage",
+                        "upperResultClass": "performancesDoubleUpper",
+                        "lowerResultClass": "performancesDoubleLower",
+                        "resultClasses": {
+                            "performancesDoubleUpper": {
+                                "title": "Esitykset aikajanalla",
+                                "intlTitle": "performancesOnATimeline",
+                                "height": "70%",
+                                "sparqlQuery": "performancesTimelineQuery",
+                                "resultMapper": "createCorrespondenceChartData",
+                                "resultMapperConfig": {
+                                    "types": ["composition"],
+                                    "lastLabel": "...",
+                                    "numberTopResults": 20
+                                },
+                                "zType": "performance",
+                                "createChartData": "createClickableMarkersTopTimelineChartData",
+                                "tooltip": { "x": { "format": "d MMM yyyy" } },
+                                "fill": { "opacity": [0.7, 0.5] },
+                                "legend": { "position": "bottom" },
+                                "grid": {
+                                    "row": {
+                                      "colors": ["#d5d5d5", "transparent"], 
+                                      "opacity": 0.25
+                                    },
+                                    "column": { "colors": ["#a8a8a8", "transparent"] },
+                                    "xaxis": { "lines": { "show": true } },
+                                    "yaxis": { "lines": { "show": true } }
+                                }
+                            },
+                            "performancesDoubleLower": {
+                                "height": "30%",
+                                "sparqlQuery": "performancesPerformedQuery",
+                                "resultMapper": "createCorrespondenceChartDataLower",
+                                "resultMapperConfig": {
+                                    "fillEmptyValues": true
+                                },
+                                "createChartData": "createTopTimelineChartData2",
+                                "title": { "text": "Esitykset vuosittain", "align": "left" },
+                                "intlTitle": "annualAppearances",
+                                "xaxis": {
+                                    "type": "datetime",
+                                    "tooltip": { "enabled": true }
+                                },
+                                "yaxis": {
+                                    "labels": { "minWidth": 150, "maxWidth": 300 }
+                                },
+                                "grid": {
+                                    "column": { "colors": ["#a8a8a8", "transparent"] },
+                                    "xaxis": { "lines": { "show": true } },
+                                    "yaxis": { "lines": { "show": true } }
+                                },
+                                "tooltip": { "x": { "format": "yyyy" } },
+                                "stroke": { "curve": "stepline", "width": 1 },
+                                "fill": {
+                                    "type": "gradient",
+                                    "gradient": {
+                                        "shadeIntensity": 1,
+                                        "opacityFrom": 0.3,
+                                        "opacityTo": 0.6
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
