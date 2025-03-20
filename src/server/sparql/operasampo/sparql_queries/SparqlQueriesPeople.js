@@ -109,6 +109,15 @@ export const personProperties = `
     {
       ?id scop:wikidata ?wikidata__id, ?wikidata__prefLabel, ?wikidata__dataProviderUrl .
     }
+    UNION 
+    {
+      ?id ^scop:person ?image__id .
+      ?image__id a scop:PersonImage ;
+                scop:imageUrl ?image__url .
+      OPTIONAL {
+        ?image__id scop:copyright ?image__description .
+      }
+    }
 `
 
 export const personRolesQuery = `

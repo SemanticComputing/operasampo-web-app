@@ -266,6 +266,16 @@
     },
     "properties": [
         {
+            "id": "image",
+            "valueType": "image",
+            "previewImageHeight": 150,
+            "makeLink": true,
+            "externalLink": true,
+            "sortValues": true,
+            "numberedList": false,
+            "hideHeader": true
+        },
+        {
             "id": "uri",
             "valueType": "object",
             "makeLink": true,
