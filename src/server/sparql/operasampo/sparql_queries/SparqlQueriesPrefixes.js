@@ -22,4 +22,5 @@ export const prefixes = `
   PREFIX gn: <http://www.geonames.org/ontology#>
   PREFIX ops: <http://ldf.fi/operasampo/>
   PREFIX scop: <http://ldf.fi/schema/operasampo/>
+  PREFIX scopl: <http://ldf.fi/operasampo/lucene/> 
 `
