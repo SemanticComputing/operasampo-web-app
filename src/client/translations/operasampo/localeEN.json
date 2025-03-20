@@ -109,7 +109,7 @@
     "other": "other",
     "resultClasses": {
       "compositionsByComposer": "composer",
-      "compositionsByLibretist": "libretist",
+      "compositionsByLibretist": "librettist",
       "performancesByComposer": "composer",
       "performancesByComposition": "composition",
       "performancesByConductor": "conductor",
@@ -252,8 +252,8 @@
           "description": "Language of the composition"
         },
         "libretist": {
-          "label": "Libretist",
-          "description": "Libretist of the composition"
+          "label": "librettist",
+          "description": "librettist of the composition"
         },
         "composed": {
           "label": "Time of composition",
@@ -333,8 +333,8 @@
           "description": "Composer of the original composition of the performance"
         },
         "libretist": {
-          "label": "Libretist",
-          "description": "Libretist of the original composition of the performance"
+          "label": "librettist",
+          "description": "librettist of the original composition of the performance"
         },
         "choirLeader": {
           "label": "Choir leader",
@@ -491,7 +491,7 @@
         },
         "composition": {
           "label": "Related to composition",
-          "description": "Compositions to which a person is somehow related to. The person can have perfromed in one of the performances of this composition, taken part in the performance in another way (e.g. as a director) or taken part in the creation of the composition itself as a composer or libretist."
+          "description": "Compositions to which a person is somehow related to. The person can have perfromed in one of the performances of this composition, taken part in the performance in another way (e.g. as a director) or taken part in the creation of the composition itself as a composer or librettist."
         },
         "biographySampo": {
           "label": "BiographySampo resource",
