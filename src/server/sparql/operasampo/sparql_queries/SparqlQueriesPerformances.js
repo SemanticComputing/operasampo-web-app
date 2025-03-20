@@ -30,7 +30,7 @@ export const performanceProperties = `
     }
     UNION
     {
-      ?id scop:choirLeadBy ?choirLeader__id .
+      ?id scop:choirLedBy ?choirLeader__id .
       ?choirLeader__id skos:prefLabel ?choirLeader__prefLabel .
       BIND(CONCAT("/people/page/", REPLACE(STR(?choirLeader__id), "^.*\\\\/(.+)", "$1")) AS ?choirLeader__dataProviderUrl)
     }

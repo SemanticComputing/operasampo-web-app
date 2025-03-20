@@ -476,11 +476,11 @@
             "facetType": "list",
             "facetLabelFilter": "FILTER(LANG(?prefLabel_) = 'fi')",
             "filterType": "uriFilter",
-            "predicate": "(((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator|^scop:costumeDesignBy|^scop:choreographyBy|^scop:scenographyBy)/scop:composition)|^scop:composedBy|^scop:libretist",
+            "predicate": "(((^scop:actor/scop:performance)|^scop:choirLedBy|^scop:conductedBy|^scop:directedBy|^scop:translator|^scop:costumeDesignBy|^scop:choreographyBy|^scop:scenographyBy)/scop:composition)|^scop:composedBy|^scop:libretist",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "((((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator|^scop:costumeDesignBy|^scop:choreographyBy|^scop:scenographyBy)/scop:composition)|^scop:composedBy|^scop:libretist)/skos:prefLabel",
+            "sortByPredicate": "((((^scop:actor/scop:performance)|^scop:choirLedBy|^scop:conductedBy|^scop:directedBy|^scop:translator|^scop:costumeDesignBy|^scop:choreographyBy|^scop:scenographyBy)/scop:composition)|^scop:composedBy|^scop:libretist)/skos:prefLabel",
             "sortDirection": "desc",
             "pieChartButton": true
         }

@@ -217,7 +217,7 @@ export const peopleByRelatedCompositionQuery = `
     <FILTER>
     {
       ?person a scop:Person ;
-              (((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist ?category .
+              (((^scop:actor/scop:performance)|^scop:choirLedBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist ?category .
       ?category skos:prefLabel ?prefLabel .
       FILTER(LANG(?prefLabel) = 'fi')
     }
@@ -225,7 +225,7 @@ export const peopleByRelatedCompositionQuery = `
     {
       ?person a scop:Person .
       FILTER NOT EXISTS {
-        ?person (((^scop:actor/scop:performance)|^scop:choirLeadBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist [] .
+        ?person (((^scop:actor/scop:performance)|^scop:choirLedBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist [] .
       }
       BIND("Tuntematon" as ?category)
       BIND("Tuntematon" as ?prefLabel)
