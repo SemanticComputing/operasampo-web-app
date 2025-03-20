@@ -434,11 +434,11 @@
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
-            "predicate": "scop:libretist",
+            "predicate": "scop:librettist",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "scop:libretist/skos:prefLabel",
+            "sortByPredicate": "scop:librettist/skos:prefLabel",
             "sortDirection": "desc",
             "pieChartButton": true
         }

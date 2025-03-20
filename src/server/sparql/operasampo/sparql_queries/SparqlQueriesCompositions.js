@@ -34,7 +34,7 @@ export const compositionProperties = `
     }
     UNION
     {
-      ?id scop:libretist ?libretist__id .
+      ?id scop:librettist ?libretist__id .
       ?libretist__id skos:prefLabel ?libretist__prefLabel .
       BIND(CONCAT("/people/page/", REPLACE(STR(?libretist__id), "^.*\\\\/(.+)", "$1")) AS ?libretist__dataProviderUrl)
     }
@@ -111,14 +111,14 @@ export const compositionsByLibretistQuery = `
     <FILTER>
     {
       ?composition a scop:Composition ;
-                  scop:libretist ?category .
+                  scop:librettist ?category .
       ?category skos:prefLabel ?prefLabel .
     }
     UNION
     {
       ?composition a scop:Composition .
       FILTER NOT EXISTS {
-        ?composition scop:libretist [] .
+        ?composition scop:librettist [] .
       }
       BIND("Tuntematon" as ?category)
       BIND("Tuntematon" as ?prefLabel)
@@ -194,7 +194,7 @@ export const csvCompositionQuery = `
     }
 
     OPTIONAL { 
-      ?id scop:libretist ?libretist . 
+      ?id scop:librettist ?libretist . 
       ?libretist skos:prefLabel ?libretistLabel .
     }
 

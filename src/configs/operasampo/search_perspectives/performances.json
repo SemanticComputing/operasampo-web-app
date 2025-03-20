@@ -527,11 +527,11 @@
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",
-            "predicate": "scop:composition/scop:libretist",
+            "predicate": "scop:composition/scop:librettist",
             "searchField": true,
             "sortButton": true,
             "sortBy": "instanceCount",
-            "sortByPredicate": "scop:composition/scop:libretist/skos:prefLabel",
+            "sortByPredicate": "scop:composition/scop:librettist/skos:prefLabel",
             "sortDirection": "desc",
             "pieChartButton": true
         },

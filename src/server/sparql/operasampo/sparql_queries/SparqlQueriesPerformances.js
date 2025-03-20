@@ -24,7 +24,7 @@ export const performanceProperties = `
     }
     UNION
     {
-      ?id scop:composition/scop:libretist ?libretist__id .
+      ?id scop:composition/scop:librettist ?libretist__id .
       ?libretist__id skos:prefLabel ?libretist__prefLabel .
       BIND(CONCAT("/people/page/", REPLACE(STR(?libretist__id), "^.*\\\\/(.+)", "$1")) AS ?libretist__dataProviderUrl)
     }
@@ -356,7 +356,7 @@ export const csvPerformanceQuery = `
     OPTIONAL { ?id scop:composition ?composition . }
 
     OPTIONAL { ?id scop:composition/scop:composedBy ?composer . }
-    OPTIONAL { ?id scop:composition/scop:libretist ?libretist . }
+    OPTIONAL { ?id scop:composition/scop:librettist ?libretist . }
 
     OPTIONAL { ?id scop:conductedBy ?conductor . }
     OPTIONAL { ?id scop:directedBy ?director . }

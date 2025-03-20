@@ -70,7 +70,7 @@ export const personProperties = `
     }
     UNION
     {
-      ?id ^scop:libretist ?libretto__id .
+      ?id ^scop:librettist ?libretto__id .
       ?libretto__id skos:prefLabel ?libretto__prefLabel .
       FILTER(LANG(?libretto__prefLabel) = 'fi')
       BIND(CONCAT("/compositions/page/", REPLACE(STR(?libretto__id), "^.*\\\\/(.+)", "$1")) AS ?libretto__dataProviderUrl)
@@ -226,7 +226,7 @@ export const peopleByRelatedCompositionQuery = `
     <FILTER>
     {
       ?person a scop:Person ;
-              (((^scop:actor/scop:performance)|^scop:choirLedBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist ?category .
+              (((^scop:actor/scop:performance)|^scop:choirLedBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:librettist ?category .
       ?category skos:prefLabel ?prefLabel .
       FILTER(LANG(?prefLabel) = 'fi')
     }
@@ -234,7 +234,7 @@ export const peopleByRelatedCompositionQuery = `
     {
       ?person a scop:Person .
       FILTER NOT EXISTS {
-        ?person (((^scop:actor/scop:performance)|^scop:choirLedBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:libretist [] .
+        ?person (((^scop:actor/scop:performance)|^scop:choirLedBy|^scop:conductedBy|^scop:directedBy|^scop:translator)/scop:composition)|^scop:composedBy|^scop:librettist [] .
       }
       BIND("Tuntematon" as ?category)
       BIND("Tuntematon" as ?prefLabel)
