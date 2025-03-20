@@ -454,7 +454,7 @@
             "facetType": "text",
             "filterType": "textFilter",
             "sortByPredicate": "skos:prefLabel",
-            "textQueryProperty": "skos:prefLabel"
+            "textQueryProperty": "scopl:labels"
         },
         "role": {
             "containerClass": "ten",
