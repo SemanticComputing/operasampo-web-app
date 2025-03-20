@@ -316,7 +316,7 @@
             "minWidth": 200
         },
         {
-            "id": "libretist",
+            "id": "librettist",
             "valueType": "object",
             "makeLink": true,
             "externalLink": false,
@@ -523,7 +523,7 @@
             "sortDirection": "desc",
             "pieChartButton": true
         },
-        "libretist": {
+        "librettist": {
             "containerClass": "ten",
             "facetType": "list",
             "filterType": "uriFilter",

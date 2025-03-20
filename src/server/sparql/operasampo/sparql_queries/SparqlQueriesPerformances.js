@@ -24,9 +24,9 @@ export const performanceProperties = `
     }
     UNION
     {
-      ?id scop:composition/scop:librettist ?libretist__id .
-      ?libretist__id skos:prefLabel ?libretist__prefLabel .
-      BIND(CONCAT("/people/page/", REPLACE(STR(?libretist__id), "^.*\\\\/(.+)", "$1")) AS ?libretist__dataProviderUrl)
+      ?id scop:composition/scop:librettist ?librettist__id .
+      ?librettist__id skos:prefLabel ?librettist__prefLabel .
+      BIND(CONCAT("/people/page/", REPLACE(STR(?librettist__id), "^.*\\\\/(.+)", "$1")) AS ?librettist__dataProviderUrl)
     }
     UNION
     {
@@ -338,7 +338,7 @@ export const performancesPerformedQuery = `
 
 export const csvPerformanceQuery = `
   SELECT DISTINCT ?id ?label 
-  (GROUP_CONCAT(DISTINCT ?composer; separator="; ") AS ?composers) (GROUP_CONCAT(DISTINCT ?libretist; separator="; ") AS ?libretists)
+  (GROUP_CONCAT(DISTINCT ?composer; separator="; ") AS ?composers) (GROUP_CONCAT(DISTINCT ?librettist; separator="; ") AS ?librettists)
   (GROUP_CONCAT(DISTINCT ?conductor; separator="; ") AS ?conductors) (GROUP_CONCAT(DISTINCT ?director; separator="; ") AS ?directors)
   (GROUP_CONCAT(DISTINCT ?costume_designer; separator="; ") AS ?costume_designers) (GROUP_CONCAT(DISTINCT ?choreographer; separator="; ") AS ?choreographers) (GROUP_CONCAT(DISTINCT ?scenographer; separator="; ") AS ?scenographers)
   (GROUP_CONCAT(DISTINCT ?producer; separator="; ") AS ?producers)
@@ -356,7 +356,7 @@ export const csvPerformanceQuery = `
     OPTIONAL { ?id scop:composition ?composition . }
 
     OPTIONAL { ?id scop:composition/scop:composedBy ?composer . }
-    OPTIONAL { ?id scop:composition/scop:librettist ?libretist . }
+    OPTIONAL { ?id scop:composition/scop:librettist ?librettist . }
 
     OPTIONAL { ?id scop:conductedBy ?conductor . }
     OPTIONAL { ?id scop:directedBy ?director . }

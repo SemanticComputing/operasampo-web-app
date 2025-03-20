@@ -34,9 +34,9 @@ export const compositionProperties = `
     }
     UNION
     {
-      ?id scop:librettist ?libretist__id .
-      ?libretist__id skos:prefLabel ?libretist__prefLabel .
-      BIND(CONCAT("/people/page/", REPLACE(STR(?libretist__id), "^.*\\\\/(.+)", "$1")) AS ?libretist__dataProviderUrl)
+      ?id scop:librettist ?librettist__id .
+      ?librettist__id skos:prefLabel ?librettist__prefLabel .
+      BIND(CONCAT("/people/page/", REPLACE(STR(?librettist__id), "^.*\\\\/(.+)", "$1")) AS ?librettist__dataProviderUrl)
     }
     UNION
     {
@@ -105,7 +105,7 @@ export const compositionsByComposerQuery = `
   ORDER BY DESC(?instanceCount)
 `
 
-export const compositionsByLibretistQuery = `
+export const compositionsByLibrettistQuery = `
   SELECT ?category ?prefLabel (COUNT(DISTINCT ?composition) as ?instanceCount)
   WHERE {
     <FILTER>
@@ -178,7 +178,7 @@ export const csvCompositionQuery = `
   SELECT DISTINCT 
   ?id ?label (GROUP_CONCAT(DISTINCT ?altLabel; separator="; ") AS ?alternative_labels) 
   (GROUP_CONCAT(DISTINCT ?composer; separator="; ") AS ?composers) (GROUP_CONCAT(DISTINCT ?composerLabel; separator="; ") AS ?labeled_composers) 
-  (GROUP_CONCAT(DISTINCT ?libretist; separator="; ") AS ?libretists) (GROUP_CONCAT(DISTINCT ?libretistLabel; separator="; ") AS ?labeled_libretists) 
+  (GROUP_CONCAT(DISTINCT ?librettist; separator="; ") AS ?librettists) (GROUP_CONCAT(DISTINCT ?librettistLabel; separator="; ") AS ?labeled_librettists) 
   (GROUP_CONCAT(DISTINCT ?language; separator="; ") AS ?languages) ?composed (GROUP_CONCAT(DISTINCT ?published; separator="; ") AS ?premiere) (GROUP_CONCAT(DISTINCT ?additionalInfo; separator="; ") AS ?additional_information)
   WHERE {
     <FILTER>
@@ -194,8 +194,8 @@ export const csvCompositionQuery = `
     }
 
     OPTIONAL { 
-      ?id scop:librettist ?libretist . 
-      ?libretist skos:prefLabel ?libretistLabel .
+      ?id scop:librettist ?librettist . 
+      ?librettist skos:prefLabel ?librettistLabel .
     }
 
     OPTIONAL { ?id scop:language ?language . }

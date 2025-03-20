@@ -109,7 +109,7 @@
     "other": "muu",
     "resultClasses": {
       "compositionsByComposer": "säveltäjä",
-      "compositionsByLibretist": "libretisti",
+      "compositionsByLibrettist": "libretisti",
       "performancesByComposer": "säveltäjä",
       "performancesByComposition": "sävellys",
       "performancesByConductor": "kapellimestari",
@@ -248,7 +248,7 @@
           "label": "Kieli",
           "description": "Sävellyksen kieli"
         },
-        "libretist": {
+        "librettist": {
           "label": "Libretisti",
           "description": "Sävellyksen libretisti"
         },
@@ -329,7 +329,7 @@
           "label": "Säveltäjä",
           "description": "Esityksen sävellyksen säveltäjä"
         },
-        "libretist": {
+        "librettist": {
           "label": "Libretisti",
           "description": "Esityksen sävellyksen libretisti"
         },

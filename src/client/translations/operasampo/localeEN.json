@@ -109,7 +109,7 @@
     "other": "other",
     "resultClasses": {
       "compositionsByComposer": "composer",
-      "compositionsByLibretist": "librettist",
+      "compositionsByLibrettist": "librettist",
       "performancesByComposer": "composer",
       "performancesByComposition": "composition",
       "performancesByConductor": "conductor",
@@ -251,7 +251,7 @@
           "label": "Language",
           "description": "Language of the composition"
         },
-        "libretist": {
+        "librettist": {
           "label": "librettist",
           "description": "librettist of the composition"
         },
@@ -332,7 +332,7 @@
           "label": "Composer",
           "description": "Composer of the original composition of the performance"
         },
-        "libretist": {
+        "librettist": {
           "label": "librettist",
           "description": "librettist of the original composition of the performance"
         },
