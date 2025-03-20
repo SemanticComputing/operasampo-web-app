@@ -93,7 +93,8 @@
     "download": "download",
     "recommendations": "recommendations",
     "export_csv": "CSV",
-    "export_sparql": "SPARQL query"
+    "export_sparql": "SPARQL query",
+    "share": "share"
   },
   "table": {
     "rowsPerPage": "Rows per page",

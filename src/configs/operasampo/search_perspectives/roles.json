@@ -149,6 +149,14 @@
             "tabIcon": "ArrowForward",
             "resultClass": "roles",
             "facetClass": "roles"
+        },
+        "export": {
+            "tabID": 3,
+            "component": "ExportLink",
+            "tabPath": "share",
+            "tabIcon": "CloudDownload",
+            "resultClass": "roles",
+            "facetClass": "roles"
         }
     },
     "properties": [

@@ -262,6 +262,14 @@
             "tabIcon": "ArrowForward",
             "resultClass": "people",
             "facetClass": "people"
+        },
+        "export": {
+            "tabID": 4,
+            "component": "ExportLink",
+            "tabPath": "share",
+            "tabIcon": "CloudDownload",
+            "resultClass": "people",
+            "facetClass": "people"
         }
     },
     "properties": [

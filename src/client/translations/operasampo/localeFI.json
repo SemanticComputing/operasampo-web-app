@@ -93,7 +93,8 @@
     "download": "lataa",
     "recommendations": "suositukset",
     "export_csv": "CSV",
-    "export_sparql": "SPARQL-kysely"
+    "export_sparql": "SPARQL-kysely",
+    "share": "jaa"
   },
   "table": {
     "rowsPerPage": "Rivejä per sivu",

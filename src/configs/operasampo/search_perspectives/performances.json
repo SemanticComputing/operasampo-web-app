@@ -266,6 +266,14 @@
             "tabIcon": "ArrowForward",
             "resultClass": "performances",
             "facetClass": "performances"
+        },
+        "export": {
+            "tabID": 6,
+            "component": "ExportLink",
+            "tabPath": "share",
+            "tabIcon": "CloudDownload",
+            "resultClass": "performances",
+            "facetClass": "performances"
         }
     },
     "properties": [

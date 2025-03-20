@@ -260,6 +260,14 @@
             "tabIcon": "ArrowForward",
             "resultClass": "compositions",
             "facetClass": "compositions"
+        },
+        "export": {
+            "tabID": 4,
+            "component": "ExportLink",
+            "tabPath": "share",
+            "tabIcon": "CloudDownload",
+            "resultClass": "compositions",
+            "facetClass": "compositions"
         }
     },
     "properties": [
