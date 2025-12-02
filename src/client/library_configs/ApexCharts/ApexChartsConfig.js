@@ -262,7 +262,7 @@ export const createClickableMarkersTopTimelineChartData = ({
       }
     },
     ...(grid) && { grid },
-    ...(tooltip) && { tooltip: { ...tooltip, y: { title: { formatter: (seriesName) => intl.get(`timeseries.${seriesName}`) } }, z: { title: intl.get(`timeseries.${zType}`), formatter: function (value, { series, seriesIndex, dataPointIndex, w }) { return value[0] } } } },
+    ...(tooltip) && { tooltip: { ...tooltip, y: { title: { formatter: (seriesName) => intl.get(`timeseries.${seriesName}`) }, formatter: function (value, { series, seriesIndex, dataPointIndex, w }) { return results.series[seriesIndex].data[dataPointIndex][2][2] } }, z: { title: intl.get(`timeseries.${zType}`), formatter: function (value, { series, seriesIndex, dataPointIndex, w }) { return value[0] } } } },
     ...(legend) && { legend },
     ...(fill) && { fill }
   }

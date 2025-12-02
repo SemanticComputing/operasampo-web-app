@@ -572,22 +572,25 @@ export const createCorrespondenceChartData = ({ sparqlBindings, config }) => {
   const cnAll = new Counter(sparqlBindings.map(ob => ob[ob.type + '__label']))
   const topTies = cnAll.mostCommonLabels(topN)
 
+  var includeLastLabelRow = false
+
   const datas = {}
   types.forEach(type => { datas[type] = [] })
   sparqlBindings.forEach(ob => {
     const v = topTies.indexOf(ob[ob.type + '__label'])
     //  one of the top correspondences (v > -1) or in other (topTies.length)
     if (v > -1) {
-      datas[ob.type].push([ob.date, v, [ob.performance_label, ob.performance_url]])
+      datas[ob.type].push([ob.date, v, [ob.performance_label, ob.performance_url, ob.venue__label]])
     } else if (lastLabel) {
-      datas[ob.type].push([ob.date, topTies.length, [ob.performance_label, ob.performance_url]])
+      includeLastLabelRow = true
+      datas[ob.type].push([ob.date, topTies.length, [ob.performance_label, ob.performance_url, ob.venue__label]])
     }
   })
 
   const years = new Set(sparqlBindings.map(ob => { return parseInt(ob.year) }))
 
   topN = topTies.length
-  if (lastLabel) { topTies.push(lastLabel) }
+  if (lastLabel && includeLastLabelRow) { topTies.push(lastLabel) }
 
   return {
     series: types.map(type => { return { name: type, data: datas[type] } }),
