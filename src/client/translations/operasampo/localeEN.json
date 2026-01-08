@@ -501,6 +501,10 @@
         "wikidata": {
           "label": "Wikidata resource",
           "description": "Wikidata resource of this person"
+        },
+        "image": {
+          "label": "Image",
+          "description": "Image depicting the person"
         }
       }
     },

@@ -498,6 +498,10 @@
         "wikidata": {
           "label": "Wikidata-resurssi",
           "description": "Henkilön resurssi Wikidatassa"
+        },
+        "image": {
+          "label": "Kuva",
+          "description": "Henkilöä kuvaava kuva"
         }
       }
     },
