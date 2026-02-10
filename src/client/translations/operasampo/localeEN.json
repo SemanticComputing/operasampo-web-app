@@ -253,8 +253,8 @@
           "description": "Language of the composition"
         },
         "librettist": {
-          "label": "librettist",
-          "description": "librettist of the composition"
+          "label": "Librettist",
+          "description": "Librettist of the composition"
         },
         "composed": {
           "label": "Time of composition",
@@ -334,8 +334,8 @@
           "description": "Composer of the original composition of the performance"
         },
         "librettist": {
-          "label": "librettist",
-          "description": "librettist of the original composition of the performance"
+          "label": "Librettist",
+          "description": "Librettist of the original composition of the performance"
         },
         "choirLeader": {
           "label": "Choir leader",
