@@ -212,7 +212,7 @@ export const processPortalConfig = async portalConfig => {
   if (layoutConfig.mainPage) {
     const { bannerImage, bannerBackround } = layoutConfig.mainPage
     const { default: bannerImageURL } = await import(/* webpackMode: "eager" */ `../img/${bannerImage}`)
-    layoutConfig.mainPage.bannerBackround = bannerBackround.replace('<BANNER_IMAGE_URL', bannerImageURL)
+    layoutConfig.mainPage.bannerBackround = bannerBackround.replace('<BANNER_IMAGE_URL>', bannerImageURL)
   }
   const mapboxAccessToken = process.env.MAPBOX_ACCESS_TOKEN
   if (mapboxConfig && mapboxAccessToken) {
