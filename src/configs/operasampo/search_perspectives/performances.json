@@ -168,6 +168,7 @@
             },
             "createChartData": "createSingleLineChartData",
             "title": "Vuosittaiset esitykset",
+            "intlTitle": "performancesLinechart",
             "xaxisTitle": "Vuosi",
             "xaxisType": "category",
             "xaxisTickAmount": 30,

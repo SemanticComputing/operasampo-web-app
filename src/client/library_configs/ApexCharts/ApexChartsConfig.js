@@ -29,9 +29,14 @@ export const createSingleLineChartData = ({
     yaxisTitle,
     stroke,
     fill,
-    tooltip
+    tooltip,
+    intlTitle
   } = resultClassConfig
   const customizedCategoryLabels = resultClassConfig.resultMapperConfig && resultClassConfig.resultMapperConfig.customizedCategoryLabels
+  const localizedTitle = intlTitle ? intl.get(`lineChart.${intlTitle}.title`) : title
+  const localizedX = intlTitle ? intl.get(`lineChart.${intlTitle}.xaxis`) : xaxisTitle
+  const localizedY = intlTitle ? intl.get(`lineChart.${intlTitle}.yaxis`) : yaxisTitle
+  const localizedSeries = intlTitle ? intl.get(`lineChart.${intlTitle}.series`) : seriesTitle
   const apexChartOptionsWithData = {
     chart: {
       type: 'line',
@@ -41,12 +46,12 @@ export const createSingleLineChartData = ({
     },
     series: [
       {
-        name: seriesTitle,
+        name: localizedSeries,
         data: results.seriesData
       }
     ],
     title: {
-      text: title
+      text: localizedTitle
     },
     xaxis: {
       ...(xaxisType) && { type: xaxisType }, // default is 'category'
@@ -55,12 +60,12 @@ export const createSingleLineChartData = ({
       ...(customizedCategoryLabels) && { overwriteCategories: results.categeryLabels },
       categories: results.categoriesData,
       title: {
-        text: xaxisTitle
+        text: localizedX
       }
     },
     yaxis: {
       title: {
-        text: yaxisTitle
+        text: localizedY
       }
     },
     ...(stroke) && { stroke },

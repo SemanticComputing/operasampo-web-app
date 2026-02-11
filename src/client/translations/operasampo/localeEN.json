@@ -122,6 +122,12 @@
     }
   },
   "lineChart": {
+    "performancesLinechart": {
+      "title": "Annual performances",
+      "xaxis": "Year",
+      "yaxis": "Count",
+      "series": "Count"
+    }
   },
   "timeseries": {
     "venue": "venue: ",
