@@ -30,14 +30,9 @@ export const createSingleLineChartData = ({
     yaxisTitle,
     stroke,
     fill,
-    tooltip,
-    intlTitle
+    tooltip
   } = resultClassConfig
   const customizedCategoryLabels = resultClassConfig.resultMapperConfig && resultClassConfig.resultMapperConfig.customizedCategoryLabels
-  const localizedTitle = intlTitle ? intl.get(`lineChart.${intlTitle}.title`) : title
-  const localizedX = intlTitle ? intl.get(`lineChart.${intlTitle}.xaxis`) : xaxisTitle
-  const localizedY = intlTitle ? intl.get(`lineChart.${intlTitle}.yaxis`) : yaxisTitle
-  const localizedSeries = intlTitle ? intl.get(`lineChart.${intlTitle}.series`) : seriesTitle
   const apexChartOptionsWithData = {
     chart: {
       type: 'line',
@@ -47,12 +42,12 @@ export const createSingleLineChartData = ({
     },
     series: [
       {
-        name: localizedSeries,
+        name: seriesTitle,
         data: results.seriesData
       }
     ],
     title: {
-      text: localizedTitle
+      text: title
     },
     xaxis: {
       ...(xaxisType) && { type: xaxisType }, // default is 'category'
@@ -61,12 +56,12 @@ export const createSingleLineChartData = ({
       ...(customizedCategoryLabels) && { overwriteCategories: results.categeryLabels },
       categories: results.categoriesData,
       title: {
-        text: localizedX
+        text: xaxisTitle
       }
     },
     yaxis: {
       title: {
-        text: localizedY
+        text: yaxisTitle
       }
     },
     ...(stroke) && { stroke },
@@ -271,13 +266,16 @@ export const createClickableMarkersTopTimelineChartData = ({
       max: results.topTies.length,
       tickAmount: results.topTies.length + 1,
       reversed: true,
+      floating: true,
       labels: {
         formatter: function (value) {
           return (value >= 0) ? results.topTies[value] || '' : ''
         },
         minWidth: 150,
         maxWidth: 300,
-        align: 'right'
+        align: 'right',
+        offsetX: 0,
+        offsetY: 0
       }
     },
     ...(grid) && { grid },
