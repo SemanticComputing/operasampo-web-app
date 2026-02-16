@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import intl from 'react-intl-universal'
 import InstancePageTable from './InstancePageTable'
-import withStyles from '@mui/styles/withStyles'
+import { withStyles } from 'tss-react/mui'
 import { Box, Chip, Divider } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'
 
@@ -115,4 +115,4 @@ InstancePageTableList.propTypes = {
 
 export const InstanceHomePageTableListComponent = InstancePageTableList
 
-export default withStyles(styles)(InstancePageTableList)
+export default withStyles(InstancePageTableList, styles)

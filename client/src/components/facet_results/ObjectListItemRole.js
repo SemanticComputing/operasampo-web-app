@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import withStyles from '@mui/styles/withStyles'
+import { withStyles } from 'tss-react/mui'
 import ObjectListItemLink from './ObjectListItemLink'
 
 const styles = () => ({
@@ -77,4 +77,4 @@ ObjectListItemRole.propTypes = {
 
 export const ObjectListItemEventComponent = ObjectListItemRole
 
-export default withStyles(styles)(ObjectListItemRole)
+export default withStyles(ObjectListItemRole, styles)
