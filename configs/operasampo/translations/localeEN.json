@@ -122,12 +122,6 @@
     }
   },
   "lineChart": {
-    "performancesLinechart": {
-      "title": "Annual performances",
-      "xaxis": "Year",
-      "yaxis": "Count",
-      "series": "Count"
-    }
   },
   "timeseries": {
     "venue": "venue: ",
@@ -259,8 +253,8 @@
           "description": "Language of the composition"
         },
         "librettist": {
-          "label": "Librettist",
-          "description": "Librettist of the composition"
+          "label": "librettist",
+          "description": "librettist of the composition"
         },
         "composed": {
           "label": "Time of composition",
@@ -340,8 +334,8 @@
           "description": "Composer of the original composition of the performance"
         },
         "librettist": {
-          "label": "Librettist",
-          "description": "Librettist of the original composition of the performance"
+          "label": "librettist",
+          "description": "librettist of the original composition of the performance"
         },
         "choirLeader": {
           "label": "Choir leader",

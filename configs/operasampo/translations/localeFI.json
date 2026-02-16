@@ -122,12 +122,6 @@
     }
   },
   "lineChart": {
-    "performancesLinechart": {
-      "title": "Vuosittaiset esitykset",
-      "xaxis": "Vuosi",
-      "yaxis": "Lukumäärä",
-      "series": "Lukumäärä"
-    }
   },
   "timeseries": {
     "venue": "esityspaikka: ",

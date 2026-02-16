@@ -1,8 +1,8 @@
 {
     "id": "people",
     "endpoint": {
-        "url": "https://ldf.fi/operasampo/sparql",
-        "useAuth": false,
+        "url": "https://ldf.fi/operasampo-dev/sparql",
+        "useAuth": true,
         "prefixesFile": "SparqlQueriesPrefixes.js"
     },
     "sparqlQueriesFile": "SparqlQueriesPeople.js",

@@ -168,7 +168,6 @@
             },
             "createChartData": "createSingleLineChartData",
             "title": "Vuosittaiset esitykset",
-            "intlTitle": "performancesLinechart",
             "xaxisTitle": "Vuosi",
             "xaxisType": "category",
             "xaxisTickAmount": 30,
@@ -209,7 +208,7 @@
                           "colors": ["#d5d5d5", "transparent"], 
                           "opacity": 0.25
                         },
-                        "column": { "colors": ["#a8a8a8", "transparent"] },
+                        "column": { "colors": ["transparent"] },
                         "xaxis": { "lines": { "show": true } },
                         "yaxis": { "lines": { "show": true } }
                     }
@@ -234,7 +233,7 @@
                         "labels": { "minWidth": 150, "maxWidth": 300 }
                     },
                     "grid": {
-                        "column": { "colors": ["#a8a8a8", "transparent"] },
+                        "column": { "colors": ["transparent"] },
                         "xaxis": { "lines": { "show": true } },
                         "yaxis": { "lines": { "show": true } }
                     },
