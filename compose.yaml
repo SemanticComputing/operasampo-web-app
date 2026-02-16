@@ -34,6 +34,7 @@ services:
     environment:
       BABEL_ENV: ${SERVER_BABEL_ENV}
       NODE_ENV: ${NODE_ENV}
+      SPARQL_ENDPOINT_BASIC_AUTH: ${SPARQL_ENDPOINT_BASIC_AUTH}
 
 
 volumes:
