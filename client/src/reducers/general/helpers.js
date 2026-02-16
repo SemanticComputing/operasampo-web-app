@@ -120,6 +120,7 @@ export const updateFacetOption = (state, action) => {
     'spatialFilter',
     'textFilter',
     'timespanFilter',
+    'dateNoTimespanFilter',
     'integerFilter',
     'dateFilter',
     'directTimespanFilter',
@@ -172,7 +173,7 @@ const updateFacetFilter = (state, action) => {
       ...state.facets[facetID],
       textFilter: value
     }
-  } else if (oldFacet.filterType === 'timespanFilter' || oldFacet.filterType === 'dateFilter' || oldFacet.filterType === 'directTimespanFilter') {
+  } else if (oldFacet.filterType === 'timespanFilter' || oldFacet.filterType === 'dateFilter' || oldFacet.filterType === 'directTimespanFilter' || oldFacet.filterType === 'dateNoTimespanFilter' ) {
     if (value == null) {
       newFacet = {
         ...state.facets[facetID],
