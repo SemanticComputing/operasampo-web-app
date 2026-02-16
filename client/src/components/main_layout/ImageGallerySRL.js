@@ -22,10 +22,24 @@ const ImageGallerySRL = props => {
 
   const thumbnailsRef = React.useRef(null)
 
+  function importAll (r) {
+    const imageCache = {}
+    r.keys().map(item => (imageCache[item.replace('./', '')] = r(item)))
+    return imageCache
+  }
+
   const images = data.map(item => {
+    let tempUrl = item.url
+    const absoluteUrlRegExp = /^(?:[a-z]+:)?\/\//i
+    if (!absoluteUrlRegExp.test(item.url)) {
+      const importedImages = importAll(require.context('../../img/', true, /\.(png|jpg)$/))
+      if (importedImages[item.url] !== undefined) {
+        tempUrl = importedImages[item.url].default
+      }
+    }
     return {
-      src: item.url,
-      thumbnail: item.url,
+      src: tempUrl,
+      thumbnail: tempUrl,
       description: item.description
     }
   })
