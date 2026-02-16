@@ -1,67 +1,46 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 # OperaSampo
 
-The Sampo-UI framework is being developed by the [Semantic Computing Research Group (SeCo)](https://seco.cs.aalto.fi) 
-at the Aalto University, Finland. See the [research page](https://seco.cs.aalto.fi/tools/sampo-ui) for 
-more information plus instructions and tutorials.
+This fork of Sampo-UI has as main purpose to modernise the framework to make it more usable for new projects.
+Secondly, it also tries to move as much customisation as possible to configs to make it more robust and future-proof.
 
-## Design philosophy
+See the [wiki page](https://github.com/GhentCDH/sampo-ui/wiki/Sampo%E2%80%90UI-updates-by-GhentCDH) for detailed
+explanations on changes made.
 
-Sampo-UI offers a comprehensive "starting base" of a full stack JavaScript web application. 
-Therefore it is not possible to include Sampo-UI as separate component into an existing 
-application. The 
-most convenient way to build a new user interface using Sampo-UI is to read the documentation 
-provided below, fork this repository, and start developing from there.
+## Running development and production
 
-## Requirements
+### Development
 
-* [Node.js® &ndash; a JavaScript runtime built on Chrome's V8 JavaScript engine.](https://nodejs.org/en/) (version 16.13.0)
+Copy the content of `example.env` into your own `.env` file. Note that if you need additional env variables that you
+need to add them to compose.yaml as well.
 
-* [Nodemon &ndash; monitor for any changes in your source and automatically restart your server](https://nodemon.io/)
+Then run:
 
-Note for Linux users: if your home directory is mounted from a network drive, using the [Node Version Manager](https://github.com/nvm-sh/nvm) for installing Node.js highly recommended. 
-
-## Installation
-
-### Local development
-
-Install the dependencies specified in `package.json` (this command needs to be run only once,
-  as long as you don't modify the dependencies):
-
-`npm install`
-
-Run client and server concurrently:
-
-`npm run dev`
-
-## Deploy with Docker
-
-These example commands can be used to deploy the server at http://localhost:3006/ in **production** mode. Production mode means in this case that the server listens for API requests at URLs beginning with http://localhost:3006/api/v1/... and additionally serves the client (React app) at http://localhost:3006/. The API docs can be found at http://localhost:3006/api-docs/.
-
-Note that in **development** mode Webpack is used for serving the client, and the server is used only for handling API requests. 
-
-The build argument API_URL must be provided.
-
-### Build
- `docker build --build-arg API_URL=http://localhost:3006/api/v1 -t sampo-web-app-image .`
-
-### Run
- `docker run -d -p 3006:3001 --name sampo-web-app sampo-web-app-image`
-
-### Run with password protected endpoint
- `docker run -d -p 3006:3001 -e SPARQL_ENDPOINT_BASIC_AUTH=your_password --name sampo-web-app sampo-web-app-image`
-
-### Upgrade
 ```
-docker build --build-arg API_URL=http://localhost:3006/api/v1 -t sampo-web-app-image .
-docker stop sampo-web-app
-docker rm sampo-web-app
-docker run -d -p 3006:3001 --name sampo-web-app sampo-web-app-image
+docker compose up
+```
+to run both client and server in development mode.
+
+
+### Production
+
+To build client and server images run:
+```bash
+docker compose -f compose-prod.yaml build 
+```
+
+To run prod containers make sure you again have a .env with your `API_URL` and all other env variables you need. Again 
+note that if you need additional env variables that you need to add them to compose-prod.yaml as well.
+Then run:
+
+```bash
+docker compose -f compose-prod.yaml up
+
 ```
 
 ## Developer guide
 
- ### Coding style
+### Coding style
 
 The [JavaScript style guide, linter, and formatter](https://standardjs.com) module (named "standard" in package.json) is installed by default as development dependency. Do not install or create any additional style definitions or configurations. Instead, install an appropriate [plugin](https://standardjs.com/index.html#are-there-text-editor-plugins) for your text editor. If there are no plugins  available for your favorite editor, it is highly recommended to switch into a supported editor. 
 
