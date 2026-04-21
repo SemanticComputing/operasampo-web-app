@@ -187,7 +187,7 @@ export const getFacet = async ({
   })
   if (facetConfig.facetType === 'hierarchical') {
     return ({
-      facetClass: facetClass,
+      facetClass,
       id: facetID,
       data: response.data.treeData,
       flatData: response.data.flatData,
@@ -195,7 +195,7 @@ export const getFacet = async ({
     })
   } else {
     return ({
-      facetClass: facetClass,
+      facetClass,
       id: facetID,
       data: response.data,
       sparqlQuery: response.sparqlQuery
@@ -233,7 +233,7 @@ const generateSelectedNoHitsBlock = ({
     facetClass,
     constraints,
     filterTarget: 'instance',
-    facetID: facetID,
+    facetID,
     inverse: true
   })
   const selections = literal ? `'${currentSelectionsWithoutUnknown.join("' '")}'` : `<${currentSelectionsWithoutUnknown.join('> <')}>`

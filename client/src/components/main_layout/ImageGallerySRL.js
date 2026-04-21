@@ -2,11 +2,11 @@ import React from 'react'
 import { styled } from '@mui/material/styles'
 import Button from '@mui/material/Button'
 import Lightbox from 'yet-another-react-lightbox'
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
-import Captions from "yet-another-react-lightbox/plugins/captions"
-import "yet-another-react-lightbox/styles.css"
-import "yet-another-react-lightbox/plugins/thumbnails.css"
-import "yet-another-react-lightbox/plugins/captions.css"
+import Thumbnails from 'yet-another-react-lightbox/plugins/thumbnails'
+import Captions from 'yet-another-react-lightbox/plugins/captions'
+import 'yet-another-react-lightbox/styles.css'
+import 'yet-another-react-lightbox/plugins/thumbnails.css'
+import 'yet-another-react-lightbox/plugins/captions.css'
 
 const ImgPreviewImage = styled('img')({
   border: '1px solid lightgray'
@@ -52,10 +52,10 @@ const ImageGallerySRL = props => {
           alt='preview image'
         />
       </Button>
-      <Lightbox 
+      <Lightbox
         open={open}
-        close={() => setOpen(false)} 
-        slides={images} 
+        close={() => setOpen(false)}
+        slides={images}
         plugins={[Thumbnails, Captions]}
         thumbnails={{ ref: thumbnailsRef }}
         on={{
@@ -63,7 +63,7 @@ const ImageGallerySRL = props => {
             (thumbnailsRef.current?.visible
               ? thumbnailsRef.current?.hide
               : thumbnailsRef.current?.show)?.()
-          },
+          }
         }}
       />
     </>
