@@ -8,18 +8,18 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Typography from '@mui/material/Typography'
-import HierarchicalFacet from './HierarchicalFacet'
-import TextFacet from './TextFacet'
-import SliderFacet from './SliderFacet'
-import RangeFacet from './RangeFacet'
-import DateFacet from './DateFacet'
+import HierarchicalFacet from 'components/facet_bar/HierarchicalFacet'
+import TextFacet from 'components/facet_bar/TextFacet'
+import SliderFacet from 'components/facet_bar/SliderFacet'
+import RangeFacet from 'components/facet_bar/RangeFacet'
+import DateFacet from 'components/facet_bar/DateFacet'
 import Paper from '@mui/material/Paper'
-import FacetHeader from './FacetHeader'
-import FacetInfo from './FacetInfo'
-import DatasetSelector from './DatasetSelector'
-import SearchField from './SearchField'
-import LeafletMapDialog from './LeafletMapDialog'
-import CustomComponentWrapper from '../CustomComponentWrapper'
+import FacetHeader from 'components/facet_bar/FacetHeader'
+import FacetInfo from 'components/facet_bar/FacetInfo'
+import DatasetSelector from 'components/facet_bar/DatasetSelector'
+import SearchField from 'components/facet_bar/SearchField'
+import LeafletMapDialog from 'components/facet_bar/LeafletMapDialog'
+import CustomComponentWrapper from 'components/CustomComponentWrapper'
 
 const facetHeights = {
   one: {
@@ -227,21 +227,6 @@ class FacetBar extends React.Component {
             dataType='ISOString'
             minLabel={intl.get('facetBar.min')}
             maxLabel={intl.get('facetBar.max')}
-          />
-        )
-        break
-      case 'directTimespanFilter':
-        // console.log(someFacetIsFetching)
-        facetComponent = (
-          <DateFacet
-            facetID={facetID}
-            facet={facet}
-            facetClass={this.props.facetClass}
-            resultClass={this.props.resultClass}
-            facetUpdateID={facetUpdateID}
-            fetchFacet={this.props.fetchFacet}
-            someFacetIsFetching={someFacetIsFetching}
-            updateFacetOption={this.props.updateFacetOption}
           />
         )
         break

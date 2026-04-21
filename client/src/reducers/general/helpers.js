@@ -1,5 +1,5 @@
 import { has, isEmpty } from 'lodash'
-import { UPDATE_FACET_VALUES_CONSTRAIN_SELF } from '../../actions'
+import { UPDATE_FACET_VALUES_CONSTRAIN_SELF } from 'actions'
 
 export const fetchResults = (state, action, initialState) => {
   const { reason } = action
@@ -123,7 +123,6 @@ export const updateFacetOption = (state, action) => {
     'dateNoTimespanFilter',
     'integerFilter',
     'dateFilter',
-    'directTimespanFilter',
     'integerFilterRange'
   ]
   if (filterTypes.includes(action.option)) {
@@ -173,7 +172,7 @@ const updateFacetFilter = (state, action) => {
       ...state.facets[facetID],
       textFilter: value
     }
-  } else if (oldFacet.filterType === 'timespanFilter' || oldFacet.filterType === 'dateFilter' || oldFacet.filterType === 'directTimespanFilter' || oldFacet.filterType === 'dateNoTimespanFilter' ) {
+  } else if (oldFacet.filterType === 'timespanFilter' || oldFacet.filterType === 'dateFilter' || oldFacet.filterType === 'dateNoTimespanFilter') {
     if (value == null) {
       newFacet = {
         ...state.facets[facetID],

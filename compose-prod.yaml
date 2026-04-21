@@ -4,7 +4,9 @@ services:
   client:
     build:
       context: ./client
-      target: client-prod
+      target: client-prod-custom
+      additional_contexts:
+        custom: ./custom_client_files
     image: sampo-ui-client:prod
     container_name: sampo-ui-client-prod
     ports:
@@ -28,7 +30,9 @@ services:
   combo:
     build:
       context: .
-      target: combo-prd
+      target: combo-prd-custom
+      additional_contexts:
+        custom: ./custom_client_files
     image: sampo-ui-combo:prod
     container_name: sampo-ui-combo-prod
     ports:

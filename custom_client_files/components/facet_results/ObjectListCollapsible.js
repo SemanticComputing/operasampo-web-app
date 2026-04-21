@@ -7,13 +7,14 @@ import { orderBy, has } from 'lodash'
 import ObjectListItem from 'components/facet_results/ObjectListItem'
 import ObjectListItemSources from 'components/facet_results/ObjectListItemSources'
 import ObjectListItemEvent from 'components/facet_results/ObjectListItemEvent'
+import ObjectListItemRole from 'components/facet_results/ObjectListItemRole'
 import classNames from 'classnames'
 
 const styles = (theme, props) => ({
   resultTableList: {
     maxHeight: props.tableData && props.tableData.paginatedResultsRowContentMaxHeight
       ? props.tableData.paginatedResultsRowContentMaxHeight
-      : 200,
+      : 400,
     overflow: 'auto'
   },
   valueList: {
@@ -63,6 +64,17 @@ const ObjectListCollapsible = props => {
       return (
         <>
           <ObjectListItemEvent
+            data={itemData}
+            isFirstValue={isFirstValue}
+          />
+          {addThreeDots &&
+            <span className={classes.threeDots} onClick={() => props.onExpandClick(props.rowId)}> ...</span>}
+        </>
+      )
+    } else if (columnId === 'performanceRole') {
+      return (
+        <>
+          <ObjectListItemRole
             data={itemData}
             isFirstValue={isFirstValue}
           />

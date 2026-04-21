@@ -4,8 +4,8 @@ import intl from 'react-intl-universal'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import has from 'lodash'
-import MainCard from './MainCard'
-import { getSpacing } from '../../helpers/helpers'
+import MainCard from 'components/perspectives/MainCard'
+import { getSpacing } from 'helpers/helpers'
 import { Grid } from '@mui/material'
 
 /**
@@ -14,15 +14,6 @@ import { Grid } from '@mui/material'
 const Main = props => {
   const { perspectives, screenSize, layoutConfig } = props
   const { mainPage } = layoutConfig
-  const internalPerspectives = []
-  const externalPerspectives = []
-  perspectives.forEach(perspective => {
-    if (perspective.externalUrl || perspective.searchMode === 'dummy-internal') {
-      externalPerspectives.push(perspective)
-    } else {
-      internalPerspectives.push(perspective)
-    }
-  })
   let headingVariant = 'h5'
   let subheadingVariant = 'body1'
   let descriptionVariant = 'body1'
@@ -149,8 +140,8 @@ const Main = props => {
         sx={theme => ({
           marginLeft: theme.spacing(1),
           marginRight: theme.spacing(1),
-          [theme.breakpoints.up(1100 + getSpacing(theme, 6))]: {
-            width: 1100,
+          [theme.breakpoints.up(800 + getSpacing(theme, 6))]: {
+            width: 800,
             marginLeft: 'auto',
             marginRight: 'auto'
           }

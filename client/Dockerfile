@@ -14,6 +14,14 @@ WORKDIR /app/client
 EXPOSE 8080
 CMD ["npm", "run", "dev"]
 
+# Client development stage
+FROM base AS client-dev-custom
+COPY . ./client
+COPY --from=custom . ./client/custom
+WORKDIR /app/client
+EXPOSE 8080
+CMD ["npm", "run", "dev"]
+
 # Client production build stage
 FROM base AS client-build
 COPY . ./client
@@ -21,6 +29,25 @@ WORKDIR /app/client
 RUN npm run build
 
 FROM nginx:alpine AS client-prod
+
+COPY --from=client-build /app/client/dist/public /usr/share/nginx/html
+COPY ./nginx.conf /etc/nginx/templates/default.conf.template
+
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+
+
+#CMD ["/bin/sh", "-c", "SAMPO_UI_CLIENT_PORT=${SAMPO_UI_CLIENT_PORT:-80} envsubst '$SAMPO_UI_CLIENT_PORT' < /etc/nginx/templates/default.conf.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
+# Client production build stage
+FROM base AS client-build-custom
+COPY . ./client
+COPY --from=custom . ./client/custom
+WORKDIR /app/client
+RUN npm run build
+
+FROM nginx:alpine AS client-prod-custom
 
 COPY --from=client-build /app/client/dist/public /usr/share/nginx/html
 COPY ./nginx.conf /etc/nginx/templates/default.conf.template

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import intl from 'react-intl-universal'
-import InstancePageTable from './InstancePageTable'
+import InstancePageTable from 'components/main_layout/InstancePageTable'
 import { withStyles } from 'tss-react/mui'
 import { Box, Chip, Divider } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'

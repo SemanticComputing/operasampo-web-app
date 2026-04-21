@@ -4,10 +4,13 @@ services:
   client:
     build:
       context: ./client
-      target: client-dev
+      target: client-dev-custom
+      additional_contexts:
+        custom: ./custom_client_files
     command: npm run dev
     volumes:
       - ./client:/app/client
+      - ./custom_client_files:/app/client/custom
       - client_node_modules:/app/client/node_modules # Prevent overwrite of deps
       - ./custom_components/dist:/app/custom-components
     ports:

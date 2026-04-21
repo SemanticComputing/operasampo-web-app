@@ -38,32 +38,32 @@ import {
   clientFSUpdateQuery,
   clientFSUpdateFacet,
   fetchKnowledgeGraphMetadata
-} from '../actions'
-import { filterResults } from '../selectors'
+} from 'actions'
+import { filterResults } from 'selectors'
 import {
   getScreenSize,
   usePageViews
-} from '../helpers/helpers'
-import * as apexChartsConfig from '../library_configs/ApexCharts/ApexChartsConfig'
-import * as leafletConfig from '../library_configs/Leaflet/LeafletConfig'
-import * as networkToolsGeneral from '../library_configs/Cytoscape.js/NetworkToolsGeneral'
-import * as networkToolsPortalSpecific from '../library_configs/Cytoscape.js/NetworkToolsPortalSpecific'
-import { useConfigsStore } from '../stores/configsStore'
+} from 'helpers/helpers'
+import * as apexChartsConfig from 'library_configs/ApexCharts/ApexChartsConfig'
+import * as leafletConfig from 'library_configs/Leaflet/LeafletConfig'
+import * as networkToolsGeneral from 'library_configs/Cytoscape.js/NetworkToolsGeneral'
+import * as networkToolsPortalSpecific from 'library_configs/Cytoscape.js/NetworkToolsPortalSpecific'
+import { useConfigsStore } from 'stores/configsStore'
 
 // ** Import general components **
-const TopBar = lazy(() => import('../components/main_layout/TopBar'))
-const TextPage = lazy(() => import('../components/main_layout/TextPage'))
-const Message = lazy(() => import('../components/main_layout/Message'))
-const FullTextSearch = lazy(() => import('../components/main_layout/FullTextSearch'))
-const FacetedSearchPerspective = lazy(() => import('../components/facet_results/FacetedSearchPerspective'))
-const FederatedSearchPerspective = lazy(() => import('../components/facet_results/FederatedSearchPerspective'))
-const InstancePagePerspective = lazy(() => import('../components/main_layout/InstancePagePerspective'))
-const KnowledgeGraphMetadataTable = lazy(() => import('../components/main_layout/KnowledgeGraphMetadataTable'))
+const TopBar = lazy(() => import('components/main_layout/TopBar'))
+const TextPage = lazy(() => import('components/main_layout/TextPage'))
+const Message = lazy(() => import('components/main_layout/Message'))
+const FullTextSearch = lazy(() => import('components/main_layout/FullTextSearch'))
+const FacetedSearchPerspective = lazy(() => import('components/facet_results/FacetedSearchPerspective'))
+const FederatedSearchPerspective = lazy(() => import('components/facet_results/FederatedSearchPerspective'))
+const InstancePagePerspective = lazy(() => import('components/main_layout/InstancePagePerspective'))
+const KnowledgeGraphMetadataTable = lazy(() => import('components/main_layout/KnowledgeGraphMetadataTable'))
 // ** General components end **
 
 // ** Import portal specific components **
-const Main = lazy(() => import('../components/perspectives/Main'))
-const Footer = lazy(() => import('../components/perspectives/Footer'))
+const Main = lazy(() => import('components/perspectives/Main'))
+const Footer = lazy(() => import('components/perspectives/Footer'))
 // ** Portal specific components end **
 
 /**
@@ -391,24 +391,6 @@ const SemanticPortal = props => {
               {intl.getHTML('instructions')}
             </TextPage>
           </Route>}
-        {/* create a route for sources page */}
-        <Route path={`${rootUrlWithLang}/sources`}>
-          <TextPage layoutConfig={layoutConfig}>
-            {intl.getHTML('sources')}
-          </TextPage>
-        </Route>
-        {/* create a route for links page */}
-        <Route path={`${rootUrlWithLang}/links`}>
-          <TextPage layoutConfig={layoutConfig}>
-            {intl.getHTML('links')}
-          </TextPage>
-        </Route>
-        {/* create a route for licenses page */}
-        <Route path={`${rootUrlWithLang}/licenses`}>
-          <TextPage layoutConfig={layoutConfig}>
-            {intl.getHTML('licenses')}
-          </TextPage>
-        </Route>
       </>
     </Box>
   )

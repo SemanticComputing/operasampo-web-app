@@ -14,6 +14,19 @@ ENV API_URL=/api/v1
 RUN npm run build
 
 
+FROM node:22.20-slim AS client-build-custom
+RUN mkdir -p /app/client
+WORKDIR /app/client
+COPY client/package*.json ./
+RUN npm install
+COPY client/ ./
+COPY --from=custom . ./custom
+
+ENV API_URL=/api/v1
+
+RUN npm run build
+
+
 # Server production build stage
 FROM node:22.20-slim AS server-build
 RUN mkdir -p /app/server
@@ -31,6 +44,22 @@ RUN mkdir -p /app/server /app/public
 WORKDIR /app/server
 # Copy built client and server files
 COPY --from=client-build /app/client/dist /app/
+COPY --from=server-build /app/server /app/server
+
+# Config should be replaced or mounted in your production environment
+COPY ./configs /app/configs
+
+# Expose server port and start the server
+EXPOSE 3001
+CMD ["node", "dist/index.js"]
+
+FROM node:22.20-slim AS combo-prd-custom
+# Make sure necessary directories exist
+RUN mkdir -p /app/server /app/public
+# Set working directory
+WORKDIR /app/server
+# Copy built client and server files
+COPY --from=client-build-custom /app/client/dist /app/
 COPY --from=server-build /app/server /app/server
 
 # Config should be replaced or mounted in your production environment
