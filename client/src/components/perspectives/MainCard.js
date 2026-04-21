@@ -99,7 +99,7 @@ const MainCard = props => {
       key={perspective.id}
       item
       xs={12}
-      sm={4}
+      sm={6}
       md={12 / cardsPerRow}
       container={xsScreen}
       perspective={perspective}
