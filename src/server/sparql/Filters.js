@@ -24,7 +24,7 @@ export const generateConstraintsBlock = ({
             facetClass: facetClass,
             facetID: c.facetID,
             filterTarget: filterTarget,
-            queryString: c.values,
+            queryString: c.values.replaceAll('\'', '\\\''),
             inverse: inverse
           })
           break
